@@ -1,0 +1,44 @@
+section{
+    background-color: dimgray;
+    padding: 24px 72px 24px 72px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.socialLinks{
+    height: 36px;
+    width: auto;
+
+}
+
+.github:hover{
+   content: url("./../../assets/Header/Contact_icons/github_hover.png");
+}
+
+.linkedin:hover {
+  content: url("./../../assets/Header/Contact_icons/linkedin_hover.png");
+}
+
+.mail:hover {
+  content: url("./../../assets/Header/Contact_icons/mail_hover.png");
+}
+
+
+.headerDeveloper{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.nameIcon{
+    height: 30px;
+    padding-right: 6px;
+}
+
+.headerName{
+    font-size: 24px;
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
