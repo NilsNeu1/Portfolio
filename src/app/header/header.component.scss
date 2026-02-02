@@ -1,44 +1,170 @@
-section{
-    background-color: dimgray;
-    padding: 24px 72px 24px 72px;
+@use './../../shared/colors.scss' as colors;
 
+section {
+    background-color: transparent;
+    padding: 24px 72px 24px 72px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 1000;
 }
 
-.socialLinks{
+.socialLinks {
     height: 36px;
     width: auto;
+    cursor: pointer;
 
 }
 
-.github:hover{
-   content: url("./../../assets/Header/Contact_icons/github_hover.png");
+.github:hover {
+    background-image: url("./../../assets/Header/Contact_icons/github_hover.png");
+    background-size: contain;
 }
 
 .linkedin:hover {
-  content: url("./../../assets/Header/Contact_icons/linkedin_hover.png");
+    background-image: url("./../../assets/Header/Contact_icons/linkedin_hover.png");
+    background-size: contain;
 }
 
 .mail:hover {
-  content: url("./../../assets/Header/Contact_icons/mail_hover.png");
+    background-image: url("./../../assets/Header/Contact_icons/mail_hover.png");
+    background-size: contain;
+}
+
+.menu:hover {
+    content: url('./../../assets/Header/Menu/menu_hover.png');
 }
 
 
-.headerDeveloper{
+.headerDeveloper {
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
-.nameIcon{
+.nameIcon {
     height: 30px;
     padding-right: 6px;
 }
 
-.headerName{
+.headerName {
     font-size: 24px;
-    color: white;
+    color: colors.$backgroundColorLight;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.navigation{
+    display: flex;
+    align-items: center;
+}
+
+
+
+.languageSelect{
+    cursor: pointer;
+    width: 36px;
+    height: 36px;
+    border: 1px solid;
+    border-color: colors.$backgroundColorLight;
+    color: colors.$backgroundColorLight;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 12px;
+
+    &:hover{
+       background-color: colors.$highlightsDark;
+    }
+
+}
+
+
+
+.floatingBurgerMenu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: absolute;
+    background-color: colors.$backgroundColorLight;
+    right: 50px;
+    top: 20px;
+    border: 1px solid black;
+    border-radius: 6px;
+    width: 200px;
+    height: 220px;
+    opacity: 0; transform: translateX(120%);
+    pointer-events: none; 
+    transition: transform 0.12s ease-out, opacity 0.12s ease-out;
+}
+.floatingBurgerMenu.open{
+    display: flex;
+    opacity: 1; transform: translateX(0); pointer-events: auto;
+}
+
+
+.burgerHead {
+    color: colors.$backgroundColor;
+    width: 160px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 24px;
+    padding: 6px 18px;
+
+    img{
+    
+    width: 36px;
+        &:hover{
+            content: url('./../../assets/Header/Menu/close_hover.png');
+        }
+    }
+}
+
+.burgerLink {
+    color: colors.$backgroundColorDark;
+    font-size: 18px;
+    padding: 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.12s ease;
+    cursor: pointer;
+
+    &:hover {
+        color: colors.$backgroundColor;
+    }
+
+    img {
+        width: 0;
+        opacity: 0;
+        transition:
+            width 0.12s ease,
+            opacity 0.12s ease;
+    }
+
+    &:hover img {
+        width: 20px;
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.langText.animate {
+    animation: fadeIn 0.12s ease-in;
 }

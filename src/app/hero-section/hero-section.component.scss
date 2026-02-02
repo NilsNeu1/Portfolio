@@ -1,0 +1,8 @@
+@use './../../shared/colors.scss' as colors;
+
+section{
+    background-color: colors.$backgroundColor;
+    width: 100%;
+    height: 100vh;
+    padding-top: 0;
+}

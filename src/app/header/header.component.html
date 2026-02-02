@@ -1,17 +1,38 @@
 <section>
-<div>
-    <img class="socialLinks github" src="./../../assets/Header/Contact_icons/github.png" alt="">
-    <img class="socialLinks linkedin" src="./../../assets/Header/Contact_icons/linkedin.png" alt="">
-    <img class="socialLinks mail" src="./../../assets/Header/Contact_icons/mail.png" alt="">
+    <div>
+        <img (click)="goToLink('https://github.com/NilsNeu1')" class="socialLinks github"
+            src="./../../assets/Header/Contact_icons/github.png" alt="github Profil öffnen">
+        <img class="socialLinks linkedin" src="./../../assets/Header/Contact_icons/linkedin.png"
+            alt="LinkedIn Profil öffnen">
+        <img class="socialLinks mail" src="./../../assets/Header/Contact_icons/mail.png" alt="Email Formular öffnen">
+    </div>
+
+    <div class="headerDeveloper">
+        <img class="nameIcon" src="./../../assets/logo/dev_logo.png" alt="">
+        <span class="headerName">Neumann</span>
+    </div>
+
+    <div class="navigation">
+        <div (click)="languageSwitch()" class="languageSelect">
+  <span [class.animate]="langAnimate" class="langText">{{ activeLanguage }}</span>
 </div>
 
-<div class="headerDeveloper" >
-    <img class="nameIcon" src="./../../assets/logo/dev_logo.png" alt="">
-    <span class="headerName" >Neumann</span>
-</div>
+        <img (click)="burgerMenuOpen()" class="socialLinks menu" src="./../../assets/Header/Menu/menu.png" alt="Menu">
+    </div>
 
-<div>
-<img class="socialLinks menu" src="./../../assets/Header/Menu/menu.png" alt="">
-</div>
+    <nav class="floatingBurgerMenu" [class.open]="isMenuOpen">
+        <div class="burgerHead">
+            <div>Menu</div>
+            <img (click)="burgerMenuClose()" src="./../../assets/Header/Menu/close.png" alt="">
+
+
+        </div>
+
+        <div class="burgerLink"><img src="./../../assets/logo/mini_flower_dark.png" alt="">About Me</div>
+        <div class="burgerLink"><img src="./../../assets/logo/mini_flower_dark.png" alt="">Skillset</div>
+        <div class="burgerLink"><img src="./../../assets/logo/mini_flower_dark.png" alt="">Portfolio</div>
+        <div class="burgerLink"><img src="./../../assets/logo/mini_flower_dark.png" alt="">Refences</div>
+        <div class="burgerLink"><img src="./../../assets/logo/mini_flower_dark.png" alt="">Contact me</div>
+    </nav>
 
 </section>
