@@ -1,4 +1,4 @@
-@use './../../shared/colors.scss' as colors;
+@use '../../shared/colors.scss' as colors;
 
 section {
     background-color: transparent;
@@ -23,22 +23,22 @@ section {
 }
 
 .github:hover {
-    background-image: url("./../../assets/Header/Contact_icons/github_hover.png");
+    background-image: url("./../../assets/Header/Contact_icons/github_hover.svg");
     background-size: contain;
 }
 
 .linkedin:hover {
-    background-image: url("./../../assets/Header/Contact_icons/linkedin_hover.png");
+    background-image: url("./../../assets/Header/Contact_icons/linkedin_hover.svg");
     background-size: contain;
 }
 
 .mail:hover {
-    background-image: url("./../../assets/Header/Contact_icons/mail_hover.png");
+    background-image: url("./../../assets/Header/Contact_icons/mail_hover.svg");
     background-size: contain;
 }
 
 .menu:hover {
-    content: url('./../../assets/Header/Menu/menu_hover.png');
+    content: url('./../../assets/Header/Menu/burger_menu_hover.svg');
 }
 
 
@@ -54,9 +54,10 @@ section {
 }
 
 .headerName {
-    font-size: 24px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 30px;
+    font-weight: 600;
     color: colors.$backgroundColorLight;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .navigation{
@@ -68,6 +69,7 @@ section {
 
 .languageSelect{
     cursor: pointer;
+    font-family: 'Quicksand', sans-serif;
     width: 36px;
     height: 36px;
     border: 1px solid;
@@ -123,7 +125,7 @@ section {
     
     width: 36px;
         &:hover{
-            content: url('./../../assets/Header/Menu/close_hover.png');
+            content: url('./../../assets/Header/Menu/close_hover.svg');
         }
     }
 }

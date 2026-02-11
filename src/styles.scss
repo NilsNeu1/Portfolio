@@ -2,4 +2,79 @@ body{
     margin: 0;
     width: 100%;
     overflow-x: hidden;
+    font-family: 'Quicksand', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Quicksand (system fallback included above) */
+@font-face {
+  font-family: 'Quicksand';
+  src: url('./shared/Fonts/Quicksand/woff2/Quicksand-Regular.woff2') format('woff2'),
+       url('./shared/Fonts/Quicksand/woff/Quicksand-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Quicksand';
+  src: url('./shared/Fonts/Quicksand/woff2/Quicksand-Medium.woff2') format('woff2'),
+       url('./shared/Fonts/Quicksand/woff/Quicksand-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Quicksand';
+  src: url('./shared/Fonts/Quicksand/woff2/Quicksand-SemiBold.woff2') format('woff2'),
+       url('./shared/Fonts/Quicksand/woff/Quicksand-SemiBold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Quicksand';
+  src: url('./shared/Fonts/Quicksand/woff2/Quicksand-Bold.woff2') format('woff2'),
+       url('./shared/Fonts/Quicksand/woff/Quicksand-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Eczar - use for headings or where desired */
+@font-face {
+  font-family: 'Eczar';
+  src: url('./shared/Fonts/Eczar/woff2/Eczar-Regular.woff2') format('woff2'),
+       url('./shared/Fonts/Eczar/woff2/Eczar-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Eczar';
+  src: url('./shared/Fonts/Eczar/woff2/Eczar-SemiBold.woff2') format('woff2'),
+       url('./shared/Fonts/Eczar/woff2/Eczar-SemiBold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Eczar';
+  src: url('./shared/Fonts/Eczar/woff2/Eczar-Bold.woff2') format('woff2'),
+       url('./shared/Fonts/Eczar/woff2/Eczar-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Utility classes */
+.font-eczar {
+  font-family: 'Eczar', Georgia, 'Times New Roman', serif;
+}
+
+.font-quicksand {
+  font-family: 'Quicksand', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
