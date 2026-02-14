@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
-import { NgIf } from "../../../node_modules/@angular/common/index";
+//import { NgIf } from "../../../node_modules/@angular/common/index";
+//import { MatIcon } from "@angular/material/icon";
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [],
+  imports: [MatIconModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })

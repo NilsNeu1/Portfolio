@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from "./header/header.component";
 import { HeroSectionComponent } from "./hero-section/hero-section.component";
+import { IconService } from './services/icon.service';
 
 @Component({
   selector: 'app-root',
@@ -13,6 +14,6 @@ import { HeroSectionComponent } from "./hero-section/hero-section.component";
 })
 export class AppComponent {
   title = 'Portfolio';
+
+  constructor(private iconService: IconService) {}
 }
-
-

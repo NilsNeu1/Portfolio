@@ -8,16 +8,17 @@
     </div>
 
     <div class="headerDeveloper">
-        <img class="nameIcon" src="./../../assets/logo/dev_logo.svg" alt="">
+        <mat-icon svgIcon="dev-logo" class="nameIcon"></mat-icon>
         <span class="headerName">Neumann</span>
     </div>
 
     <div class="navigation">
         <div (click)="languageSwitch()" class="languageSelect">
-  <span [class.animate]="langAnimate" class="langText">{{ activeLanguage }}</span>
-</div>
+            <span [class.animate]="langAnimate" class="langText">{{ activeLanguage }}</span>
+        </div>
 
-        <img (click)="burgerMenuOpen()" class="socialLinks menu" src="./../../assets/Header/Menu/burger_menu.svg" alt="Menu">
+        <mat-icon (click)="burgerMenuOpen()" class="socialLinks menu" svgIcon="menu"></mat-icon>
+    
     </div>
 
     <nav class="floatingBurgerMenu" [class.open]="isMenuOpen">
@@ -28,11 +29,11 @@
 
         </div>
 
-        <div class="burgerLink"><img src="./../../assets/logo/flower_dark.svg" alt="">About Me</div>
-        <div class="burgerLink"><img src="./../../assets/logo/flower_dark.svg" alt="">Skillset</div>
-        <div class="burgerLink"><img src="./../../assets/logo/flower_dark.svg" alt="">Portfolio</div>
-        <div class="burgerLink"><img src="./../../assets/logo/flower_dark.svg" alt="">Refences</div>
-        <div class="burgerLink"><img src="./../../assets/logo/flower_dark.svg" alt="">Contact me</div>
+        <div class="burgerLink"><mat-icon svgIcon="flower" class="burgerFlower"></mat-icon>About Me</div>
+        <div class="burgerLink"><mat-icon svgIcon="flower" class="burgerFlower"></mat-icon>Skillset</div>
+        <div class="burgerLink"><mat-icon svgIcon="flower" class="burgerFlower"></mat-icon>Portfolio</div>
+        <div class="burgerLink"><mat-icon svgIcon="flower" class="burgerFlower"></mat-icon>Refences</div>
+        <div class="burgerLink"><mat-icon svgIcon="flower" class="burgerFlower"></mat-icon>Contact me</div>
     </nav>
 
 </section>

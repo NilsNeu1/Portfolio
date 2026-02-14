@@ -1,7 +1,7 @@
 @use '../../shared/colors.scss' as colors;
 
-section{
-    background-color: colors.$backgroundColor;
+section {
+    background-color: colors.$primary;
     width: 100%;
     height: 100vh;
     padding-top: 0;
@@ -11,39 +11,96 @@ section{
     justify-content: space-around;
 }
 
-.intro-text{
-    color: colors.$backgroundColorLight;
+.intro-text {
+    color: colors.$primaryBright;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    color: colors.$primaryBright;
 
-    p{
+    p {
         margin: 0;
         font-size: 36px;
     }
 
-    h1{
+    h1 {
         margin: -30px 0 -30px 0;
         font-size: 78px;
     }
 }
 
-.hero-image{
+.hero-display {
 
-height: 100%;
-background-image: url('../../assets/logo/flower_dark.svg');
-background-repeat: no-repeat;
-background-size: 540px;
-background-position-x: right;
-background-position-y: center;
-    
-    img{
-        width: auto;
-        height: -webkit-fill-available;
+    height: 100%;
+    width: 70%;
+
+}
+
+
+.scroll-down-button {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin-top: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    .arc-text-svg {
+        width: 100%;
+        height: 100%;
+        overflow: visible;
+        animation: spin 8s linear infinite;
+        transform-origin: center center;
+
+        text {
+            fill: colors.$primaryBright;
+            font-size: 12px;
+            font-family: "Quicksand", sans-serif;
+        }
+    }
+
+    .rotating-icon {
+        color: colors.$accentBright;
+        position: absolute;
+        width: 90px;
+        height: 90px;
+        transform: translate(-50%, -50%);
+        transform-origin: center center;
+        animation: spin 8s linear infinite;
     }
 }
 
-.section-selector{
-    width: 40px;
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+button {
+    font-family: "Quicksand";
+    font-size: 18px;
+    font-weight: 700;
+    background-color: transparent;
+    color: colors.$primaryBright;
+    border: solid 1px colors.$primaryBright;
+    border-radius: 24px;
+    width: 138px;
+    height: 42px;
+    margin-top: 50px;
+    cursor: pointer;
+    transition: background-color 0.12s ease;
+
+    &:hover {
+        background-color: colors.$accentDark;
+    }
+
 }
