@@ -32,9 +32,25 @@ section {
 
 .hero-display {
 
-    height: 100%;
-    width: 70%;
+    display: flex;
+    align-items: end;
 
+}
+
+.hero-display-flower{
+    color: colors.$accentDark;
+    width: 600px;
+    height: 600px;
+    position: relative;
+    transform: translate(100%, -50%);
+    z-index: 1;
+
+}
+
+.hero-image{
+    z-index: 10;
+    width: 630px;
+    height: auto;
 }
 
 

@@ -18,7 +18,8 @@ export class IconService {
     this.addIcon('dev-logo', 'assets/logo/dev_logo.svg');
     this.addIcon('flower', 'assets/logo/flower_dark.svg');
     this.addIcon('menu', 'assets/Header/Menu/burger_menu.svg');
-    this.addIcon('arrow-right', 'assets/icons/dynamic/arrow-right.svg');
+    this.addIcon('nav-bullet-inactive', '/assets/nav_bullets/dot.svg');
+    this.addIcon('nav-bullet-active', '/assets/nav_bullets/square.svg');
   }
 
   private addIcon(name: string, path: string) {

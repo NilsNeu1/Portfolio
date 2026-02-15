@@ -1,0 +1,33 @@
+@use '../../../shared/colors.scss' as colors;
+
+.bullet-container{
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+}
+
+
+
+.bullet{
+    width: 18px;
+    height: 18px;
+
+    &.active-bright{
+    color: colors.$accentBright;
+    }
+
+    &.active-dark{
+    color: colors.$accentDark;
+    }
+
+    &.inactive-bright{
+    color: colors.$primaryBright;
+    }
+
+    &.inactive-dark{
+        color: colors.$primaryDark;
+    }
+
+}

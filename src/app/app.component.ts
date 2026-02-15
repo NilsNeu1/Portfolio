@@ -4,11 +4,12 @@ import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from "./header/header.component";
 import { HeroSectionComponent } from "./hero-section/hero-section.component";
 import { IconService } from './services/icon.service';
+import { NavigationBulletsComponent } from "./user-interface/navigation-bullets/navigation-bullets.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, HeaderComponent, HeroSectionComponent],
+  imports: [CommonModule, RouterOutlet, HeaderComponent, HeroSectionComponent, NavigationBulletsComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
