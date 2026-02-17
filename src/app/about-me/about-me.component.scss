@@ -1,0 +1,9 @@
+@use '../../shared/colors.scss' as colors;
+
+section{
+    background-color: colors.$primaryBright;
+    width: 100%;
+    height: 100vh;
+    padding-top: 0;
+    display: flex;
+}
