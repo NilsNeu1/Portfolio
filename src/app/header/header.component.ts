@@ -11,7 +11,7 @@ import { MatIconModule } from '@angular/material/icon';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
-isMenuOpen = false;
+isMenuOpen: boolean = false;
 activeLanguage = 'DE';
 langAnimate = false;
 

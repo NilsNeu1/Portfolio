@@ -1,9 +1,121 @@
-@use '../../shared/colors.scss' as colors;
+@use '../../shared/mixin/colors.scss' as colors;
+@use '../../shared/mixin/buttons.scss' as buttons;
 
-section{
+section {
     background-color: colors.$primaryBright;
     width: 100%;
     height: 100vh;
     padding-top: 0;
     display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+}
+
+.section-titel {
+
+    display: flex;
+    align-items: flex-end;
+    margin-top: 5%;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    h1 {
+        color: colors.$primaryDark;
+        font-family: 'Eczar' !important;
+        font-size: 72px;
+    }
+}
+
+.hero-container {
+    display: flex;
+    align-items: flex-end;
+}
+
+.hero-image {
+    background-color: colors.$primary;
+    width: 636px;
+    height: 890px;
+}
+
+.information {
+    //display: none;
+    width: 660px;
+    height: 180px;
+    padding: 24px;
+    background-color: colors.$primaryDark;
+    color: colors.$primaryBright;
+    position: relative;
+    transform: translate(-50%, 50%);
+    border-radius: 6px;
+}
+
+
+.information-interaction{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+
+.get-in-touch-btn {
+    @include buttons.app-button(120px);
+
+    border-color: colors.$primaryBright;
+    color: colors.$primaryBright;
+
+    &:hover {
+        background-color: colors.$accentDark;
+    }
+}
+
+.psst-emoji{
+    width: 40px;
+    height: 40px;
+    transition: transform 0.12s ease-out;
+    cursor: pointer;
+    animation: wobble 1s ease-in-out infinite;
+
+    &:hover{
+        animation: none;
+    }
+}
+
+
+.about-me-overlay{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    height: 200px;
+    width: 300px;
+    padding: 12px;
+    background-color: colors.$primary;
+    border: 1px solid colors.$primaryDark;
+    border-radius: 6px;
+    transform: translate(180%, 230%);
+    opacity: 1;
+    transition: transform 0.12s ease-out, opacity 0.12s ease-in-out;
+    pointer-events: none;
+    
+}
+
+.about-me-overlay.open{
+    transform: translate(180%, 6%);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+@keyframes wobble {
+    0% {
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(6px);
+    }
+     100%{
+        transform: translateY(0px);
+    }
+
 }

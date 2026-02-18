@@ -5,6 +5,7 @@ import { NgFor } from '@angular/common';
 import { NgClass } from '@angular/common';
 
 
+
 @Component({
   selector: 'app-navigation-bullets',
   standalone: true,

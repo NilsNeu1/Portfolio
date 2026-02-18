@@ -10,4 +10,16 @@ import { MatIconModule } from '@angular/material/icon';
 })
 export class AboutMeComponent {
 
+isHovered: boolean = false;
+
+onHoverStart(){
+this.isHovered = true;
+
+}
+
+onHoverEnd(){
+this.isHovered = false;
+
+}
+
 }

@@ -1,5 +1,41 @@
 <section id="about" nav backgroundType="bright">
-    <div class="section-titel" ></div>
-    <div class="hero-pose" ></div>
-    <div class="information" ></div>
+
+    <div class="section-titel">
+        <h1>About me</h1>
+
+        <div class="information">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit at ipsam nam aliquid adipisci, voluptate
+                consequatur reprehenderit inventore iure dolorum sapiente alias nulla eum nihil. Fugit voluptas
+                laboriosam esse exercitationem.</p>
+                <p>Let's create something Awesome together!</p>
+
+                <div class="information-interaction" >
+                    <button class="get-in-touch-btn" >Let's Talk</button>
+                    <mat-icon  
+                    (mouseenter)="onHoverStart()"
+                    (mouseleave)="onHoverEnd()"
+                    class="psst-emoji" 
+                    svgIcon="psst-emoji-d" ></mat-icon>
+
+                    
+                </div>
+
+                <div  [class.open]="isHovered" class="about-me-overlay" >
+                    <h2>More about me</h2>
+                    <div> - Tech enthusiast</div>
+                    <div> - strive to improve</div>
+                    <div> - inspired by solving Problems</div>
+                </div>
+
+        </div>
+
+
+    </div>
+
+    <div class="hero-container">
+        <img class="hero-image" src="../../assets/placeholder/ryan-reynolds.png" alt="">
+    </div>
+
+
+
 </section>
