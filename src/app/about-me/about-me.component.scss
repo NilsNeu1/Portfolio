@@ -94,7 +94,7 @@ section {
     border: 1px solid colors.$primaryDark;
     border-radius: 6px;
     transform: translate(180%, 230%);
-    opacity: 1;
+    opacity: 0;
     transition: transform 0.12s ease-out, opacity 0.12s ease-in-out;
     pointer-events: none;
     

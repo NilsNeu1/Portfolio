@@ -23,7 +23,6 @@ export class NavigationBulletsComponent {
   private observeSections() {
 
     const sections = Array.from(document.querySelectorAll('section[nav]'))
-      .filter(section => !section.classList.contains('header'));
 
       this.sections = sections.map(section => ({ id: section.id }));
 
