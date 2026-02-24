@@ -1,26 +1,37 @@
 <section id="skills" nav backgroundType="dark">
 
+    <div class="competencies-container"></div>
 
     <div>
 
-        <div>
-        <h1> Core Competencies</h1>
-    
-        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae ipsa consequatur assumenda. Tempore voluptas magni accusamus tenetur porro aut voluptatum provident dolores, unde, labore ratione quisquam consequatur fugit adipisci ducimus.</span>
+        <div class="my-passion">
+            <h1> Core Competencies</h1>
+
+            <div class="passion-text" >
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae ipsa consequatur assumenda. Tempore
+                voluptas magni accusamus tenetur porro aut voluptatum provident dolores, unde, labore ratione quisquam
+                consequatur fugit adipisci ducimus.
+            </div>
         </div>
 
     </div>
 
-    <div>
+    <div class="skillset" >
         <div>
-            <mat-icon svgIcon="flower" > </mat-icon>
+            <mat-icon svgIcon="flower"> </mat-icon>
         </div>
-        <div class="growth-slide-in" >
+        <div class="growth-slide-in">
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
         </div>
-        <div>
-            <mat-icon class="skill-icon" ></mat-icon>
+
+        <div class="skill-icon-container" >
+          <div class="skill-icon" *ngFor="let skill of skills">
+            <img [src]="skill.icon" alt="">
+            <span>{{skill.label}}</span>
+        </div>  
         </div>
+        
+
     </div>
 
 </section>

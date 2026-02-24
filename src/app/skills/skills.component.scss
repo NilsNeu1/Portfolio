@@ -1,8 +1,61 @@
 @use '../../shared/mixin/colors.scss' as colors;
 
 
-section{
+section {
     height: 100vh;
     width: 100%;
     background-color: colors.$primaryDark;
+    padding-top: 0;
+}
+
+.competencies-container {
+    padding-top: 5%;
+    gap: 18px;
+    display: flex;
+}
+
+.my-passion {
+    color: colors.$primaryBright;
+
+    h1 {
+        font-size: 72px;
+        font-family: 'Eczar';
+        font-weight: 800;
+
+    }
+}
+
+.passion-text {
+    background-color: colors.$primary;
+    border-radius: 6px;
+    padding: 6px;
+    width: 50%;
+}
+
+.skillset {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.growth-slide-in {
+    background-color: colors.$accentBright;
+    border-radius: 6px;
+    padding: 6px;
+    width: 200px;
+}
+
+.skill-icon-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 6px;
+}
+
+.skill-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    color: colors.$primaryBright;
 }
