@@ -1,15 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { NgForOf } from "@angular/common";
+import { ObserveSectionDirective } from '../services/section-observer/section.observer.directive';
 
 @Component({
   selector: 'app-skills',
   standalone: true,
-  imports: [MatIconModule, NgForOf],
+  imports: [MatIconModule, NgForOf, ObserveSectionDirective],
   templateUrl: './skills.component.html',
   styleUrl: './skills.component.scss'
 })
 export class SkillsComponent {
+  sectionId = 'skills';
+  
+  isHovered: boolean = false;
 
   skills = [
     {icon: '../../assets/Frontend_Skills_icons/HTML.svg', label: 'HTML' },
@@ -24,5 +28,15 @@ export class SkillsComponent {
     {icon: '../../assets/Frontend_Skills_icons/Scrum.svg', label: 'Scrum' },
   ]
 
+
+onHoverStart(){
+this.isHovered = true;
+
+}
+
+onHoverEnd(){
+this.isHovered = false;
+
+}
 
 }

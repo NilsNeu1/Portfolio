@@ -1,8 +1,7 @@
-import { Component } from '@angular/core';
-import { MatIconModule } from '@angular/material/icon';
-import { NgIf } from "@angular/common";
-import { NgFor } from '@angular/common';
-import { NgClass } from '@angular/common';
+import { Component, computed, inject } from '@angular/core';
+ import { MatIconModule } from '@angular/material/icon';
+  import { NgIf, NgFor, NgClass } from '@angular/common';
+   import { VisibilityService } from '../../services/section-observer/section-observer.service';
 
 
 
@@ -14,6 +13,7 @@ import { NgClass } from '@angular/common';
   styleUrl: './navigation-bullets.component.scss'
 })
 export class NavigationBulletsComponent {
+  private VisibilityService = inject(VisibilityService);
 
   activeSectionId: string | null = null;
   sections: { id: string }[] = [];
