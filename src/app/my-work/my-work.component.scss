@@ -1,4 +1,5 @@
 @use '../../shared/mixin/colors.scss' as colors;
+@use '../../shared/mixin/buttons.scss' as buttons;
 
 
 section {
@@ -6,4 +7,75 @@ section {
     width: 100%;
     background-color: colors.$primaryBright;
     padding-top: 0;
+}
+
+.project-section-header{
+    padding-top: 5%;
+}
+
+.project-carousel{
+    display: flex;
+    justify-content: space-around;
+}
+
+.project-infobox{
+    border: solid 1px black;
+    color: colors.$primaryBright;
+    background-color: colors.$primaryDark;
+    border-radius: 6px;
+    padding: 24px;
+
+    div{
+        padding-top: 6px;
+    }
+}
+
+.project-infobox-titel{
+    display: flex;
+    justify-content: space-between;
+}
+
+.used-skills{
+    color: colors.$primary;
+}
+
+.project-snapshots{
+    height: 400px;
+    width: 400px;
+    max-width: 40%;
+    border: solid black 1px;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    img{
+        width: 40%;
+        height: 40%;
+    }
+}
+
+.project-links-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+
+}
+
+.project-links{
+     @include buttons.app-button(160px);
+    border-color: colors.$primaryBright;
+    color: colors.$primaryBright;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-right: 24px;
+
+
+        &:hover {
+        background-color: colors.$accentDark;
+    }
 }

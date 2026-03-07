@@ -1,22 +1,45 @@
-<section nav backgroundType="bright">
+<section nav id="projects" backgroundType="bright">
 
-    <div>
+    <div class="project-section-header">
         <h1>My work</h1>
         <span>Explore a selection of my work here - Interact with the projects to see my skills in action.</span>
     </div>
 
     <div class="project-carousel">
 
-        <div class="project-snapshots"></div>
+        <div class="project-snapshots">
+            <img src="../../assets/Frontend_Skills_icons/Angular.svg" alt="">
+        </div>
 
 
         <div>
             <div class="project-infobox">
 
-                <h2></h2>
+                <div class="project-infobox-titel">
+                    <h2>{{projects[currentIndex].name}}</h2>
+                    <img src="{{projects[currentIndex].icon}}" alt="">
+                </div>
+
+                <div>
+                    <span class="used-skills" *ngFor="let tech of projects[currentIndex].technologies">
+                        {{ tech }}
+                    </span>
+                </div>
+
+                <div>
+                    <span>
+                        {{projects[currentIndex].description}}
+                    </span>
+                </div>
+
+                <div class="project-links-container" >
+                    <nav class="project-links">Github</nav>
+                    <nav class="project-links" >Live Test</nav>
+                </div>
+
 
             </div>
-            
+
             <div class="project-select-buttons"></div>
         </div>
 

@@ -1,16 +1,17 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input} from '@angular/core';
+import { NgFor } from '@angular/common';
 import { ObserveSectionDirective } from '../services/section-observer/section.observer.directive';
-import { url } from 'node:inspector';
 
 @Component({
   selector: 'app-my-work',
   standalone: true,
-  imports: [ObserveSectionDirective],
+  imports: [ObserveSectionDirective, NgFor],
   templateUrl: './my-work.component.html',
   styleUrl: './my-work.component.scss'
 })
 export class MyWorkComponent {
   sectionId = 'projects';
+  currentIndex = 0;
 
   projects = [
     {
@@ -24,7 +25,7 @@ export class MyWorkComponent {
     },
     {
       name: "Join",
-      icon: url(),
+      icon: 'url()',
       snapshot: "",
       technologies: ["HTML", "CSS", "TypeScript", "Angular"],
       description: "A Task-manager inspired by the Kanban System. ",
@@ -32,5 +33,16 @@ export class MyWorkComponent {
       redirect:""
     },
   ];
+
+
+nextProject() {
+  this.currentIndex = (this.currentIndex + 1) % this.projects.length;
+}
+
+prevProject() {
+  this.currentIndex =
+    (this.currentIndex - 1 + this.projects.length) % this.projects.length;
+}
+
 
 }
