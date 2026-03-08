@@ -7,15 +7,27 @@ section {
     width: 100%;
     background-color: colors.$primaryBright;
     padding-top: 0;
+    padding-left: 4rem;
 }
 
 .project-section-header{
     padding-top: 5%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    h1{
+    font-family: "Eczar";
+    font-size: 60px;
+    padding-right: 5%;
+    }
 }
 
 .project-carousel{
     display: flex;
     justify-content: space-around;
+    align-items: center;
 }
 
 .project-infobox{
@@ -24,6 +36,7 @@ section {
     background-color: colors.$primaryDark;
     border-radius: 6px;
     padding: 24px;
+    width: 600px;
 
     div{
         padding-top: 6px;
@@ -40,8 +53,8 @@ section {
 }
 
 .project-snapshots{
-    height: 400px;
-    width: 400px;
+    height: 500px;
+    width: 500px;
     max-width: 40%;
     border: solid black 1px;
     border-radius: 6px;
@@ -51,8 +64,9 @@ section {
     justify-content: center;
 
     img{
-        width: 40%;
-        height: 40%;
+        width: 85%;
+        height: auto;
+        border-radius: 6px;
     }
 }
 
@@ -77,5 +91,21 @@ section {
 
         &:hover {
         background-color: colors.$accentDark;
+    }
+}
+
+.project-select-buttons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 18px;
+    font-weight: 800;
+
+    nav {
+        &:hover{
+        color: colors.$accentDark;
+        cursor: pointer;
+    }
     }
 }

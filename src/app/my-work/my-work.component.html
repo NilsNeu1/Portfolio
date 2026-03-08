@@ -7,8 +7,10 @@
 
     <div class="project-carousel">
 
-        <div class="project-snapshots">
-            <img src="../../assets/Frontend_Skills_icons/Angular.svg" alt="">
+        <div 
+        class="project-snapshots"
+        [style.background-color]="projects[currentIndex].color" >
+            <img src="{{projects[currentIndex].snapshot}}" alt="{{projects[currentIndex].name}}">
         </div>
 
 
@@ -33,14 +35,17 @@
                 </div>
 
                 <div class="project-links-container" >
-                    <nav class="project-links">Github</nav>
-                    <nav class="project-links" >Live Test</nav>
+                    <nav class="project-links" (click)="prevProject()">Github</nav>
+                    <nav class="project-links" (click)="nextProject()">Live Test</nav>
                 </div>
 
 
             </div>
 
-            <div class="project-select-buttons"></div>
+            <div class="project-select-buttons">
+                <nav>Previous project</nav>
+                <nav>Next project</nav>
+            </div>
         </div>
 
     </div>
