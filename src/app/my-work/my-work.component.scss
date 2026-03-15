@@ -46,6 +46,12 @@ section {
 .project-infobox-titel{
     display: flex;
     justify-content: space-between;
+
+    img{
+        width: 40px;
+        height: 40px;
+        animation: wobble 1s ease-in infinite;
+    }
 }
 
 .used-skills{
@@ -67,7 +73,18 @@ section {
         width: 85%;
         height: auto;
         border-radius: 6px;
+        z-index: 10;
     }
+
+    
+}
+
+.snapshot-spinner{
+    position: relative;
+    bottom: -42px;
+    left: -160px;
+    scale: 7;
+    animation: spin 8s linear infinite;
 }
 
 .project-links-container{
@@ -87,6 +104,7 @@ section {
     align-items: center;
     justify-content: center;
     margin-right: 24px;
+    text-decoration: none;
 
 
         &:hover {
@@ -107,5 +125,28 @@ section {
         color: colors.$accentDark;
         cursor: pointer;
     }
+    }
+}
+
+@keyframes spin {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes wobble {
+    0%{
+        transform: translateY(0px);
+    }
+
+    50%{
+        transform: translateY(4px);
+    }
+
+    100%{
+        transform: translateY(0px);
     }
 }

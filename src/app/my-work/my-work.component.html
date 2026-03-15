@@ -1,4 +1,4 @@
-<section nav id="projects" backgroundType="bright">
+<section nav id="projects" backgroundType="bright" appObserveSection="projects">
 
     <div class="project-section-header">
         <h1>My work</h1>
@@ -7,10 +7,11 @@
 
     <div class="project-carousel">
 
-        <div 
-        class="project-snapshots"
-        [style.background-color]="projects[currentIndex].color" >
-            <img src="{{projects[currentIndex].snapshot}}" alt="{{projects[currentIndex].name}}">
+        <div class="project-snapshots" [style.background-color]="projects[currentIndex].bgColor">
+            <mat-icon class="snapshot-spinner" svgIcon="flower"
+                [style.color]="projects[currentIndex].spinnerColor"></mat-icon>
+            <img class="snapshot-display" src="{{projects[currentIndex].snapshot}}"
+                alt="{{projects[currentIndex].name}}">
         </div>
 
 
@@ -34,17 +35,17 @@
                     </span>
                 </div>
 
-                <div class="project-links-container" >
-                    <nav class="project-links" (click)="prevProject()">Github</nav>
-                    <nav class="project-links" (click)="nextProject()">Live Test</nav>
+                <div class="project-links-container">
+                    <a [href]="projects[currentIndex].github" target="_blank" class="project-links">Github</a>
+                    <a [href]="projects[currentIndex].redirect" target="_blank" class="project-links">Live Test</a>
                 </div>
 
 
             </div>
 
             <div class="project-select-buttons">
-                <nav>Previous project</nav>
-                <nav>Next project</nav>
+                <nav (click)="prevProject()">Previous project</nav>
+                <nav (click)="nextProject()">Next project</nav>
             </div>
         </div>
 

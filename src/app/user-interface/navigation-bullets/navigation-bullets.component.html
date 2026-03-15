@@ -1,21 +1,28 @@
-<section class="bullet-container" >
-   <div
-   class="bullet"
-   *ngFor="let section of sections"
-   [class.active]="section.id === activeSectionId"
-   (click)="scrollTo(section.id)"
-   >
-
-   <ng-container
-   *ngIf="section.id === activeSectionId; else inactiveIcon">
-    <mat-icon  class="bullet" [ngClass]="activeBulletColorClass" svgIcon="nav-bullet-active" ></mat-icon>
+<section class="bullet-container">
+  <div
+    class="bullet"
+    *ngFor="let section of sections"
+    [class.active]="section.id === activeId()"
+    (click)="scrollTo(section.id)"
+  >
+    <!-- Aktive Bullet -->
+    <ng-container *ngIf="section.id === activeId(); else inactiveIcon">
+      <mat-icon
+        class="bullet"
+        [ngClass]="activeBulletColorClass()"
+        svgIcon="nav-bullet-active"
+      ></mat-icon>
     </ng-container>
 
-    <ng-template #inactiveIcon >
-        <mat-icon  class="bullet" [ngClass]="bulletColorClass" svgIcon="nav-bullet-inactive" ></mat-icon>
+    <!-- Inaktive Bullet -->
+    <ng-template #inactiveIcon>
+      <mat-icon
+        class="bullet"
+        [ngClass]="inactiveBulletColorClass()"
+        svgIcon="nav-bullet-inactive"
+      ></mat-icon>
     </ng-template>
-
-   </div>
+  </div>
 </section>
 
 

@@ -1,0 +1,47 @@
+@use '../../shared/mixin/colors.scss' as colors;
+@use '../../shared/mixin/buttons.scss' as buttons;
+
+
+section {
+    height: 100vh;
+    width: 100%;
+    background-color: colors.$primaryDark;
+    padding-top: 0;
+    padding-left: 4rem;
+    color: colors.$primaryBright;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.contact-container{
+    display: flex;
+    flex-direction: column;
+    padding-top: 5%;
+    padding-left: 4rem;
+}
+
+.contact-header{
+width: 800px;
+
+    h1{
+    color: colors.$accentBright;
+    font-family: 'Eczar';
+    font-size: 50px; 
+    }
+}
+
+.contact-text{
+    width: 800px;
+
+    h2{
+        color: colors.$accentDark;
+    }
+
+}
+
+.contact-form-container{
+    display: flex;
+    flex-direction: column;
+}

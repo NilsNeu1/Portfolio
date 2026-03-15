@@ -9,19 +9,22 @@ import { NavigationBulletsComponent } from "./user-interface/navigation-bullets/
 import { AboutMeComponent } from './about-me/about-me.component';
 import { SkillsComponent } from "./skills/skills.component";
 import { MyWorkComponent } from './my-work/my-work.component';
+import { ContactComponent } from "./contact/contact.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
-    CommonModule, 
-    RouterOutlet, 
+    CommonModule,
+    RouterOutlet,
     ObserveSectionDirective,
-    HeaderComponent, 
-    HeroSectionComponent, 
-    NavigationBulletsComponent, 
-    AboutMeComponent, SkillsComponent, 
-    MyWorkComponent],
+    HeaderComponent,
+    HeroSectionComponent,
+    NavigationBulletsComponent,
+    AboutMeComponent, SkillsComponent,
+    MyWorkComponent,
+    ContactComponent
+],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

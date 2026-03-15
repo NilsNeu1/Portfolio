@@ -1,17 +1,21 @@
 import { Component, Input} from '@angular/core';
 import { NgFor } from '@angular/common';
 import { ObserveSectionDirective } from '../services/section-observer/section.observer.directive';
+import { MatIcon } from "@angular/material/icon";
 
 @Component({
   selector: 'app-my-work',
   standalone: true,
-  imports: [ObserveSectionDirective, NgFor],
+  imports: [ObserveSectionDirective, NgFor, MatIcon],
   templateUrl: './my-work.component.html',
   styleUrl: './my-work.component.scss'
 })
 export class MyWorkComponent {
   sectionId = 'projects';
   currentIndex = 0;
+  blue = "#679AAC";
+  orange = "#F9AF42";
+  darkorange = "#FF834F";
 
   projects = [
     {
@@ -20,18 +24,21 @@ export class MyWorkComponent {
       snapshot: "../../assets/project_screenshots/el_pollo_loco.png",
       technologies: ["HTML", "CSS", "Javascript"],
       description: "A simple Jump-and-Run game based on an object-oriented approach. Help Pepe to defeat his enemies and collect Coins",
-      github: "",
+      github: "https://github.com/NilsNeu1/El-Pollo-Loco",
       redirect:"",
-      color: "",
+      bgColor: this.orange,
+      spinnerColor: this.darkorange,
     },
     {
       name: "Join",
-      icon: 'url()',
-      snapshot: "",
+      icon: '../../assets/general/Project_emoji/Join_D.svg',
+      snapshot: "../../assets/project_screenshots/join.svg",
       technologies: ["HTML", "CSS", "TypeScript", "Angular"],
       description: "A Task-manager inspired by the Kanban System. ",
-      github: "",
-      redirect:""
+      github: "https://github.com/NilsNeu1/Join",
+      redirect:"",
+      bgColor: this.darkorange,
+      spinnerColor: this.orange,
     },
   ];
 

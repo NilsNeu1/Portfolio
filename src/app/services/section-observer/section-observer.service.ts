@@ -7,13 +7,13 @@ export interface SectionInfo {
 
 @Injectable({ providedIn: 'root' })
 export class VisibilityService {
-  // Deine statische Datenbank
+
   readonly sections: SectionInfo[] = [
     { id: 'hero',     darkUi: false },
     { id: 'about',    darkUi: true  },
     { id: 'skills',   darkUi: false },
     { id: 'projects', darkUi: true  },
-    { id: 'feedback', darkUi: false },
+    // { id: 'feedback', darkUi: false },
     { id: 'contact',  darkUi: false }
   ];
 

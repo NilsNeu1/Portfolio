@@ -1,78 +1,40 @@
 import { Component, computed, inject } from '@angular/core';
- import { MatIconModule } from '@angular/material/icon';
-  import { NgIf, NgFor, NgClass } from '@angular/common';
-   import { VisibilityService } from '../../services/section-observer/section-observer.service';
-
-
+import { MatIconModule } from '@angular/material/icon';
+import { NgFor, NgIf, NgClass } from '@angular/common';
+import { VisibilityService } from '../../services/section-observer/section-observer.service';
 
 @Component({
   selector: 'app-navigation-bullets',
   standalone: true,
-  imports: [MatIconModule, NgIf, NgFor, NgClass],
+  imports: [MatIconModule, NgFor, NgIf, NgClass],
   templateUrl: './navigation-bullets.component.html',
   styleUrl: './navigation-bullets.component.scss'
 })
 export class NavigationBulletsComponent {
-  private VisibilityService = inject(VisibilityService);
+  private visibilityService = inject(VisibilityService);
 
-  activeSectionId: string | null = null;
-  sections: { id: string }[] = [];
-  bulletColorClass: string = '';
-  activeBulletColorClass: string = '';
+  // Abgeleitete, unveränderliche Signals aus dem Service
+  sections = this.visibilityService.sections;
+  activeId = this.visibilityService.activeId;
+  activeSectionData = this.visibilityService.activeSectionData;
 
-  private observeSections() {
+  // Computed Signal für Active Bullet Farbe basierend auf Dark UI
+  activeBulletColorClass = computed(() =>
+    this.activeSectionData().darkUi ? 'active-bright' : 'active-dark'
+  );
 
-    const sections = Array.from(document.querySelectorAll('section[nav]'))
+  // Computed Signal für Inactive Bullet Farbe basierend auf Dark UI
+  inactiveBulletColorClass = computed(() =>
+    this.activeSectionData().darkUi ? 'inactive-dark' : 'inactive-bright'
+  );
 
-      this.sections = sections.map(section => ({ id: section.id }));
-
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          this.activeSectionId = entry.target.id;
-          this.updateBulletColors(entry.target);
-        }
-      });
-    }, { threshold: 0.5 });
-
-    sections.forEach(section => observer.observe(section));
+  /**
+   * Glatte Scroll-Navigation zu einer Section
+   */
+  scrollTo(sectionId: string): void {
+    const element = document.getElementById(sectionId);
+    element?.scrollIntoView({ behavior: 'smooth' });
   }
-
-  private getSectionBackgroundType(sectionElement: Element): string | null {
-    return sectionElement.getAttribute('backgroundType');
-  }
-
-
-  updateBulletColors(sectionElement: Element) {
-  const backgroundType = this.getSectionBackgroundType(sectionElement);
-  if (!backgroundType) return;
-
-  const isActive = sectionElement.id === this.activeSectionId;
-
-  const isDark = backgroundType === 'dark';
-
-  if (isActive) {
-
-    this.activeBulletColorClass = isDark ? 'active-bright' : 'active-dark';
-    this.bulletColorClass = isDark ? 'inactive-bright' : 'inactive-dark';
-  }
-}
-
-
-
-
-scrollTo(sectionId: string) {
-  document.getElementById(sectionId)?.scrollIntoView({
-    behavior: 'smooth'
-  });
-}
-
-
-ngOnInit() {
-  this.observeSections();
-}
-
-
 }
 
 
