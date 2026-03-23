@@ -18,8 +18,8 @@ section {
 .contact-container {
     display: flex;
     flex-direction: column;
-    padding-top: 5%;
-    padding-left: 4rem;
+
+    width: 40%;
 }
 
 .contact-header {
@@ -44,18 +44,22 @@ section {
 .contact-form-container {
     display: flex;
     flex-direction: column;
+     width: 40%;
 }
 
 .form-row {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
 
 }
 
 .form-block {
     display: flex;
     flex-direction: column;
-    padding: 0px 6px 12px 6px;
+    padding: 24px;
+    padding-left: 0px;
+    width: stretch;
 
     label {
         color: colors.$primaryBright;
@@ -71,11 +75,16 @@ section {
         border: 0;
         border-bottom: 2px solid colors.$accentBright;
         color: colors.$primaryBright;
-        height: 24px;
+        min-height: 30px;
+        max-height: 400px;
+        field-sizing: content;
         transition: border-color 0.2s ease;
         font-family: 'Quicksand', sans-serif;
         font-size: 1em;
         outline: transparent;
+        scrollbar-width: thin;
+        scrollbar-color: colors.$accentDark transparent;
+        resize: none;
         cursor: pointer;
 
         &::placeholder {
@@ -103,6 +112,68 @@ section {
         input,
         textarea {
             border-bottom-color: colors.$accentDark;
+            // padding-top: 18px;
+
         }
     }
 }
+
+.policy{
+    padding-top: 30px;
+
+    a{
+color: colors.$accentDark;
+}
+}
+
+// .policy-btn{
+//       border-color: colors.$accentBright; 
+//       background-color: none;
+// }
+
+.submit-btn{
+    border-color: colors.$accentBright;
+}
+
+.footer{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 60px;
+
+    a{
+    color: colors.$primaryBright;
+    text-decoration: none;
+    padding-left: 30px;
+
+    &:hover{
+        color: colors.$accentDark;
+    }
+
+}
+}
+
+.policy-btn {
+  appearance: none;        // Browser-Styles entfernen
+  width: 14px;
+  height: 14px;
+  border: 2px solid colors.$accentDark;
+  border-radius: 1px;
+  cursor: pointer;
+  background-color: transparent;
+  transition: border-color 0.2s ease;
+
+  &:checked {
+    background-color: transparent;
+    content: "";
+  }
+
+  // Optional: Hover
+  &:hover {
+    border-color: lighten(colors.$accentBright, 10%);
+  }
+
+}
+
+
