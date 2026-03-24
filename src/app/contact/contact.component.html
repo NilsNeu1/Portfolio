@@ -25,59 +25,61 @@
 
     <div class="contact-form-container">
 
-        <form (ngSubmit)="onSubmit()">
+  <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+
+    <div class="form-row">
+        <div class="form-block">
+            <label for="clientName">What's your name?</label>
+            <input [(ngModel)]="contactData.clientName" name="clientName" id="clientName" type="text"
+                [placeholder]="clientName.invalid && clientName.touched ? 'Name is required!' : 'Your Name...'"
+                required #clientName="ngModel"
+                [class.error-input]="clientName.invalid && clientName.touched">
+        </div>
+
+        <div class="form-block">
+            <label for="clientEmail">What's your email?</label>
+            <input [(ngModel)]="contactData.clientEmail" name="clientEmail" id="clientEmail" type="email"
+                [placeholder]="clientEmail.invalid && clientEmail.touched ? 
+                    (clientEmail.errors?.['required'] ? 'Email is required!' : 'Please enter a valid email!') 
+                    : 'youremail@email.com'"
+                pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" required #clientEmail="ngModel"
+                [class.error-input]="clientEmail.invalid && clientEmail.touched">
+        </div>
+    </div>
+
+    <div class="form-block">
+        <label for="clientMessage">How can I help you?</label>
+        <textarea [(ngModel)]="contactData.clientMessage" name="clientMessage" id="clientMessage" cols="30"
+            rows="10"
+            [placeholder]="clientMessage.invalid && clientMessage.touched ? 'Message is required!' : 'Hello Nils, i\'m interested in...'"
+            required #clientMessage="ngModel"
+            [class.error-input]="clientMessage.invalid && clientMessage.touched"></textarea>
+    </div>
+
+<div class="policy">
+    <input [(ngModel)]="contactData.agreeToPrivacyPolicy" class="policy-btn" type="checkbox" id="AGB" name="AGB" required #AGB="ngModel">
+    <label class="policy-label" for="AGB">
+        I've read the <a href="">privacy policy</a> and agree to the processing of my data.
+        <span *ngIf="AGB.invalid && AGB.touched" class="error">Please accept the privacy policy.</span>
+    </label>
+</div>
+
+    <div class="submit-btn-container">
+        <input class="submit-btn" type="submit" value="Send!">
+    </div>
+
+</form>
 
 
-            <div class="form-row">
-                <div class="form-block">
-                    <label for="clientName">What's your name?</label>
-                    <input [(ngModel)]="contactData.clientName" name="clientName" id="clientName" type="text"
-                        placeholder="Your Name...">
-                </div>
+        <div class="footer">
+            <span>© 2024 Nils Neumann 2026</span>
 
-                <div class="form-block">
-                    <label for="clientEmail">What's your email?</label>
-                    <input [(ngModel)]="contactData.clientEmail" name="clientEmail" id="clientEmail" type="email"
-                        placeholder="youremail@email.com">
-                </div>
+            <div class="footer-links">
+                <a href="" target="_blank">Impressum</a>
+                <a href="https://github.com/NilsNeu1" target="_blank">GitHub</a>
             </div>
 
-
-
-
-
-            <div class="form-block">
-                <label for="clientMessage">How can I help you?</label>
-                <textarea [(ngModel)]="contactData.clientMessage" name="clientMessage" id="clientMessage" cols="30"
-                    rows="10" placeholder="Hello Nils, i'm interested in..."></textarea>
-            </div>
-
-            <div  class="policy">
-                <span>
-                    <input class="policy-btn" type="checkbox" name="" id="AGB"> I've read the <a href="">privacy policy</a> and agree to
-                    the
-                    processing of my data.
-                </span>
-            </div>
-
-
-            <input class="submit-btn" type="submit" value="Submit">
-
-
-
-
-        </form>
-
-
-                    <div class="footer">
-                <span>© 2024 Nils Neumann 2026</span>
-
-                <div class="footer-links">
-                    <a href="" target="_blank">Impressum</a>
-                    <a href="https://github.com/NilsNeu1" target="_blank">GitHub</a>
-                </div>
-
-            </div>
+        </div>
 
     </div>
 
@@ -85,4 +87,3 @@
 
 
 </section>
-

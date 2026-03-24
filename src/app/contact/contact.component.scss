@@ -44,7 +44,7 @@ section {
 .contact-form-container {
     display: flex;
     flex-direction: column;
-     width: 40%;
+    width: 40%;
 }
 
 .form-row {
@@ -91,6 +91,10 @@ section {
             color: colors.$primaryBright;
             filter: opacity(0.5);
         }
+        &.error-input::placeholder {
+        color: rgb(248, 74, 74);
+        filter: opacity(1);
+    }
     }
 
     &:hover {
@@ -118,62 +122,144 @@ section {
     }
 }
 
-.policy{
-    padding-top: 30px;
 
-    a{
-color: colors.$accentDark;
-}
+.submit-btn-container {
+    display: flex;
+    justify-content: center;
 }
 
-// .policy-btn{
-//       border-color: colors.$accentBright; 
-//       background-color: none;
-// }
+.submit-btn {
+    @include buttons.app-button(160px);
+    border-color: colors.$primaryBright;
+    color: colors.$primaryBright;
+    margin-top: 50px;
 
-.submit-btn{
-    border-color: colors.$accentBright;
+    &:hover {
+        background-color: colors.$accentDark;
+    }
+
+    &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+        background-color: transparent;
+    }
 }
 
-.footer{
+
+.footer {
 
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding-top: 60px;
 
-    a{
-    color: colors.$primaryBright;
-    text-decoration: none;
-    padding-left: 30px;
+    a {
+        color: colors.$primaryBright;
+        text-decoration: none;
+        padding-left: 30px;
 
-    &:hover{
-        color: colors.$accentDark;
+        &:hover {
+            color: colors.$accentDark;
+        }
+
     }
-
 }
+
+.error{
+    color: rgb(248, 74, 74);
+}
+
+// _____ AGB Section and input checkbox styling _____
+
+
+.policy {
+    padding-top: 30px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+
+    a {
+        color: colors.$accentDark;
+        text-decoration: none;
+        text-underline-offset: 2px;
+
+        &:hover {
+            color: colors.$accentBright;
+            font-weight: bold;
+        }
+    }
+}
+
+.policy-label {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 10px;
+    cursor: pointer;
+    line-height: 1.5;
+    user-select: none;
 }
 
 .policy-btn {
-  appearance: none;        // Browser-Styles entfernen
-  width: 14px;
-  height: 14px;
-  border: 2px solid colors.$accentDark;
-  border-radius: 1px;
-  cursor: pointer;
-  background-color: transparent;
-  transition: border-color 0.2s ease;
-
-  &:checked {
+    appearance: none;
+    -webkit-appearance: none;
+    position: relative; // Anker für ::after-Haken
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    margin-top: 2px; // optische Ausrichtung zur Textbaseline
+    border: 1.5px solid colors.$accentDark;
+    border-radius: 2px;
+    cursor: pointer;
     background-color: transparent;
-    content: "";
-  }
+    outline: none;
+    transition:
+        border-color 0.18s ease,
+        box-shadow 0.18s ease;
 
-  // Optional: Hover
-  &:hover {
-    border-color: lighten(colors.$accentBright, 10%);
-  }
+    // --- Haken via ::after ---
+    &::after {
+        content: '';
+        position: absolute;
+        width: 9px;
+        height: 5.5px;
+        top: 2px;
+        left: 2.5px;
+        border-left: 1.75px solid transparent;
+        border-bottom: 1.75px solid transparent;
+        transform: rotate(-45deg) scale(0.7);
+        transform-origin: center;
+        opacity: 0;
+        transition:
+            opacity 0.14s ease,
+            transform 0.16s cubic-bezier(0.34, 1.56, 0.64, 1); // leichtes Federgefühl
+    }
 
+    // --- Checked-State ---
+    &:checked {
+        border-color: colors.$accentDark;
+
+        &::after {
+            border-left-color: colors.$accentDark;
+            border-bottom-color: colors.$accentDark;
+            opacity: 1;
+            transform: rotate(-45deg) scale(1);
+        }
+    }
+
+    // --- Hover (unchecked & checked) ---
+    &:hover {
+        border-color: colors.$accentBright;
+        box-shadow: 0 0 0 3px rgba(colors.$accentBright, 0.18);
+
+        &::after {
+            border-left-color: colors.$accentBright;
+            border-bottom-color: colors.$accentBright;
+        }
+    }
+
+    // --- Keyboard-Fokus (Barrierefreiheit) ---
+    &:focus-visible {
+        border-color: colors.$accentDark;
+        box-shadow: 0 0 0 3px rgba(colors.$accentDark, 0.30);
+    }
 }
-
-
