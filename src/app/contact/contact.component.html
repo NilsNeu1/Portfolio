@@ -59,7 +59,7 @@
 <div class="policy">
     <input [(ngModel)]="contactData.agreeToPrivacyPolicy" class="policy-btn" type="checkbox" id="AGB" name="AGB" required #AGB="ngModel">
     <label class="policy-label" for="AGB">
-        I've read the <a href="">privacy policy</a> and agree to the processing of my data.
+        I've read the <a target="_blank"  routerLink="/legal-notice">privacy policy</a> and agree to the processing of my data.
         <span *ngIf="AGB.invalid && AGB.touched" class="error">Please accept the privacy policy.</span>
     </label>
 </div>
@@ -72,7 +72,7 @@
 
 
         <div class="footer">
-            <span>© 2024 Nils Neumann 2026</span>
+            <span>© 2026 Nils Neumann</span>
 
             <div class="footer-links">
                 <a href="" target="_blank">Impressum</a>

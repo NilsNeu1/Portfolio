@@ -10,6 +10,7 @@ import { AboutMeComponent } from './about-me/about-me.component';
 import { SkillsComponent } from "./skills/skills.component";
 import { MyWorkComponent } from './my-work/my-work.component';
 import { ContactComponent } from "./contact/contact.component";
+import { LegalNoticeComponent } from './legal-notice/legal-notice.component';
 
 @Component({
   selector: 'app-root',
@@ -23,7 +24,8 @@ import { ContactComponent } from "./contact/contact.component";
     NavigationBulletsComponent,
     AboutMeComponent, SkillsComponent,
     MyWorkComponent,
-    ContactComponent
+    ContactComponent,
+    LegalNoticeComponent
 ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'

@@ -1,0 +1,40 @@
+@use '../../shared/mixin/colors.scss' as colors;
+@use '../../shared/mixin/buttons.scss' as buttons;
+
+
+section {
+    width: 100%;
+    background-color: colors.$primaryDark;
+    padding-top: 0;
+    padding-left: 4rem;
+    color: colors.$primaryBright;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+h1{
+    color: colors.$accentBright;
+    font-size: 60px;
+}
+
+div{
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    h2{
+        color: colors.$accentBright;
+    }
+
+    p{
+        color: colors.$primaryBright;
+
+        mark{
+            color: colors.$accentBright;
+            background-color: transparent;
+        }
+    }
+}
