@@ -1,15 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from "./header/header.component";
-import { HeroSectionComponent } from "./hero-section/hero-section.component";
 import { IconService } from './services/icon-service/icon.service';
-import { ObserveSectionDirective } from './services/section-observer/section.observer.directive';
-import { NavigationBulletsComponent } from "./user-interface/navigation-bullets/navigation-bullets.component";
-import { AboutMeComponent } from './about-me/about-me.component';
-import { SkillsComponent } from "./skills/skills.component";
-import { MyWorkComponent } from './my-work/my-work.component';
-import { ContactComponent } from "./contact/contact.component";
 import { LegalNoticeComponent } from './legal-notice/legal-notice.component';
 
 @Component({
@@ -18,13 +10,6 @@ import { LegalNoticeComponent } from './legal-notice/legal-notice.component';
   imports: [
     CommonModule,
     RouterOutlet,
-    ObserveSectionDirective,
-    HeaderComponent,
-    HeroSectionComponent,
-    NavigationBulletsComponent,
-    AboutMeComponent, SkillsComponent,
-    MyWorkComponent,
-    ContactComponent,
     LegalNoticeComponent
 ],
   templateUrl: './app.component.html',
