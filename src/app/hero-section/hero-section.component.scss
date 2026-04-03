@@ -1,6 +1,12 @@
 @use '../../shared/mixin/colors.scss' as colors;
 @use '../../shared/mixin/buttons.scss' as buttons;
 
+$mobile: 480px;
+$tablet: 768px;
+$laptop: 1024px;
+$desktop: 1280px;
+
+
 section {
     background-color: colors.$primary;
     width: 100%;
@@ -8,24 +14,47 @@ section {
     padding-top: 0;
     display: flex;
     justify-content: space-evenly;
+
+     @media (max-width: $tablet) {
+         justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 50px;
+     }
 }
 
 .intro-text {
     color: colors.$primaryBright;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: flex-start;
     padding-top: 5%;
+    width: min(500px, 30%);
 
     p {
         margin: 0;
         font-size: 46px;
+        margin-block-start: -21px;
     }
 
     h1 {
-        margin: -30px 0 -30px 0;
+        line-height: 84px;
         font-size: 100px;
+        margin: 12px 0px;
+    }
+
+    @media (max-width: 1280px) {
+        p {
+            font-size: 24px;
+            margin-block-start: -12px;
+        }
+
+        h1 {
+            font-size: 52px;
+            margin: 6px 0px;
+            line-height: 42px;
+        }
     }
 }
 
@@ -34,23 +63,25 @@ section {
     display: flex;
     flex-direction: column-reverse;
     align-items: end;
+    width: min(900px, 50%);
 
 }
 
-.hero-display-flower{
+.hero-display-flower {
     color: colors.$accentDark;
     width: 60px;
     height: auto;
     aspect-ratio: 1 / 1;
     position: relative;
-    transform: scale(10) translate(-30%, 45%) ;
+    transform: scale(10) translate(-30%, 45%);
     z-index: 1;
 
 }
 
-.hero-image{  // 1:1 Portrait
+.hero-image {
+    // 1:1 Portrait
     z-index: 10;
-    width: 900px;
+    width: 100%;
     height: auto;
     aspect-ratio: 1 /1;
     background-color: rgba(127, 255, 212, 0.368);
@@ -60,8 +91,8 @@ section {
 .scroll-down-button {
     position: relative;
     width: 120px;
-    height: 120px;
-    margin-top: 350px;
+    // height: 120px;
+    // margin-top: 350px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -111,7 +142,7 @@ button {
     margin-top: 50px;
 
 
-        &:hover {
+    &:hover {
         background-color: colors.$accentDark;
     }
 
