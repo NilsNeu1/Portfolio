@@ -15,8 +15,8 @@ section {
     display: flex;
     justify-content: space-evenly;
 
-     @media (max-width: $tablet) {
-         justify-content: center;
+     @media (max-width: $laptop) {
+        justify-content: center;
         flex-direction: column;
         align-items: center;
         padding-top: 50px;
@@ -30,32 +30,20 @@ section {
     justify-content: space-around;
     align-items: flex-start;
     padding-top: 5%;
-    width: min(500px, 30%);
+
 
     p {
         margin: 0;
-        font-size: 46px;
-        margin-block-start: -21px;
+        font-size: clamp(0.5rem, calc(1rem + 3vw), 5rem);
+        margin-block-start: -0.4em;
     }
 
     h1 {
-        line-height: 84px;
-        font-size: 100px;
-        margin: 12px 0px;
+        line-height: 0.8em;
+        font-size: clamp(1rem, calc(1rem + 5vw), 7rem);
+        margin: 0.15em 0;
     }
 
-    @media (max-width: 1280px) {
-        p {
-            font-size: 24px;
-            margin-block-start: -12px;
-        }
-
-        h1 {
-            font-size: 52px;
-            margin: 6px 0px;
-            line-height: 42px;
-        }
-    }
 }
 
 .hero-display {
@@ -69,9 +57,9 @@ section {
 
 .hero-display-flower {
     color: colors.$accentDark;
-    width: 60px;
+    width: 6%;
     height: auto;
-    aspect-ratio: 1 / 1;
+    // aspect-ratio: 1 / 1;
     position: relative;
     transform: scale(10) translate(-30%, 45%);
     z-index: 1;
