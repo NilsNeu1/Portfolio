@@ -1,4 +1,4 @@
-<section  id="header">
+<section id="header" [ngClass]="headerColorClass()">
     <div>
         <img (click)="goToLink('https://github.com/NilsNeu1')" class="socialLinks github"
             src="./../../assets/Header/Contact_icons/github.svg" alt="github Profil öffnen">
@@ -18,7 +18,7 @@
         </div>
 
         <mat-icon (click)="burgerMenuOpen()" class="socialLinks menu" svgIcon="menu"></mat-icon>
-    
+
     </div>
 
     <nav class="floatingBurgerMenu" [class.open]="isMenuOpen">
@@ -34,6 +34,14 @@
         <div class="burgerLink"><mat-icon svgIcon="flower" class="burgerFlower"></mat-icon>Portfolio</div>
         <div class="burgerLink"><mat-icon svgIcon="flower" class="burgerFlower"></mat-icon>Refences</div>
         <div class="burgerLink"><mat-icon svgIcon="flower" class="burgerFlower"></mat-icon>Contact me</div>
+        <div class="mobileLinks">
+            <img (click)="goToLink('https://github.com/NilsNeu1')" class="socialLinks github"
+                src="./../../assets/Header/Contact_icons/github.svg" alt="github Profil öffnen">
+            <img class="socialLinks linkedin" src="./../../assets/Header/Contact_icons/linkedin.svg"
+                alt="LinkedIn Profil öffnen">
+            <img class="socialLinks mail" src="./../../assets/Header/Contact_icons/mail.svg"
+                alt="Email Formular öffnen">
+        </div>
     </nav>
 
 </section>

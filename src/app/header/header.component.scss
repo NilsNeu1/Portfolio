@@ -13,6 +13,7 @@ section {
     width: 100%;
     box-sizing: border-box;
     z-index: 1000;
+    transition: color 0.3s ease;
 }
 
 .socialLinks {
@@ -28,6 +29,22 @@ section {
     &:hover {
     color: colors.$accentDark;
 }
+}
+
+// Light background sections (darkUi: false)
+section.light-bg .menu {
+    color: colors.$primaryBright;
+    &:hover {
+        color: colors.$accentDark;
+    }
+}
+
+// Dark background sections (darkUi: true)
+section.dark-bg .menu {
+    color: colors.$primaryDark;
+    &:hover {
+        color: colors.$accentBright;
+    }
 }
 
 .github:hover {
@@ -58,11 +75,31 @@ section {
     color: colors.$accentDark;
 }
 
+// Light background sections (darkUi: false)
+section.light-bg .nameIcon {
+    color: colors.$accentDark;
+}
+
+// Dark background sections (darkUi: true)
+section.dark-bg .nameIcon {
+    color: colors.$accentBright;
+}
+
 .headerName {
     font-family: 'Quicksand', sans-serif;
     font-size: 30px;
     font-weight: 600;
     color: colors.$primaryBright;
+}
+
+// Light background sections (darkUi: false)
+section.light-bg .headerName {
+    color: colors.$primaryBright;
+}
+
+// Dark background sections (darkUi: true)
+section.dark-bg .headerName {
+    color: colors.$primaryDark;
 }
 
 .navigation{
@@ -92,6 +129,24 @@ section {
 
 }
 
+// Light background sections (darkUi: false)
+section.light-bg .languageSelect {
+    color: colors.$primaryBright;
+    border-color: colors.$primaryBright;
+    &:hover {
+        background-color: colors.$accentDark;
+    }
+}
+
+// Dark background sections (darkUi: true)
+section.dark-bg .languageSelect {
+    color: colors.$primaryDark;
+    border-color: colors.$primaryDark;
+    &:hover {
+        background-color: colors.$accentBright;
+    }
+}
+
 
 
 .floatingBurgerMenu {
@@ -105,7 +160,8 @@ section {
     border: 1px solid black;
     border-radius: 6px;
     width: 200px;
-    height: 220px;
+    height: auto;
+    padding: 6px;
     opacity: 0; 
     transform: translateX(120%);
     pointer-events: none; 
@@ -119,13 +175,13 @@ section {
 
 .burgerHead {
     color: colors.$primary;
-    width: 160px;
+    width: 168px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     font-size: 24px;
-    padding: 6px 18px;
+    padding: 0px 18px 6px;
 
     img{
     
@@ -164,6 +220,10 @@ section {
         opacity: 1;
         
     }
+}
+
+.mobileLinks {
+    display: none;
 }
 
 @keyframes fadeIn {

@@ -1,19 +1,29 @@
-import { Component } from '@angular/core';
-//import { NgIf } from "../../../node_modules/@angular/common/index";
-//import { MatIcon } from "@angular/material/icon";
+import { Component, computed, inject } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
+import { NgClass } from '@angular/common';
+import { VisibilityService } from '../services/section-observer/section-observer.service';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [MatIconModule],
+  imports: [MatIconModule, NgClass],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
-isMenuOpen: boolean = false;
-activeLanguage = 'DE';
-langAnimate = false;
+  private visibilityService = inject(VisibilityService);
+
+  isMenuOpen: boolean = false;
+  activeLanguage = 'DE';
+  langAnimate = false;
+
+  // Get active section data from service
+  activeSectionData = this.visibilityService.activeSectionData;
+
+  // Computed signal for header styling based on active section
+  headerColorClass = computed(() =>
+    this.activeSectionData().darkUi ? 'dark-bg' : 'light-bg'
+  );
 
   goToLink(url: string) {
   window.open(url, '_blank');

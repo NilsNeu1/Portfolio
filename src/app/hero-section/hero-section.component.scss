@@ -15,12 +15,11 @@ section {
     display: flex;
     justify-content: space-evenly;
 
-     @media (max-width: $laptop) {
-        justify-content: center;
+    @media (max-width: $laptop) {
+        justify-content: end;
         flex-direction: column;
         align-items: center;
-        padding-top: 50px;
-     }
+    }
 }
 
 .intro-text {
@@ -44,6 +43,20 @@ section {
         margin: 0.15em 0;
     }
 
+
+    @media (max-width: $laptop) {
+
+        p {
+            font-size: clamp(0.5rem, calc(1rem + 2vh), 3rem);
+        }
+
+        h1 {
+            line-height: 1em;
+            font-size: clamp(1rem, calc(1.6rem + 5vh), 7rem);
+        }
+    }
+
+
 }
 
 .hero-display {
@@ -52,6 +65,19 @@ section {
     flex-direction: column-reverse;
     align-items: end;
     width: min(900px, 50%);
+    height: auto;
+    aspect-ratio: 1/1;
+
+    @media (max-width: $laptop) {
+        padding-top: 5vh;
+        width: max(60%, 300px);
+        align-items: center;
+    }
+
+    @media (max-width: $tablet) {
+        width: 85%;
+
+    }
 
 }
 
@@ -59,10 +85,13 @@ section {
     color: colors.$accentDark;
     width: 6%;
     height: auto;
-    // aspect-ratio: 1 / 1;
+    aspect-ratio: 1 / 1;
     position: relative;
+    overflow: hidden;
     transform: scale(10) translate(-30%, 45%);
     z-index: 1;
+
+
 
 }
 
@@ -76,10 +105,28 @@ section {
 }
 
 
+.scroll-button-container {
+    background-color: colors.$primary;
+    z-index: 100;
+    border-radius: 50%;
+    width: 120px;
+    height: auto;
+    aspect-ratio: 1/1;
+
+    @media (max-width: $laptop) {
+        position: absolute;
+        bottom: 5%;
+        left: 5%;
+        width: 15%;
+
+    }
+}
+
 .scroll-down-button {
     position: relative;
-    width: 120px;
-    // height: 120px;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1/1;
     // margin-top: 350px;
     display: flex;
     align-items: center;
@@ -88,7 +135,8 @@ section {
 
     .arc-text-svg {
         width: 100%;
-        height: 100%;
+        height: auto;
+        aspect-ratio: 1/1;
         overflow: visible;
         animation: spin 8s linear infinite;
         transform-origin: center center;
@@ -98,16 +146,27 @@ section {
             font-size: 12px;
             font-family: "Quicksand", sans-serif;
         }
+
+        @media (max-width: $laptop) {
+            width: 90%;
+
+        }
     }
 
     .rotating-icon {
         color: colors.$accentBright;
         position: absolute;
-        width: 90px;
-        height: 90px;
+        width: 80%;
+        height: auto;
+        aspect-ratio: 1/1;
         transform: translate(-50%, -50%);
         transform-origin: center center;
         animation: spin 8s linear infinite;
+
+
+        @media (max-width: $laptop) {
+            width: 60%;
+        }
     }
 }
 
@@ -132,6 +191,11 @@ button {
 
     &:hover {
         background-color: colors.$accentDark;
+    }
+
+    @media (max-width: $laptop) {
+        margin-top: 5%;
+
     }
 
 }
