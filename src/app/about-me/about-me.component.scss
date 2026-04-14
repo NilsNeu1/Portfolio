@@ -1,5 +1,10 @@
 @use '../../shared/mixin/colors.scss' as colors;
 @use '../../shared/mixin/buttons.scss' as buttons;
+$mobile: 480px;
+$tablet: 768px;
+$laptop: 1024px;
+$desktop: 1280px;
+
 
 section {
     background-color: colors.$primaryBright;
@@ -9,6 +14,7 @@ section {
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-around;
+    overflow: hidden;
 }
 
 .section-titel {
@@ -22,7 +28,7 @@ section {
     h1 {
         color: colors.$primaryDark;
         font-family: 'Eczar' !important;
-        font-size: 72px;
+        font-size: calc(1rem + 4vw);
     }
 }
 
@@ -33,20 +39,25 @@ section {
 
 .hero-image {  // 3:4 Portait
     background-color: colors.$primary;
-    width: 636px;
-    height: 890px;
+    width: auto;
+    height: clamp(200px, 500px + 20vw, 830px);
+    aspect-ratio: 3/4;
 }
 
 .information {
     //display: none;
-    width: 660px;
-    height: 180px;
+    width: clamp(300px, calc(25vw + 200px), 660px);
+    height: clamp(240px, calc(400px - 10vw), 350px);
     padding: 24px;
     background-color: colors.$primaryDark;
     color: colors.$primaryBright;
     position: relative;
-    transform: translate(-50%, 50%);
+    transform: translate(calc(100% - 55vw), 10%);
     border-radius: 6px;
+
+    p{
+        // font-size: clamp(0.5rem, calc(0.5rem + 1vw), 1.1rem);
+    }
 }
 
 
@@ -87,8 +98,9 @@ section {
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-evenly;
-    height: 200px;
-    width: 300px;
+    height: 170px;
+    width: auto;
+    aspect-ratio: 3/2;
     padding: 12px;
     background-color: colors.$primary;
     border: 1px solid colors.$primaryDark;
@@ -97,11 +109,16 @@ section {
     opacity: 0;
     transition: transform 0.12s ease-out, opacity 0.12s ease-in-out;
     pointer-events: none;
+
+    h2{
+        margin-bottom: 6px;
+        margin-top: 0;
+    }
     
 }
 
 .about-me-overlay.open{
-    transform: translate(180%, 6%);
+    transform: translate(20vw, 6%);
     opacity: 1;
     pointer-events: auto;
 }

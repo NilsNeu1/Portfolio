@@ -18,6 +18,10 @@ export class ObserveSectionDirective implements OnInit, OnDestroy {
     this.initIntersectionObserver();
   }
 
+
+
+
+
   private initIntersectionObserver() {
     if (!isPlatformBrowser(this.platformId)) return;
     if (!('IntersectionObserver' in window)) return;
@@ -31,6 +35,8 @@ export class ObserveSectionDirective implements OnInit, OnDestroy {
     this.observer.observe(this.el.nativeElement);
   }
 
+
+  
 
 
   ngOnDestroy() {
