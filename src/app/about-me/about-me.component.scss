@@ -15,9 +15,13 @@ section {
     flex-direction: row-reverse;
     justify-content: space-around;
     overflow: hidden;
+
+    @media(max-width: $laptop){
+        justify-content: center;
+    }
 }
 
-.section-titel {
+.section-text {
 
     display: flex;
     align-items: flex-end;
@@ -29,25 +33,48 @@ section {
         color: colors.$primaryDark;
         font-family: 'Eczar' !important;
         font-size: calc(1rem + 4vw);
+        margin-right: 35px;
     }
+
+        @media(max-width: $laptop){
+            h1 {
+            }
+    }
+
 }
+
 
 .hero-container {
     display: flex;
     align-items: flex-end;
+    width: auto;
+    height: auto;
+
+        @media(max-width: $laptop){
+            align-items: flex-start;
+        }
+
 }
 
 .hero-image {  // 3:4 Portait
     background-color: colors.$primary;
+    height: clamp(200px, 280px + 35vw, 920px);
     width: auto;
-    height: clamp(200px, 500px + 20vw, 830px);
     aspect-ratio: 3/4;
+
+        @media (max-width: $laptop) {
+        
+        margin-top: 5%;
+        height: clamp(300px, 120px + 30vw, 600px);
+        transform: translate(10%, 50%);
+    }
+
 }
 
 .information {
     //display: none;
     width: clamp(300px, calc(25vw + 200px), 660px);
-    height: clamp(240px, calc(400px - 10vw), 350px);
+    height: clamp(200px, 400px - 14vw, 350px);
     padding: 24px;
     background-color: colors.$primaryDark;
     color: colors.$primaryBright;
@@ -55,9 +82,19 @@ section {
     transform: translate(calc(100% - 55vw), 10%);
     border-radius: 6px;
 
-    p{
-        // font-size: clamp(0.5rem, calc(0.5rem + 1vw), 1.1rem);
+    @media (max-width: $laptop) {
+        transform: translate(0, 60%);
+        aspect-ratio: 3/4;
+        width: auto;
+        height: clamp(200px, 110px + 28vw, 390px);
+        z-index: 1;
+
+        p{
+            font-size: calc(0.5rem + 1vw);
+        }
+
     }
+
 }
 
 
@@ -121,6 +158,10 @@ section {
     transform: translate(20vw, 6%);
     opacity: 1;
     pointer-events: auto;
+
+    @media(max-width: $laptop){
+        transform: translate(-70%, 6%);
+    }
 }
 
 
