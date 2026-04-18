@@ -36,10 +36,6 @@ section {
         margin-right: 35px;
     }
 
-        @media(max-width: $laptop){
-            h1 {
-            }
-    }
 
 }
 
@@ -65,7 +61,7 @@ section {
         @media (max-width: $laptop) {
         
         margin-top: 5%;
-        height: clamp(300px, 120px + 30vw, 600px);
+        height: clamp(230px, 120px + 30vw, 600px);
         transform: translate(10%, 50%);
     }
 
@@ -95,6 +91,18 @@ section {
 
     }
 
+    @media(max-width: $tablet){
+        width: clamp(100px, 50px + 22vw, 300px);
+        height: clamp(190px, 100px + 22vw, 250px);
+        padding: 12px;
+        margin-right: 30px;
+        transform: translate(0, 95%);
+
+        p{
+            font-size: calc(0.25rem + 1.2vw);
+        }
+    }
+
 }
 
 
@@ -115,11 +123,19 @@ section {
     &:hover {
         background-color: colors.$accentDark;
     }
+
+     @media(max-width: $tablet){
+        width: 55px;
+        height: auto;
+        padding: 3px;
+        font-size: calc(0.25rem + 1vw);
+}
 }
 
 .psst-emoji{
     width: 40px;
-    height: 40px;
+    height: auto;
+    aspect-ratio: 1/1;
     transition: transform 0.12s ease-out;
     cursor: pointer;
     animation: wobble 1s ease-in-out infinite;
@@ -127,6 +143,10 @@ section {
     &:hover{
         animation: none;
     }
+
+     @media(max-width: $tablet){
+        width: 23px;
+}
 }
 
 
@@ -135,8 +155,8 @@ section {
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-evenly;
-    height: 170px;
-    width: auto;
+    height: auto;
+    width: fit-content;
     aspect-ratio: 3/2;
     padding: 12px;
     background-color: colors.$primary;
@@ -151,6 +171,26 @@ section {
         margin-bottom: 6px;
         margin-top: 0;
     }
+
+    @media(max-width: $laptop){
+
+        h2{
+            font-size: calc(0.8rem + 1vw);
+        }
+
+        div{
+            font-size: calc(0.5rem + 1vw);}
+    }
+
+        @media(max-width: $tablet){
+
+        h2{
+            font-size: calc(0.5rem + 1vw);
+        }
+
+        div{
+            font-size: calc(0.25rem + 1.2vw);}
+    }
     
 }
 
@@ -160,8 +200,14 @@ section {
     pointer-events: auto;
 
     @media(max-width: $laptop){
-        transform: translate(-70%, 6%);
+        transform: translate(-70%, -65%);
     }
+
+        @media(max-width: $tablet){
+        transform: translate(-100%, -15%);
+    }
+
+
 }
 
 
@@ -170,7 +216,7 @@ section {
         transform: translateY(0px);
     }
     50%{
-        transform: translateY(6px);
+        transform: translateY(-6px);
     }
      100%{
         transform: translateY(0px);
