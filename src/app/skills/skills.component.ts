@@ -22,6 +22,7 @@ export class SkillsComponent {
     {icon: '../../assets/Frontend_Skills_icons/Typescript.svg', label: 'TypeScript' },
     {icon: '../../assets/Frontend_Skills_icons/Angular.svg', label: 'Angular' },
     // {icon: '../../assets/Frontend_Skills_icons/Firebase.svg', label: 'Firebase' },
+    {icon: '../../assets/Frontend_Skills_icons/Supabase.svg', label: 'Supabase' },
     {icon: '../../assets/Frontend_Skills_icons/Git.svg', label: 'Git' },
     {icon: '../../assets/Frontend_Skills_icons/Rest_Api.svg', label: 'REST-API' },
     {icon: '../../assets/Frontend_Skills_icons/Material_Design.svg', label: 'Material Design' },
