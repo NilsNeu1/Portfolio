@@ -29,7 +29,7 @@
                     </span>
                 </div>
 
-                <div>
+                <div class="project-description">
                     <span>
                         {{projects[currentIndex].description}}
                     </span>
@@ -44,8 +44,8 @@
             </div>
 
             <div class="project-select-buttons">
-                <nav (click)="prevProject()">Previous project</nav>
-                <nav (click)="nextProject()">Next project</nav>
+                <nav (click)="prevProject()">&lt;&lt;&lt;Previous project</nav>
+                <nav (click)="nextProject()">Next project&gt;&gt;&gt;</nav>
             </div>
         </div>
 

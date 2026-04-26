@@ -34,7 +34,7 @@ export class MyWorkComponent {
       icon: '../../assets/general/Project_emoji/Join_D.svg',
       snapshot: "../../assets/project_screenshots/join.svg",
       technologies: ["HTML", "CSS", "TypeScript", "Angular"],
-      description: "A Task-manager inspired by the Kanban System. ",
+      description: "A Task-manager inspired by the Kanban System created as a Group Project.",
       github: "https://github.com/NilsNeu1/Join",
       redirect:"",
       bgColor: this.darkorange,
@@ -45,7 +45,6 @@ export class MyWorkComponent {
 
 nextProject() {
   this.currentIndex = (this.currentIndex + 1) % this.projects.length;
-  console.log(this.currentIndex);
 }
 
 prevProject() {

@@ -1,101 +1,184 @@
 @use '../../shared/mixin/colors.scss' as colors;
 @use '../../shared/mixin/buttons.scss' as buttons;
-
+$mobile: 480px;
+$tablet: 768px;
+$laptop: 1024px;
+$desktop: 1280px;
 
 section {
     height: 100vh;
     width: 100%;
     background-color: colors.$primaryBright;
     padding-top: 0;
-    padding-left: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    // padding-left: 3vw;
 }
 
-.project-section-header{
-    padding-top: 5%;
+.project-section-header {
+    // padding-top: 5%;
 
     display: flex;
     flex-direction: row;
     align-items: center;
+    padding-left: 5vw;
 
-    h1{
-    font-family: "Eczar";
-    font-size: 60px;
-    padding-right: 5%;
+    h1 {
+        font-family: "Eczar";
+        font-size: calc(1rem + 2.5vw);
+        font-weight: 800;
+        padding-right: 5%;
+    }
+
+    span {
+        font-size: clamp(12px, 0.5rem + 0.5vw, 16px);
+    }
+
+    @media(max-width: $laptop) {
+        flex-direction: column;
+        align-items: flex-start;
+
+
+
+        h1 {
+            padding-right: 0px;
+        }
+
+        span {
+            margin-top: -24px;
+        }
     }
 }
 
-.project-carousel{
+.project-carousel {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
+
+
+    @media(max-width: $laptop) {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+        @media(max-width: $mobile) {
+        gap: 12px;
+    }
 }
 
-.project-infobox{
+.project-infobox {
     border: solid 1px black;
     color: colors.$primaryBright;
     background-color: colors.$primaryDark;
     border-radius: 6px;
     padding: 24px;
-    width: 600px;
+    width: clamp(360px, calc(20vw + 200px), 600px);
 
-    div{
+    div {
         padding-top: 6px;
+    }
+
+    @media(max-width: $laptop) {
+        padding: 12px;
+    }
+
+    @media (max-width: $mobile) {
+        padding: 12px;
+        width: clamp(260px, calc(20vw + 200px), 600px);
     }
 }
 
-.project-infobox-titel{
+.project-infobox-titel {
     display: flex;
     justify-content: space-between;
 
-    img{
+    h2 {
+        font-size: calc(1rem + 0.5vw);
+        margin: 0;
+    }
+
+    img {
         width: 40px;
         height: 40px;
         animation: wobble 1s ease-in infinite;
     }
+
+        @media (max-width: $mobile) {
+        img{
+            width: 30px;
+            height: 30px;
+        }
+    }
 }
 
-.used-skills{
+
+
+.used-skills {
     color: colors.$primary;
+    font-size: clamp(12px, calc(0.5rem + 0.5vw), 16px);
 }
 
-.project-snapshots{
-    height: 500px;
-    width: 500px;
-    max-width: 40%;
+.project-description {
+
+    span {
+        font-size: clamp(12px, calc(0.5rem + 0.5vw), 16px);
+    }
+}
+
+.project-snapshots {
+    height: auto;
+    width: clamp(360px, calc(20vw + 200px), 500px);
+    aspect-ratio: 1/1;
     border: solid black 1px;
     border-radius: 6px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 
-    img{
+
+    img {
         width: 85%;
         height: auto;
         border-radius: 6px;
         z-index: 10;
     }
 
-    
+    @media (max-width: $laptop) {
+        padding: 12px;
+    }
+
+    @media (max-width: $mobile) {
+        padding: 12px;
+        width: clamp(260px, calc(20vw + 200px), 500px);
+    }
+
+
 }
 
-.snapshot-spinner{
+.snapshot-spinner {
     position: relative;
-    bottom: -42px;
-    left: -160px;
+    bottom: -4%;
+    left: -32%;
     scale: 7;
     animation: spin 8s linear infinite;
 }
 
-.project-links-container{
+.project-links-container {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
 
+    @media(max-width: $laptop) {
+        justify-content: space-between;
+    }
+
 }
 
-.project-links{
-     @include buttons.app-button(160px);
+.project-links {
+    @include buttons.app-button(160px);
     border-color: colors.$primaryBright;
     color: colors.$primaryBright;
     margin-top: 50px;
@@ -107,12 +190,22 @@ section {
     text-decoration: none;
 
 
-        &:hover {
+    &:hover {
         background-color: colors.$accentDark;
     }
+
+    @media(max-width: $laptop) {
+        font-size: calc(1rem + 0.5vw);
+        height: auto;
+        width: auto;
+        padding: 4px 12px;
+        margin-top: 20px;
+        margin-right: 0px;
+    }
+
 }
 
-.project-select-buttons{
+.project-select-buttons {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -121,32 +214,34 @@ section {
     font-weight: 800;
 
     nav {
-        &:hover{
-        color: colors.$accentDark;
-        cursor: pointer;
+        &:hover {
+            color: colors.$accentDark;
+            cursor: pointer;
+        }
     }
-    }
+
 }
 
 @keyframes spin {
-    0%{
+    0% {
         transform: rotate(0deg);
     }
-    100%{
+
+    100% {
         transform: rotate(360deg);
     }
 }
 
 @keyframes wobble {
-    0%{
+    0% {
         transform: translateY(0px);
     }
 
-    50%{
+    50% {
         transform: translateY(4px);
     }
 
-    100%{
+    100% {
         transform: translateY(0px);
     }
 }
