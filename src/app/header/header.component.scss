@@ -13,7 +13,6 @@ section {
     width: 100%;
     box-sizing: border-box;
     z-index: 1000;
-    transition: color 0.3s ease;
 }
 
 .socialLinks {
@@ -36,6 +35,7 @@ section.light-bg .menu {
     color: colors.$primaryBright;
     &:hover {
         color: colors.$accentDark;
+        transition: color 0.25s ease;
     }
 }
 
@@ -78,6 +78,7 @@ section.dark-bg .menu {
 // Light background sections (darkUi: false)
 section.light-bg .nameIcon {
     color: colors.$accentDark;
+    transition: color 0.25s ease;
 }
 
 // Dark background sections (darkUi: true)
@@ -95,11 +96,17 @@ section.dark-bg .nameIcon {
 // Light background sections (darkUi: false)
 section.light-bg .headerName {
     color: colors.$primaryBright;
+    transition: color 0.25s ease;
 }
 
 // Dark background sections (darkUi: true)
 section.dark-bg .headerName {
     color: colors.$primaryDark;
+}
+
+.headerLinks.hidden {
+    transition: opacity 0.12s ease-out;
+    display: none;
 }
 
 .navigation{
@@ -135,6 +142,7 @@ section.light-bg .languageSelect {
     border-color: colors.$primaryBright;
     &:hover {
         background-color: colors.$accentDark;
+        transition: color 0.25s ease;
     }
 }
 
@@ -144,6 +152,7 @@ section.dark-bg .languageSelect {
     border-color: colors.$primaryDark;
     &:hover {
         background-color: colors.$accentBright;
+        transition: color 0.25s ease;
     }
 }
 

@@ -26,6 +26,8 @@ export class VisibilityService {
     this.sections.find(s => s.id === this._activeId()) || this.sections[0]
   );
 
+  readonly isHeroActive = computed(() => this._activeId() === 'hero');
+
   setActive(id: string) {
     if (this._activeId()!== id) {
       this._activeId.set(id);

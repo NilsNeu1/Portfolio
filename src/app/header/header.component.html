@@ -1,5 +1,6 @@
 <section id="header" [ngClass]="headerColorClass()">
-    <div>
+
+    <div  class="headerLinks" [class.hidden]="!isHeroActive()">
         <img (click)="goToLink('https://github.com/NilsNeu1')" class="socialLinks github"
             src="./../../assets/Header/Contact_icons/github.svg" alt="github Profil öffnen">
         <img class="socialLinks linkedin" src="./../../assets/Header/Contact_icons/linkedin.svg"
@@ -34,6 +35,7 @@
         <div class="burgerLink"><mat-icon svgIcon="flower" class="burgerFlower"></mat-icon>Portfolio</div>
         <div class="burgerLink"><mat-icon svgIcon="flower" class="burgerFlower"></mat-icon>Refences</div>
         <div class="burgerLink"><mat-icon svgIcon="flower" class="burgerFlower"></mat-icon>Contact me</div>
+
         <div class="mobileLinks">
             <img (click)="goToLink('https://github.com/NilsNeu1')" class="socialLinks github"
                 src="./../../assets/Header/Contact_icons/github.svg" alt="github Profil öffnen">
