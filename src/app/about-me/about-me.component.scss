@@ -57,6 +57,7 @@ section {
     height: clamp(200px, 280px + 35vw, 920px);
     width: auto;
     aspect-ratio: 3/4;
+    object-fit: cover;
 
         @media (max-width: $laptop) {
         

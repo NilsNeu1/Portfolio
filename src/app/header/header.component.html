@@ -1,11 +1,15 @@
-<section id="header" [ngClass]="headerColorClass()">
+<section id="header" 
+  appHeaderObserver 
+  (sectionChange)="onHeaderSectionChange($event)"
+  [ngClass]="headerColorClass()">
+    <div class="headerLinks" [class.hidden]="!isHeroActive()">
 
-    <div  class="headerLinks" [class.hidden]="!isHeroActive()">
-        <img (click)="goToLink('https://github.com/NilsNeu1')" class="socialLinks github"
-            src="./../../assets/Header/Contact_icons/github.svg" alt="github Profil öffnen">
-        <img class="socialLinks linkedin" src="./../../assets/Header/Contact_icons/linkedin.svg"
-            alt="LinkedIn Profil öffnen">
-        <img class="socialLinks mail" src="./../../assets/Header/Contact_icons/mail.svg" alt="Email Formular öffnen">
+
+        <mat-icon (click)="goToLink('https://github.com/NilsNeu1')" class="socialLinks github" svgIcon="github"
+            alt="github Profil öffnen"></mat-icon>
+        <mat-icon class="socialLinks linkedin" svgIcon="linkedin" alt="linkedin Profil öffnen"></mat-icon>
+        <mat-icon class="socialLinks mail" svgIcon="mail" alt="Email Formular öffnen"></mat-icon>
+
     </div>
 
     <div class="headerDeveloper">
@@ -36,13 +40,13 @@
         <div class="burgerLink"><mat-icon svgIcon="flower" class="burgerFlower"></mat-icon>Refences</div>
         <div class="burgerLink"><mat-icon svgIcon="flower" class="burgerFlower"></mat-icon>Contact me</div>
 
-        <div class="mobileLinks">
-            <img (click)="goToLink('https://github.com/NilsNeu1')" class="socialLinks github"
-                src="./../../assets/Header/Contact_icons/github.svg" alt="github Profil öffnen">
-            <img class="socialLinks linkedin" src="./../../assets/Header/Contact_icons/linkedin.svg"
-                alt="LinkedIn Profil öffnen">
-            <img class="socialLinks mail" src="./../../assets/Header/Contact_icons/mail.svg"
-                alt="Email Formular öffnen">
+        <div class="mobileLinks" [class.hidden]="isHeroActive()">
+
+            <mat-icon (click)="goToLink('https://github.com/NilsNeu1')" class="socialLinks github" svgIcon="github"
+                alt="github Profil öffnen"></mat-icon>
+            <!-- <mat-icon class="socialLinks linkedin" svgIcon="linkedin" alt="linkedin Profil öffnen"></mat-icon> -->
+            <mat-icon class="socialLinks mail" svgIcon="mail" alt="Email Formular öffnen"></mat-icon>
+
         </div>
     </nav>
 

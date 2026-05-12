@@ -1,4 +1,3 @@
-// header.component.ts
 import { Component, computed, inject, signal } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { NgClass, NgIf } from '@angular/common';
@@ -19,24 +18,22 @@ export class HeaderComponent {
   activeLanguage = 'DE';
   langAnimate = false;
 
-  activeSectionData = this.visibilityService.activeSectionData;
   isHeroActive = this.visibilityService.isHeroActive;
 
-  // Signal das von der Direktive über (pastHero) gesetzt wird
-  isPastHero = signal(false);
+  private headerSectionData = signal<{ darkUi: boolean }>({ darkUi: false });
 
   headerColorClass = computed(() =>
-    this.activeSectionData().darkUi ? 'dark-bg' : 'light-bg'
+    this.headerSectionData().darkUi ? 'dark-bg' : 'light-bg'
   );
 
-  onPastHero(value: boolean) {
-    this.isPastHero.set(value);
+ onHeaderSectionChange(data: { darkUi: boolean } | null) {
+  console.log('Header section change:', data);
+  if (data) {
+    this.headerSectionData.set({ darkUi: data.darkUi });
   }
+}
 
-  goToLink(url: string) {
-    window.open(url, '_blank');
-  }
-
+  goToLink(url: string) { window.open(url, '_blank'); }
   burgerMenuOpen() { this.isMenuOpen = true; }
   burgerMenuClose() { this.isMenuOpen = false; }
 

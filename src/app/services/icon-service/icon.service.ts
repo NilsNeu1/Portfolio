@@ -20,8 +20,11 @@ export class IconService {
     this.addIcon('menu', 'assets/Header/Menu/burger_menu.svg');
     this.addIcon('nav-bullet-inactive', '/assets/nav_bullets/dot.svg');
     this.addIcon('nav-bullet-active', '/assets/nav_bullets/square.svg');
-    this.addIcon('psst-emoji-d','/assets/general/Project_emoji/Secret_D.svg')
-    this.addIcon('psst-emoji-m','/assets/general/Project_emoji/Secret_M.svg')
+    this.addIcon('psst-emoji-d','/assets/general/Project_emoji/Secret_D.svg');
+    this.addIcon('psst-emoji-m','/assets/general/Project_emoji/Secret_M.svg');
+    this.addIcon('github', '/assets/Header/Contact_icons/github.svg');
+    this.addIcon('linkedin', '/assets/Header/contact_icons/linkedin.svg')
+    this.addIcon('mail', '/assets/Header/Contact_icons/mail.svg');
   }
 
   private addIcon(name: string, path: string) {

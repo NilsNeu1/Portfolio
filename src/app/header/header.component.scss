@@ -20,6 +20,7 @@ section {
     width: auto;
     cursor: pointer;
 
+
 }
 
 .menu{
@@ -102,6 +103,10 @@ section.light-bg .headerName {
 // Dark background sections (darkUi: true)
 section.dark-bg .headerName {
     color: colors.$primaryDark;
+}
+
+.headerLinks{
+    color: colors.$primaryBright;
 }
 
 .headerLinks.hidden {
@@ -232,6 +237,16 @@ section.dark-bg .languageSelect {
 }
 
 .mobileLinks {
+    color: colors.$primaryDark;
+
+    mat-icon{
+        height: 32px;
+        margin-left: 6px;
+    }
+}
+
+.mobileLinks.hidden {
+    transition: opacity 0.12s ease-out;
     display: none;
 }
 

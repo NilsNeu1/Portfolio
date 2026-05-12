@@ -89,7 +89,7 @@ section {
     aspect-ratio: 1 / 1;
     position: relative;
     overflow: hidden;
-    transform: scale(10) translate(-30%, 45%);
+    transform: scale(10) translate(-50%, 55%);
     z-index: 1;
 
 
@@ -102,7 +102,7 @@ section {
     width: 100%;
     height: auto;
     aspect-ratio: 1 /1;
-    background-color: rgba(127, 255, 212, 0.368);
+    object-fit: contain;
 }
 
 
