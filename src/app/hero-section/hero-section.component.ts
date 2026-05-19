@@ -13,4 +13,12 @@ import { ObserveSectionDirective } from '../services/section-observer/section.ob
 export class HeroSectionComponent {
   sectionId = 'hero';
 
+  scrollToSection(sectionId: string) {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
+
 }

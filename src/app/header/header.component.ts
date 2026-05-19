@@ -17,6 +17,7 @@ export class HeaderComponent {
   isMenuOpen = false;
   activeLanguage = 'DE';
   langAnimate = false;
+  myEmail = 'nils@example.com'; // Replace with your actual email
 
   isHeroActive = this.visibilityService.isHeroActive;
 
@@ -31,6 +32,23 @@ export class HeaderComponent {
   if (data) {
     this.headerSectionData.set({ darkUi: data.darkUi });
   }
+}
+
+  scrollToSection(sectionId: string) {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      this.burgerMenuClose();
+    }
+  }
+
+copyEmailToClipboard() {
+  navigator.clipboard.writeText(this.myEmail).then(() => {
+    alert('📋 E-Mail wurde ins Clipboard kopiert!');
+  }).catch(err => {
+    console.error('Failed to copy email:', err);
+  });
+  this.burgerMenuClose();
 }
 
   goToLink(url: string) { window.open(url, '_blank'); }

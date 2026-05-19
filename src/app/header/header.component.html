@@ -8,7 +8,7 @@
         <mat-icon (click)="goToLink('https://github.com/NilsNeu1')" class="socialLinks github" svgIcon="github"
             alt="github Profil öffnen"></mat-icon>
         <mat-icon class="socialLinks linkedin" svgIcon="linkedin" alt="linkedin Profil öffnen"></mat-icon>
-        <mat-icon class="socialLinks mail" svgIcon="mail" alt="Email Formular öffnen"></mat-icon>
+        <mat-icon (click)="copyEmailToClipboard()" class="socialLinks mail" svgIcon="mail" alt="Email Formular öffnen"></mat-icon>
 
     </div>
 
@@ -18,9 +18,9 @@
     </div>
 
     <div class="navigation">
-        <div (click)="languageSwitch()" class="languageSelect">
+        <!-- <div (click)="languageSwitch()" class="languageSelect">
             <span [class.animate]="langAnimate" class="langText">{{ activeLanguage }}</span>
-        </div>
+        </div> -->
 
         <mat-icon (click)="burgerMenuOpen()" class="socialLinks menu" svgIcon="menu"></mat-icon>
 
@@ -34,11 +34,12 @@
 
         </div>
 
-        <div class="burgerLink"><mat-icon svgIcon="flower" class="burgerFlower"></mat-icon>About Me</div>
-        <div class="burgerLink"><mat-icon svgIcon="flower" class="burgerFlower"></mat-icon>Skillset</div>
-        <div class="burgerLink"><mat-icon svgIcon="flower" class="burgerFlower"></mat-icon>Portfolio</div>
-        <div class="burgerLink"><mat-icon svgIcon="flower" class="burgerFlower"></mat-icon>Refences</div>
-        <div class="burgerLink"><mat-icon svgIcon="flower" class="burgerFlower"></mat-icon>Contact me</div>
+        <div (click)="scrollToSection('hero')" class="burgerLink"><mat-icon svgIcon="flower" class="burgerFlower"></mat-icon>Welcome</div>
+        <div (click)="scrollToSection('about')" class="burgerLink"><mat-icon svgIcon="flower" class="burgerFlower"></mat-icon>About Me</div>
+        <div (click)="scrollToSection('skills')" class="burgerLink"><mat-icon svgIcon="flower" class="burgerFlower"></mat-icon>Skillset</div>
+        <div (click)="scrollToSection('projects')" class="burgerLink"><mat-icon svgIcon="flower" class="burgerFlower"></mat-icon>Projects</div>
+        <!-- <div (click)="scrollToSection('about')" class="burgerLink"><mat-icon svgIcon="flower" class="burgerFlower"></mat-icon>Refences</div> -->
+        <div (click)="scrollToSection('contact')" class="burgerLink"><mat-icon svgIcon="flower" class="burgerFlower"></mat-icon>Contact me</div>
 
         <div class="mobileLinks" [class.hidden]="isHeroActive()">
 
