@@ -1,5 +1,10 @@
 @use '../../shared/mixin/colors.scss' as colors;
 
+$mobile: 480px;
+$tablet: 768px;
+$laptop: 1024px;
+$desktop: 1280px;
+
 section {
     background-color: transparent;
     padding: 24px 72px 24px 72px;
@@ -16,7 +21,7 @@ section {
 }
 
 .socialLinks {
-    height: 36px;
+    height: clamp(30px, calc(14px + 1vw), 36px);
     width: auto;
     cursor: pointer;
 
@@ -71,7 +76,7 @@ section.dark-bg .menu {
 }
 
 .nameIcon {
-    height: 30px;
+    height: clamp(24px, calc(14px + 1vw), 30px);
     padding-right: 6px;
     color: colors.$accentDark;
 }
@@ -89,7 +94,7 @@ section.dark-bg .nameIcon {
 
 .headerName {
     font-family: 'Quicksand', sans-serif;
-    font-size: 30px;
+    font-size: clamp(1rem, calc(0.8rem + 1vw), 2rem);
     font-weight: 600;
     color: colors.$primaryBright;
 }
@@ -107,6 +112,10 @@ section.dark-bg .headerName {
 
 .headerLinks{
     color: colors.$primaryBright;
+
+    @media (max-width: 1024px) {
+        display: none;
+    }
 }
 
 .headerLinks.hidden {
@@ -242,6 +251,10 @@ section.dark-bg .languageSelect {
     mat-icon{
         height: 32px;
         margin-left: 6px;
+    }
+
+    @media (min-width: $desktop) {
+        display: block;
     }
 }
 

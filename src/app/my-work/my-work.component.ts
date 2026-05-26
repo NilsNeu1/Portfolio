@@ -35,7 +35,7 @@ export class MyWorkComponent {
       snapshot: "../../assets/project_screenshots/join.svg",
       technologies: ["HTML", "CSS", "TypeScript", "Angular"],
       description: "A Task-manager inspired by the Kanban System created as a Group Project.",
-      github: "https://github.com/NilsNeu1/Join",
+      github: "https://github.com/NilsNeu1/Public-Join",
       redirect:"",
       bgColor: this.darkorange,
       spinnerColor: this.orange,

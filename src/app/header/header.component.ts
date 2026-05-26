@@ -1,13 +1,12 @@
-import { Component, computed, inject, signal } from '@angular/core';
+import { Component, computed, inject, HostListener, signal } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { NgClass, NgIf } from '@angular/common';
 import { VisibilityService } from '../services/section-observer/section-observer.service';
-import { HeaderObserverDirective } from '../services/section-observer/header-obersver.directive';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [MatIconModule, NgClass, NgIf, HeaderObserverDirective],
+  imports: [MatIconModule, NgClass, NgIf],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
@@ -17,22 +16,21 @@ export class HeaderComponent {
   isMenuOpen = false;
   activeLanguage = 'DE';
   langAnimate = false;
-  myEmail = 'nils@example.com'; // Replace with your actual email
+  myEmail = 'nils@example.com';
 
   isHeroActive = this.visibilityService.isHeroActive;
+  isNarrowScreen = signal(window.innerWidth < 1024);
 
-  private headerSectionData = signal<{ darkUi: boolean }>({ darkUi: false });
+  @HostListener('window:resize')
+  onResize() {
+    this.isNarrowScreen.set(window.innerWidth < 1024);
+  }
 
   headerColorClass = computed(() =>
-    this.headerSectionData().darkUi ? 'dark-bg' : 'light-bg'
+    this.visibilityService.activeSectionData().darkUi ? 'dark-bg' : 'light-bg'
   );
 
- onHeaderSectionChange(data: { darkUi: boolean } | null) {
-  console.log('Header section change:', data);
-  if (data) {
-    this.headerSectionData.set({ darkUi: data.darkUi });
-  }
-}
+  showMobileLinks = computed(() => !this.isHeroActive() || this.isNarrowScreen());
 
   scrollToSection(sectionId: string) {
     const element = document.getElementById(sectionId);
@@ -42,14 +40,14 @@ export class HeaderComponent {
     }
   }
 
-copyEmailToClipboard() {
-  navigator.clipboard.writeText(this.myEmail).then(() => {
-    alert('📋 E-Mail wurde ins Clipboard kopiert!');
-  }).catch(err => {
-    console.error('Failed to copy email:', err);
-  });
-  this.burgerMenuClose();
-}
+  copyEmailToClipboard() {
+    navigator.clipboard.writeText(this.myEmail).then(() => {
+      alert('📋 E-Mail wurde ins Clipboard kopiert!');
+    }).catch(err => {
+      console.error('Failed to copy email:', err);
+    });
+    this.burgerMenuClose();
+  }
 
   goToLink(url: string) { window.open(url, '_blank'); }
   burgerMenuOpen() { this.isMenuOpen = true; }

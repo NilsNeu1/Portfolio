@@ -1,6 +1,5 @@
 <section id="header" 
   appHeaderObserver 
-  (sectionChange)="onHeaderSectionChange($event)"
   [ngClass]="headerColorClass()">
     <div class="headerLinks" [class.hidden]="!isHeroActive()">
 
@@ -41,7 +40,7 @@
         <!-- <div (click)="scrollToSection('about')" class="burgerLink"><mat-icon svgIcon="flower" class="burgerFlower"></mat-icon>Refences</div> -->
         <div (click)="scrollToSection('contact')" class="burgerLink"><mat-icon svgIcon="flower" class="burgerFlower"></mat-icon>Contact me</div>
 
-        <div class="mobileLinks" [class.hidden]="isHeroActive()">
+        <div class="mobileLinks" [class.hidden]="!showMobileLinks()">
 
             <mat-icon (click)="goToLink('https://github.com/NilsNeu1')" class="socialLinks github" svgIcon="github"
                 alt="github Profil öffnen"></mat-icon>

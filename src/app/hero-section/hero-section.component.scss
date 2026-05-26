@@ -103,6 +103,11 @@ section {
     height: auto;
     aspect-ratio: 1/1.1;
     object-fit: contain;
+
+    @media (max-width: $laptop) {
+        width: 85%;
+    }
+
 }
 
 
