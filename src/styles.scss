@@ -119,3 +119,12 @@ app-header {
     display: none;
   }
 }
+
+// Zentrales Mixin für Content-Begrenzung
+@mixin content-wrapper($max: 1440px) {
+  width: 100%;
+  max-width: $max;
+  margin-inline: auto;        // zentriert den Content
+  padding-inline: clamp(16px, 4vw, 80px); // responsiver Seitenabstand
+  box-sizing: border-box;
+}

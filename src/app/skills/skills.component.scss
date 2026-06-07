@@ -1,11 +1,18 @@
 @use '../../shared/mixin/colors.scss' as colors;
+@use '../../shared/mixin/content-wrapper.scss' as wrapper;
 $mobile: 480px;
 $tablet: 768px;
 $laptop: 1024px;
 $desktop: 1280px;
 
 
+:host {
+    display: block;
+    background-color: colors.$primaryDark;
+}
+
 section {
+    @include wrapper.content-wrapper();
     height: 100vh;
     width: 100%;
     background-color: colors.$primaryDark;

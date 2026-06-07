@@ -1,5 +1,6 @@
 @use '../../shared/mixin/colors.scss' as colors;
 @use '../../shared/mixin/buttons.scss' as buttons;
+@use '../../shared/mixin/content-wrapper.scss' as wrapper;
 
 $mobile: 480px;
 $tablet: 768px;
@@ -7,7 +8,13 @@ $laptop: 1024px;
 $desktop: 1280px;
 
 
+:host {
+    display: block;
+    background-color: colors.$primary;
+}
+
 section {
+    @include wrapper.content-wrapper();
     background-color: colors.$primary;
     width: 100%;
     height: 100vh;

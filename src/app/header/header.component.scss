@@ -1,4 +1,5 @@
 @use '../../shared/mixin/colors.scss' as colors;
+@use '../../shared/mixin/content-wrapper.scss' as wrapper;
 
 $mobile: 480px;
 $tablet: 768px;
@@ -6,6 +7,7 @@ $laptop: 1024px;
 $desktop: 1280px;
 
 section {
+    @include wrapper.content-wrapper();
     background-color: transparent;
     padding: 24px 72px 24px 72px;
     display: flex;

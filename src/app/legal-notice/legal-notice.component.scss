@@ -1,8 +1,15 @@
 @use '../../shared/mixin/colors.scss' as colors;
 @use '../../shared/mixin/buttons.scss' as buttons;
+@use '../../shared/mixin/content-wrapper.scss' as wrapper;
+
+:host {
+    display: block;
+    background-color: colors.$primaryDark;
+}
 
 
 section {
+    @include wrapper.content-wrapper();
     width: 100%;
     background-color: colors.$primaryDark;
     padding-top: 0;
