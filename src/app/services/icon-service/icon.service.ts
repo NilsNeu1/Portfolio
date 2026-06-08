@@ -25,6 +25,7 @@ export class IconService {
     this.addIcon('github', '/assets/Header/Contact_icons/github.svg');
     this.addIcon('linkedin', '/assets/Header/contact_icons/linkedin.svg')
     this.addIcon('mail', '/assets/Header/Contact_icons/mail.svg');
+    this.addIcon('arrow', '/assets/general/arrow_outward.svg');
   }
 
   private addIcon(name: string, path: string) {

@@ -91,8 +91,12 @@ html, body {
 app-root {
   display: block;
   height: 100vh;
-  overflow-y: scroll;
+  overflow-y: auto;
   scroll-snap-type: y mandatory;
+  scrollbar-width: none;  
+            // Firefox
+  &::-webkit-scrollbar {
+    display: none; }
 }
 
 // Jede Section snappt
