@@ -61,7 +61,7 @@ section {
 
 .hero-image {  // 3:4 Portait
     background-color: rgba(127, 255, 212, 0.368);
-    height: clamp(200px, 280px + 35vw, 920px);
+    height: clamp(200px, 280px + 35vw, 1340px);
     width: auto;
     aspect-ratio: 3/4;
     object-fit: cover;
@@ -76,9 +76,12 @@ section {
 }
 
 .information {
+    
+
+
     //display: none;
-    width: clamp(300px, calc(25vw + 200px), 660px);
-    height: clamp(200px, 400px - 14vw, 350px);
+    width: clamp(300px, calc(25vw + 200px), 900px);
+    height: clamp(200px, 50px + 10.2vw, 350px);
     padding: 24px;
     background-color: colors.$primaryDark;
     color: colors.$primaryBright;
@@ -88,7 +91,15 @@ section {
     position: absolute;
     top: 40%;
     left: 40%;
+
+    p{
+        font-size: clamp(1rem, calc(1rem + (100vw - 1920px) * 0.025), 1.6rem);
+    }
     
+    @media(max-width: 1920px){
+        height: clamp(200px, 400px - 14vw, 350px);
+
+    }
 
     @media (max-width: $laptop) {
         transform: translate(0, 60%);
@@ -98,7 +109,7 @@ section {
         z-index: 1;
 
         p{
-            font-size: calc(0.5rem + 1vw);
+            font-size: clamp(1rem, calc(0.25rem + 1.2vw), 1.5rem);
         }
 
     }
@@ -110,9 +121,9 @@ section {
         margin-right: 30px;
         transform: translate(0, 95%);
 
-        p{
-            font-size: calc(0.25rem + 1.2vw);
-        }
+        // p{
+        //     font-size: calc(0.25rem + 1.2vw);
+        // }
     }
 
 }
@@ -182,6 +193,23 @@ section {
     h2{
         margin-bottom: 6px;
         margin-top: 0;
+        font-size: clamp(1rem, calc(1rem + (100vw - 1920px) * 0.05), 2rem);
+    }
+
+    div{
+        font-size: clamp(1rem, calc(1rem + (100vw - 1920px) * 0.025), 1.6rem);
+    }
+
+
+
+    @media(max-width: 1920px){
+        h2{
+            font-size: 1.5rem;
+        }
+
+        div{
+            font-size: 1rem;
+        }
     }
 
     @media(max-width: $laptop){

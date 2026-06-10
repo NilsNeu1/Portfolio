@@ -112,7 +112,8 @@ section {
     object-fit: contain;
 
     @media (max-width: $laptop) {
-        width: 85%;
+        width: auto;
+        height: 50vh;
     }
 
 }
