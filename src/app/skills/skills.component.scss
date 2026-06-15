@@ -50,13 +50,13 @@ section {
 
 .passion-text {
     background-color: colors.$primary;
-    font-size: calc(1rem + 0.1vw);
+    font-size: clamp(1rem, 1rem + (100vw - 1920px) * 0.025, 1.6rem);
     border-radius: 6px;
     padding: 18px;
     width: 50%;
 
     @media(max-width: $laptop) {
-        font-size: calc(0.5rem + 1vw);
+        font-size: clamp(1rem, calc(0.5rem + 1vw), 1.2rem);
         border-radius: 6px;
         padding: 16px;
         width: 90%;
@@ -79,17 +79,44 @@ section {
 }
 
 .show-more {
-    transform: translate(-80px, -36px);
+    // transform: translate(-80px, -36px);
+    position: absolute;
     cursor: pointer;
+    width: 90px;
+
+        @media(max-width: 1920px) {
+        width: 60px;
+    }
+
+            @media(max-width: $tablet) {
+        width: 50px;
+    }
+
 }
 
 
+.spinner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
 .growth-spinner {
     color: colors.$accentDark;
-    width: 120px;
+    width: 150px;
     height: auto;
     aspect-ratio: 1/1;
     animation: spin 8s linear infinite;
+
+    @media(max-width: 1920px) {
+        width: 120px;
+    }
+
+    @media(max-width: $laptop) {
+        width: 80px;
+    }
+
 }
 
 
@@ -100,7 +127,7 @@ section {
     padding: 24px;
     width: clamp(200px, calc(20vw + 100px), 400px);
     border: 1px solid colors.$primaryBright;
-    transform: translate(0 , 60vh);
+    transform: translate(0, 60vh);
     opacity: 1;
     transition: transform 0.12s ease-out, opacity 0.12s ease-in-out;
     pointer-events: none;
@@ -113,16 +140,25 @@ section {
     opacity: 1;
     pointer-events: auto;
 
-       @media(max-width: $laptop) {
-       transform: translate(0, 0);
-       padding: 12px;
 
-        h2{
+    h2 {
+        font-size: clamp(1rem, calc(1rem + (100vw - 1920px) * 0.05), 2rem);
+    }
+
+    span {
+        font-size: clamp(1rem, calc(1rem + (100vw - 1920px) * 0.025), 1.6rem);
+    }
+
+    @media(max-width: $laptop) {
+        transform: translate(0, 0);
+        padding: 12px;
+
+        h2 {
             font-size: calc(0.6rem + 2vw);
         }
 
-        span{
-            font-size: calc(0.5rem + 1vw);
+        span {
+            font-size: clamp(1rem, calc(0.5rem + 1vw), 1.2rem);
         }
     }
 }
@@ -133,7 +169,7 @@ section {
     gap: 6px;
 
     @media(max-width: $laptop) {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(5, 1fr);
         gap: 2px;
     }
 }
@@ -146,13 +182,13 @@ section {
     color: colors.$primaryBright;
 
     img {
-        width: clamp(30px, calc(4vw + 10px), 70px);
+        width: clamp(30px, calc(3vw + 10px), 100px);
         height: auto;
         aspect-ratio: 1/1;
     }
 
     span {
-        font-size: calc(0.7rem + 0.2vw);
+        font-size: clamp(1rem, 1rem + (100vw - 1920px) * 0.025, 1.6rem);
     }
 
     @media(max-width: $laptop) {
@@ -161,8 +197,8 @@ section {
         }
 
         span {
-        font-size: calc(0.5rem + 1vw);
-    }
+            font-size: clamp(0.8rem, calc(0.5rem + 1vw), 1.2rem);
+        }
 
     }
 
@@ -182,8 +218,17 @@ section {
     align-items: center;
 
     img {
-        width: 50px;
-        height: 50px;
+        width: clamp(40px, calc(3vw + 10px), 100px);
+        height: auto;
+        aspect-ratio: 1/1;
+    }
+
+
+    @media(max-width: $tablet) {
+        img {
+            width: clamp(50px, calc(8vw + 10px), 70px);
+        }
+        
     }
 }
 

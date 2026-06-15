@@ -25,7 +25,7 @@ export class SkillsComponent {
     {icon: '../../assets/Frontend_Skills_icons/Supabase.svg', label: 'Supabase' },
     {icon: '../../assets/Frontend_Skills_icons/Git.svg', label: 'Git' },
     {icon: '../../assets/Frontend_Skills_icons/Rest_Api.svg', label: 'REST-API' },
-    {icon: '../../assets/Frontend_Skills_icons/Material_Design.svg', label: 'Material Design' },
+    {icon: '../../assets/Frontend_Skills_icons/Material_Design.svg', label: 'Mat.Design' },
     {icon: '../../assets/Frontend_Skills_icons/Scrum.svg', label: 'Scrum' },
   ]
 
