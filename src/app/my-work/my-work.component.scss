@@ -41,7 +41,8 @@ section {
     }
 
     span {
-        font-size: clamp(12px, 0.5rem + 0.5vw, 16px);
+
+        font-size: clamp(1rem, calc(1rem + (100vw - 1920px) * 0.025), 1.6rem);
     }
 
     @media(max-width: $laptop) {
@@ -56,6 +57,7 @@ section {
 
         span {
             margin-top: -24px;
+            font-size: clamp(1rem, calc(0.25rem + 1.2vw), 1.5rem);
         }
     }
 }
@@ -72,7 +74,7 @@ section {
     }
 
         @media(max-width: $mobile) {
-        gap: 12px;
+        gap: 3vh;
     }
 }
 
@@ -94,7 +96,7 @@ section {
 
     @media (max-width: $mobile) {
         padding: 12px;
-        width: clamp(260px, calc(20vw + 200px), 600px);
+        width: clamp(330px, calc(20vw + 200px), 600px);
     }
 }
 
@@ -125,14 +127,29 @@ section {
 
 .used-skills {
     color: colors.$primary;
-    font-size: clamp(12px, calc(0.5rem + 0.5vw), 16px);
+    font-size: clamp(1rem, calc(1rem + (100vw - 1920px) * 0.025), 1.6rem);
+
+    @media(max-width: $laptop) {
+        font-size: clamp(1rem, calc(0.25rem + 1.2vw), 1.5rem);
+    }
+
+
 }
 
 .project-description {
 
     span {
-        font-size: clamp(12px, calc(0.5rem + 0.5vw), 16px);
+        font-size: clamp(1rem, calc(1rem + (100vw - 1920px) * 0.025), 1.6rem);
     }
+
+     @media(max-width: $laptop) {
+
+        span{
+
+            font-size: clamp(1rem, calc(0.25rem + 1.2vw), 1.5rem);
+        }
+    }
+
 }
 
 .project-snapshots {
@@ -161,7 +178,8 @@ section {
 
     @media (max-width: $mobile) {
         padding: 12px;
-        width: clamp(260px, calc(20vw + 200px), 500px);
+        width: clamp(330px, calc(20vw + 200px), 500px);
+        height: 220px;
     }
 
 
@@ -197,6 +215,7 @@ section {
     justify-content: center;
     margin-right: 24px;
     text-decoration: none;
+    font-size: clamp(1rem, calc(0.25rem + 1.2vw), 1.5rem);
 
 
     &:hover {
@@ -221,6 +240,8 @@ section {
     justify-content: space-between;
     padding-top: 18px;
     font-weight: 800;
+    font-size: clamp(1rem, calc(1rem + (100vw - 1920px) * 0.025), 1.6rem);
+
 
     nav {
         &:hover {

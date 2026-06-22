@@ -7,12 +7,14 @@
 
         <div class="contact-text">
             <h2>Got a problem to solve?</h2>
-            <span>
+            <span>I'm a frontend developer focused on building clean, maintainable, and accessible applications.
+                I'm currently looking for a role where solid architecture and long-term code quality matter.</span>
+            <!-- <span>
                 I'm a frontend developer with a strong focus on building clean, maintainable, and accessible
                 applications - especially with Angular. I'm currently looking for opportunities to contribute as a
                 frontend engineer, ideally within a team that values solid architecture, clarity in code, and long-term
                 maintainability.
-            </span>
+            </span> -->
             <!-- <span>
                 <br>While my core strength lies in frontend development, I'm actively expanding my backend skills to grow
                 into a more versatile full-stack role over time. If you're looking for someone who brings technical
@@ -25,57 +27,57 @@
 
     <div class="contact-form-container">
 
-  <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+        <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
 
-    <div class="form-row">
-        <div class="form-block">
-            <label for="clientName">What's your name?</label>
-            <input [(ngModel)]="contactData.clientName" name="clientName" id="clientName" type="text"
-                [placeholder]="clientName.invalid && clientName.touched ? 'Name is required!' : 'Your Name...'"
-                required #clientName="ngModel"
-                [class.error-input]="clientName.invalid && clientName.touched">
-        </div>
+            <div class="form-row">
+                <div class="form-block">
+                    <label for="clientName">What's your name?</label>
+                    <input [(ngModel)]="contactData.clientName" name="clientName" id="clientName" type="text"
+                        [placeholder]="clientName.invalid && clientName.touched ? 'Name is required!' : 'Your Name...'"
+                        required #clientName="ngModel" [class.error-input]="clientName.invalid && clientName.touched">
+                </div>
 
-        <div class="form-block">
-            <label for="clientEmail">What's your email?</label>
-            <input [(ngModel)]="contactData.clientEmail" name="clientEmail" id="clientEmail" type="email"
-                [placeholder]="clientEmail.invalid && clientEmail.touched ? 
+                <div class="form-block">
+                    <label for="clientEmail">What's your email?</label>
+                    <input [(ngModel)]="contactData.clientEmail" name="clientEmail" id="clientEmail" type="email"
+                        [placeholder]="clientEmail.invalid && clientEmail.touched ? 
                     (clientEmail.errors?.['required'] ? 'Email is required!' : 'Please enter a valid email!') 
-                    : 'youremail@email.com'"
-                pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" required #clientEmail="ngModel"
-                [class.error-input]="clientEmail.invalid && clientEmail.touched">
-        </div>
-    </div>
+                    : 'youremail@email.com'" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" required
+                        #clientEmail="ngModel" [class.error-input]="clientEmail.invalid && clientEmail.touched">
+                </div>
+            </div>
 
-    <div class="form-block">
-        <label for="clientMessage">How can I help you?</label>
-        <textarea [(ngModel)]="contactData.clientMessage" name="clientMessage" id="clientMessage" cols="30"
-            rows="10"
-            [placeholder]="clientMessage.invalid && clientMessage.touched ? 'Message is required!' : 'Hello Nils, i\'m interested in...'"
-            required #clientMessage="ngModel"
-            [class.error-input]="clientMessage.invalid && clientMessage.touched"></textarea>
-    </div>
+            <div class="form-block">
+                <label for="clientMessage">How can I help you?</label>
+                <textarea [(ngModel)]="contactData.clientMessage" name="clientMessage" id="clientMessage" cols="30"
+                    rows="10"
+                    [placeholder]="clientMessage.invalid && clientMessage.touched ? 'Message is required!' : 'Hello Nils, i\'m interested in...'"
+                    required #clientMessage="ngModel"
+                    [class.error-input]="clientMessage.invalid && clientMessage.touched"></textarea>
+            </div>
 
-<div class="policy">
-    <input [(ngModel)]="contactData.agreeToPrivacyPolicy" class="policy-btn" type="checkbox" id="AGB" name="AGB" required #AGB="ngModel">
-    <label class="policy-label" for="AGB">
-        I've read the <a target="_blank"  routerLink="/legal-notice">privacy policy</a> and agree to the processing of my data.
-        <span *ngIf="AGB.invalid && AGB.touched" class="error">Please accept the privacy policy.</span>
-    </label>
-</div>
+            <div class="policy">
+                <input [(ngModel)]="contactData.agreeToPrivacyPolicy" class="policy-btn" type="checkbox" id="AGB"
+                    name="AGB" required #AGB="ngModel">
+                <label class="policy-label" for="AGB">
+                    I've read the <a target="_blank" routerLink="/legal-notice">privacy policy</a> and agree to the
+                    processing of my data.
+                    <span *ngIf="AGB.invalid && AGB.touched" class="error">Please accept the privacy policy.</span>
+                </label>
+            </div>
 
-    <div class="submit-btn-container">
-        <input class="submit-btn" type="submit" value="Send!">
-    </div>
+            <div class="submit-btn-container">
+                <input class="submit-btn" type="submit" value="Send!">
+            </div>
 
-</form>
+        </form>
 
 
         <div class="footer">
             <span>© 2026 Nils Neumann</span>
 
             <div class="footer-links">
-                <a href=""  routerLink="/legal-notice">Impressum</a>
+                <a href="" routerLink="/legal-notice">Impressum</a>
                 <a href="https://github.com/NilsNeu1" target="_blank">GitHub</a>
             </div>
 

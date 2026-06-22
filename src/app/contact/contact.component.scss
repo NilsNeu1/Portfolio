@@ -28,7 +28,6 @@ section {
     @media (max-width: $laptop) {
         flex-direction: column;
         justify-content: space-evenly;
-        padding-left: 0;
         overflow-y: scroll;
     }
 }
@@ -64,16 +63,15 @@ section {
 }
 
 .contact-text {
-    width: 40vw;
 
 
     h2 {
         color: colors.$accentDark;
-        font-size: calc(1rem + 0.5vw);
+        font-size: clamp(1.3rem, calc(1.3rem + (100vw - 1920px) * 0.05), 2rem);
     }
 
     span {
-        font-size: clamp(12px, 0.5rem + 0.5vw, 16px);
+        font-size: clamp(1rem, calc(1rem + (100vw - 1920px) * 0.025), 1.6rem);
     }
 
     @media (max-width: $laptop) {
@@ -118,7 +116,7 @@ section {
         color: colors.$primaryBright;
         font-family: 'Quicksand', sans-serif;
         font-weight: 800;
-        font-size: clamp(16px, 0.5rem + 0.8vw, 24px);
+        font-size: clamp(1.1rem, 0.5rem + 0.8vw, 24px);
         transition: color 0.2s ease;
     }
 
@@ -152,7 +150,7 @@ section {
 
 
         @media(max-width: $laptop) {
-            font-size: clamp(12px, 0.5rem + 0.5vw, 16px);
+            font-size: clamp(1rem, 0.5rem + 0.5vw, 16px);
             max-width: 80vw;
             max-height: 46px;
         }
@@ -228,12 +226,12 @@ section {
     flex-direction: row;
     justify-content: space-between;
     padding-top: 60px;
-    font-size: clamp(12px, 0.5rem + 0.5vw, 16px);
+    font-size: clamp(1rem, 0.5rem + 0.5vw, 16px);
 
     a {
         color: colors.$primaryBright;
         text-decoration: none;
-        padding-left: 30px;
+        padding-left: 1rem;
 
         &:hover {
             color: colors.$accentDark;
@@ -286,7 +284,7 @@ section {
     cursor: pointer;
     line-height: 1.5;
     user-select: none;
-    font-size: clamp(12px, 0.5rem + 0.5vw, 16px);
+    font-size: clamp(1rem, calc(1rem + (100vw - 1920px) * 0.025), 1.3rem);
 
     @media(max-width: $desktop) {
             line-height: 0.5;
