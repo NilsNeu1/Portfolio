@@ -12,58 +12,105 @@ import { RouterLink } from '@angular/router';
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })
-
-
 export class ContactComponent {
 
   http = inject(HttpClient);
 
-  mailTest = true;
+  submitStatus: 'idle' | 'loading' | 'success' | 'error' = 'idle';
 
   contactData = {
-    clientName: "",
-    clientEmail: "",
-    clientMessage: "",
+    clientName: '',
+    clientEmail: '',
+    clientMessage: '',
     agreeToPrivacyPolicy: false
-  }
+  };
 
   post = {
-    endPoint: 'https://deineDomain.de/sendMail.php',
+    endPoint: 'https://nils-neumann.developerakademie.net/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
     options: {
       headers: {
         'Content-Type': 'text/plain',
-        responseType: 'text',
       },
     },
   };
 
-  onSubmit(ngForm: NgForm) {
-    if (ngForm.form.invalid) {
-      this.alertUserError(ngForm);
-      return;
-    }
+  isValidName(value: string): boolean {
+    return value.trim().length >= 2;
+  }
 
-    this.sentContactForm(ngForm);
-    console.log("worked" , this.contactData)
+  isValidMessage(value: string): boolean {
+    return value.trim().length > 0;
   }
 
   alertUserError(ngForm: NgForm) {
+  Object.keys(ngForm.form.controls).forEach(key => {
+    const control = ngForm.form.controls[key];
+    if (control.invalid) {
+      control.reset();
+      control.markAsTouched();
+    }
+  });
+}
+
+onSubmit(ngForm: NgForm) {
+  if (ngForm.form.invalid) {
+    this.alertUserError(ngForm);
+    return;
+  }
+
+  if (!this.isValidName(this.contactData.clientName)) {
+    ngForm.form.controls['clientName'].reset();
+    ngForm.form.controls['clientName'].markAsTouched();
+    ngForm.form.controls['clientName'].setErrors({ minlength: true });
+    return;
+  }
+
+  if (!this.isValidMessage(this.contactData.clientMessage)) {
+    ngForm.form.controls['clientMessage'].reset();
+    ngForm.form.controls['clientMessage'].markAsTouched();
+    ngForm.form.controls['clientMessage'].setErrors({ whitespace: true });
+    return;
+  }
+
+  this.sendContactForm(ngForm);
+}
+
+  markAllTouched(ngForm: NgForm) {
     Object.keys(ngForm.form.controls).forEach(key => {
-      if (ngForm.form.controls[key].invalid) {
-        ngForm.form.controls[key].reset();
-        ngForm.form.controls[key].markAsTouched();
-      }
+      ngForm.form.controls[key].markAsTouched();
     });
   }
 
-  sentContactForm(ngForm: NgForm) {
-    this.http.post(this.post.endPoint, this.post.body(this.contactData))
+
+  sendContactForm(ngForm: NgForm) {
+    this.submitStatus = 'loading';
+
+
+//  if (true) {
+//     setTimeout(() => {
+//       this.submitStatus = 'success';
+//       ngForm.resetForm();
+//       setTimeout(() => this.submitStatus = 'idle', 4000);
+//     }, 1500);
+//     return;
+//   }
+
+
+
+    this.http.post(this.post.endPoint, this.post.body(this.contactData), this.post.options)
       .subscribe({
-        next: () => ngForm.resetForm(),
-        error: (error) => console.error(error),
-        complete: () => console.info('send post complete'),
+        next: () => {
+          this.submitStatus = 'success';
+          ngForm.resetForm();
+          setTimeout(() => this.submitStatus = 'idle', 4000);
+        },
+        error: () => {
+          this.submitStatus = 'error';
+          setTimeout(() => this.submitStatus = 'idle', 4000);
+        },
       });
   }
-
 }
+
+

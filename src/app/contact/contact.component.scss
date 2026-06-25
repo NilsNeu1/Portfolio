@@ -356,3 +356,17 @@ section {
         box-shadow: 0 0 0 3px rgba(colors.$accentDark, 0.30);
     }
 }
+
+.form-feedback {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.feedback-success {
+  color: #4caf50;
+}
+
+.feedback-error {
+  color: rgb(248, 74, 74);
+}

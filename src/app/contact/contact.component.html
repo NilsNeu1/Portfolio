@@ -66,8 +66,22 @@
                 </label>
             </div>
 
-            <div class="submit-btn-container">
-                <input class="submit-btn" type="submit" value="Send!">
+<div class="submit-btn-container">
+  <button
+    class="submit-btn"
+    type="submit"
+    [disabled]="submitStatus === 'loading'">
+    {{ submitStatus === 'loading' ? 'Sending...' : 'Send!' }}
+  </button>
+</div>
+
+            <div class="form-feedback" *ngIf="submitStatus === 'success' || submitStatus === 'error'">
+                <span class="feedback-success" *ngIf="submitStatus === 'success'">
+                    ✓ Message sent! I'll get back to you soon.
+                </span>
+                <span class="feedback-error" *ngIf="submitStatus === 'error'">
+                    ✗ Something went wrong. Please try again or reach out directly.
+                </span>
             </div>
 
         </form>
