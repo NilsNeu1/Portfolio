@@ -18,7 +18,7 @@ export class HeaderComponent {
   langAnimate = false;
   myEmail = 'nils@example.com';
 
-  isHeroActive = this.visibilityService.isHeroActive;
+ isHeroActive = computed(() => this.visibilityService.activeSectionData()?.id === 'hero');
   isNarrowScreen = signal(window.innerWidth < 1024);
 
   @HostListener('window:resize')

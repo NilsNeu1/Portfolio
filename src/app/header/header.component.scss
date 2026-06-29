@@ -22,6 +22,12 @@ section {
     z-index: 1000;
 }
 
+@media (max-width: 768px) {
+  :host.hidden-mobile {
+    display: none;
+  }
+}
+
 .socialLinks {
     height: clamp(30px, calc(14px + 1vw), 36px);
     width: auto;

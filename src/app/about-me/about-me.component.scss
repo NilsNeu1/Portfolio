@@ -32,7 +32,7 @@ section {
      
         color: colors.$primaryDark;
         font-family: 'Eczar' !important;
-        font-size: calc(1rem + 4vw);
+        font-size: calc(1rem + 3vw);
         // margin-right: 35px;
     
 }
@@ -70,7 +70,7 @@ section {
 
 .hero-image {  // 3:4 Portait
     background-color: rgba(127, 255, 212, 0.368);
-    height: clamp(200px, 280px + 35vw, 1340px);
+    height: clamp(200px, 280px + 35vw, 780px);
     width: auto;
     aspect-ratio: 3/4;
     object-fit: cover;
@@ -93,8 +93,8 @@ section {
 
 
     //display: none;
-    width: clamp(300px, calc(25vw + 200px), 900px);
-    height: clamp(200px, 50px + 10.2vw, 350px);
+    width: clamp(300px, calc(25vw + 200px), 700px);
+    height: clamp(200px, 50px + 10.2vw, 250px);
     padding: 24px;
     background-color: colors.$primaryDark;
     color: colors.$primaryBright;
@@ -106,7 +106,7 @@ section {
     left: 48%;
 
     p{
-        font-size: clamp(1rem, calc(1rem + (100vw - 1920px) * 0.025), 1.6rem);
+        font-size: clamp(1rem, calc(1rem + (100vw - 1920px) * 0.025), 1.2rem);
     }
     
     @media(max-width: 1920px){
@@ -130,12 +130,6 @@ section {
         padding: 12px;
         width: clamp(100px, 80px + 22vw, 300px);
         height: 440px;
-        // height: clamp(190px, 100px + 22vw, 250px);
-        // padding: 12px;
-        // top: 50%;
-        // left: 30%;
-        // width: 200px;
-        // height: 100px;
 
     }
 
@@ -214,11 +208,11 @@ section {
     h2{
         margin-bottom: 6px;
         margin-top: 0;
-        font-size: clamp(1rem, calc(1rem + (100vw - 1920px) * 0.05), 2rem);
+        font-size: clamp(1rem, calc(1rem + (100vw - 1920px) * 0.05), 1.5rem);
     }
 
     div{
-        font-size: clamp(1rem, calc(1rem + (100vw - 1920px) * 0.025), 1.6rem);
+        font-size: clamp(1rem, calc(1rem + (100vw - 1920px) * 0.025), 1.2rem);
     }
 
 
@@ -256,7 +250,7 @@ section {
 }
 
 .about-me-overlay.open{
-    transform: translate(20vw, 6%);
+    transform: translate(120%, 0%);
     opacity: 1;
     pointer-events: auto;
 

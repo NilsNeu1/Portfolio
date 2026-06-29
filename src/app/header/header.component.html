@@ -1,6 +1,8 @@
 <section id="header" 
   appHeaderObserver 
-  [ngClass]="headerColorClass()">
+  [ngClass]="headerColorClass()"
+  [class.hidden-mobile]="!isHeroActive()">
+  
     <div class="headerLinks" [class.hidden]="!isHeroActive()">
 
 
