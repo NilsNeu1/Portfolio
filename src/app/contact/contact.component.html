@@ -33,7 +33,7 @@
                 <div class="form-block">
                     <label for="clientName">What's your name?</label>
                     <input [(ngModel)]="contactData.clientName" name="clientName" id="clientName" type="text"
-                        [placeholder]="clientName.invalid && clientName.touched ? 'Name is required!' : 'Your Name...'"
+                        [placeholder]="clientName.invalid && clientName.touched ? 'Name is incorrect!' : 'Your Name...'"
                         required #clientName="ngModel" [class.error-input]="clientName.invalid && clientName.touched">
                 </div>
 
@@ -66,29 +66,19 @@
                 </label>
             </div>
 
-<div class="submit-btn-container">
-  <button
-    class="submit-btn"
-    type="submit"
-    [disabled]="submitStatus === 'loading'">
-    {{ submitStatus === 'loading' ? 'Sending...' : 'Send!' }}
-  </button>
-</div>
-
-            <div class="form-feedback" *ngIf="submitStatus === 'success' || submitStatus === 'error'">
-                <span class="feedback-success" *ngIf="submitStatus === 'success'">
-                    ✓ Message sent! I'll get back to you soon.
-                </span>
-                <span class="feedback-error" *ngIf="submitStatus === 'error'">
-                    ✗ Something went wrong. Please try again or reach out directly.
-                </span>
+            <div class="submit-btn-container">
+                <button class="submit-btn" type="submit" [disabled]="submitStatus === 'loading'">
+                    {{ submitStatus === 'loading' ? 'Sending...' : 'Send!' }}
+                </button>
             </div>
+
+
 
         </form>
 
 
         <div class="footer">
-            <span>© 2026 Nils Neumann</span>
+            <span>©2026 Nils Neumann</span>
 
             <div class="footer-links">
                 <a href="" routerLink="/legal-notice">Impressum</a>
@@ -99,7 +89,18 @@
 
     </div>
 
+    <div class="form-feedback" [class.feedback-success]="submitStatus === 'success'"
+        [class.feedback-error]="submitStatus === 'error'"
+        *ngIf="submitStatus === 'success' || submitStatus === 'error'">
 
+        <span *ngIf="submitStatus === 'success'">
+            ✓ Message sent! I'll get back to you soon.
+        </span>
+
+        <span *ngIf="submitStatus === 'error'">
+            ✗ Something went wrong. Please try again or reach out directly.
+        </span>
+    </div>
 
 
 </section>

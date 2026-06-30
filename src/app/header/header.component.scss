@@ -199,7 +199,6 @@ section.dark-bg .languageSelect {
     transition: transform 0.12s ease-out, opacity 0.12s ease-out;
 }
 .floatingBurgerMenu.open{
-    display: flex;
     opacity: 1; transform: translateX(0); pointer-events: auto;
 }
 

@@ -101,6 +101,11 @@ section {
     z-index: 1;
 
 
+@media (max-width: $mobile) {
+        width: 7%;
+        transform: scale(9) translate(-50%, 55%);
+    }
+
 
 }
 

@@ -98,6 +98,11 @@ section {
         padding: 12px;
         width: clamp(330px, calc(20vw + 200px), 600px);
     }
+
+    @media (max-width: 340px) {
+        padding: 12px;
+        width: clamp(270px, calc(20vw + 200px), 600px);
+    }
 }
 
 .project-infobox-titel {
@@ -180,6 +185,10 @@ section {
         padding: 12px;
         width: clamp(330px, calc(20vw + 200px), 500px);
         height: 220px;
+    }
+
+        @media (max-width: 340px) {
+        width: clamp(270px, calc(20vw + 200px), 600px);
     }
 
 

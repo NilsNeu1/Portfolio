@@ -60,6 +60,13 @@ section {
         }
     }
 
+    @media (max-width: $mobile) {
+        h1 {
+            margin-bottom: 0;
+            line-height: 1;
+        }
+    }
+
 }
 
 .contact-text {
@@ -186,8 +193,8 @@ section {
     }
 
     @media(max-width: $laptop) {
-            padding: 10px;
-        }
+        padding: 10px;
+    }
 
 
 }
@@ -204,6 +211,12 @@ section {
     color: colors.$primaryBright;
     margin-top: 50px;
 
+    @media(max-width: $mobile) {
+        margin-top: 20px;
+        width: 100px;
+        height: 32px;
+    }
+
     &:hover {
         background-color: colors.$accentDark;
     }
@@ -215,8 +228,8 @@ section {
     }
 
     @media(max-width: $laptop) {
-            margin-top: 30px;
-        }
+        margin-top: 30px;
+    }
 }
 
 
@@ -227,6 +240,10 @@ section {
     justify-content: space-between;
     padding-top: 60px;
     font-size: clamp(1rem, 0.5rem + 0.5vw, 16px);
+
+    span {
+        font-size: clamp(0.8rem, 0.5rem + 0.5vw, 16px);
+    }
 
     a {
         color: colors.$primaryBright;
@@ -240,8 +257,8 @@ section {
     }
 
     @media(max-width: $laptop) {
-            padding-top: 20px;
-        }
+        padding-top: 20px;
+    }
 }
 
 .error {
@@ -269,16 +286,16 @@ section {
     }
 
     @media(max-width: $laptop) {
-            padding-top: 16px;
-            align-items: center;
-            flex-direction: row-reverse;
-            justify-content: space-evenly;
-            width: 90vw;
-        }
+        padding-top: 16px;
+        align-items: center;
+        flex-direction: row-reverse;
+        justify-content: space-evenly;
+        width: 90vw;
+    }
 }
 
 .policy-label {
-    display: inline-flex;
+    display: block;
     align-items: center;
     gap: 10px;
     cursor: pointer;
@@ -288,8 +305,8 @@ section {
     flex-wrap: wrap;
 
     @media(max-width: $desktop) {
-            line-height: 0.5;
-        }
+        line-height: 1;
+    }
 }
 
 .policy-btn {
@@ -358,15 +375,27 @@ section {
 }
 
 .form-feedback {
-  margin-top: 1rem;
-  text-align: center;
-  font-size: 1rem;
+    position: absolute;
+    background: rgba(black, 0.30);
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 1rem;
+    width: 340px;
+    border-radius: 6px;
+    backdrop-filter: blur(12px);
+    padding: 6px;
+
+    @media(max-width: $mobile) {
+        width: auto;
+        border-radius: 0;
+    }
+
 }
 
 .feedback-success {
-  color: #4caf50;
+    background: rgba(76, 175, 80, 0.3);
 }
 
 .feedback-error {
-  color: rgb(248, 74, 74);
+    background: rgba(248, 74, 74, 0.3);
 }

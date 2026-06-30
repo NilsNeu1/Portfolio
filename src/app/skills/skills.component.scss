@@ -170,6 +170,7 @@ section {
     @media(max-width: $laptop) {
         grid-template-columns: repeat(5, 1fr);
         gap: 2px;
+        padding-top: 40px;
     }
 }
 
@@ -200,6 +201,13 @@ section {
 
         span {
             font-size: clamp(0.8rem, calc(0.5rem + 1vw), 1.2rem);
+        }
+
+    }
+
+        @media(max-width: $laptop) {
+        img {
+            width: clamp(45px, calc(8vw + 10px), 70px);
         }
 
     }
