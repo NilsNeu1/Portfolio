@@ -1,0 +1,78 @@
+{
+  "HEADER": {
+    "WELCOME": "Willkommen",
+    "ABOUT": "Über mich",
+    "SKILLS": "Fähigkeiten",
+    "PROJECTS": "Projekte",
+    "CONTACT": "Kontakt"
+  },
+  
+    "HERO": {
+    "GREETING": "Hallo! Ich bin",
+    "ROLE": "Frontend Developer",
+    "CTA": "Kontakt",
+    "SCROLL": "Scroll down. Scroll down. Scroll down. Scroll down."
+  },
+
+
+"ABOUT": {
+    "TITLE": "Über mich",
+    "TEXT_1": "Was als Funken der Neugier und ein kleines erstes Projekt begann, wurde schnell zu einer Leidenschaft und einer klaren beruflichen Richtung. Mit einem wissbegierigen Mindset und einem Platz in einem Bereich, der sich ständig weiterentwickelt, erkannte ich bald, dass Programmieren nicht nur ein Interesse war - es war der Weg, den ich einschlagen wollte.",
+    "TEXT_2": "Lass uns gemeinsam wachsen und etwas Großartiges erschaffen!",
+    "CTA": "Reden wir",
+    "OVERLAY_TITLE": "Mehr über mich",
+    "OVERLAY_1": "- Tech-Enthusiast",
+    "OVERLAY_2": "- Strebe nach Verbesserung",
+    "OVERLAY_3": "- Inspiriert Problemen zu lösen",
+    "OVERLAY_4": "- Immer bereit, mein Skillset zu erweitern"
+  },
+
+  
+  "SKILLS": {
+    "TITLE": "Kernkompetenzen",
+    "TEXT": "Ich arbeite über den gesamten Frontend-Stack — Angular und TypeScript für gut strukturierte Anwendungen, JavaScript und CSS um Designs zum Leben zu erwecken, und Material Design für saubere, benutzerfreundliche Interfaces. Ich habe Supabase für Echtzeit-Daten verwendet und sichere meine Arbeit immer mit GitHub. Ich achte auf die Details, die eine Erfahrung richtig anfühlen lassen: responsive Layouts, schnelle Ladezeiten und Interaktionen, die einfach funktionieren.",
+    "GROWTH_TITLE": "Ich erweitere ständig mein Wissen",
+    "GROWTH_TEXT": "Aktuell hat mich etwas Neues begeistert! Ich bin auf Linux umgestiegen und lerne Python!"
+  },
+
+
+    "PROJECTS": {
+    "TITLE": "Meine Arbeit",
+    "SUBTITLE": "Entdecke hier eine Auswahl meiner Arbeiten - Interagiere mit den Projekten, um meine Fähigkeiten in Aktion zu sehen.",
+    "PREV": "Zurück",
+    "NEXT": "Weiter",
+    "EL_POLLO_LOCO": "Ein einfaches Jump-and-Run-Spiel auf Basis eines objektorientierten Ansatzes. Hilf Pepe, seine Feinde zu besiegen und Münzen zu sammeln.",
+    "JOIN": "Ein Task-Manager inspiriert vom Kanban-System, entwickelt als Gruppenprojekt."
+  },
+
+    "CONTACT": {
+    "TITLE": "Lass uns gemeinsam etwas Cooles bauen!",
+    "SUBTITLE": "Hast du ein Problem zu lösen?",
+    "TEXT": "Ich bin ein Frontend-Entwickler mit Fokus auf saubere, wartbare und zugängliche Anwendungen. Ich suche derzeit eine Stelle, bei der solide Architektur und langfristige Codequalität zählen.",
+    "NAME_LABEL": "Wie heißt du?",
+    "NAME_PLACEHOLDER": "Dein Name...",
+    "NAME_ERROR": "Name ist falsch!",
+    "EMAIL_LABEL": "Wie lautet deine E-Mail?",
+    "EMAIL_PLACEHOLDER": "deinemail@email.com",
+    "EMAIL_ERROR_REQUIRED": "E-Mail ist erforderlich!",
+    "EMAIL_ERROR_INVALID": "Bitte gib eine gültige E-Mail ein!",
+    "MESSAGE_LABEL": "Wie kann ich dir helfen?",
+    "MESSAGE_PLACEHOLDER": "Hallo Nils, ich bin interessiert an...",
+    "MESSAGE_ERROR": "Nachricht ist erforderlich!",
+    "POLICY": "Ich habe die <a target='_blank' routerLink='/legal-notice'>Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten zu.",
+    "POLICY_ERROR": "Bitte akzeptiere die Datenschutzerklärung.",
+    "SEND": "Senden!",
+    "SENDING": "Wird gesendet...",
+    "SUCCESS": "✓ Nachricht gesendet! Ich melde mich bald bei dir.",
+    "ERROR": "✗ Etwas ist schiefgelaufen. Bitte versuche es erneut oder kontaktiere mich direkt.",
+    "FOOTER": "Impressum",
+
+    "POLICY_PRE": "Ich stimme der",
+    "POLICY_LINK": "Datenschutzerklärung",
+    "POLICY_POST": "zu."
+  }
+
+
+}
+
+

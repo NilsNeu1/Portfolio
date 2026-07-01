@@ -1,0 +1,73 @@
+{
+  "HEADER": {
+    "WELCOME": "Welcome",
+    "ABOUT": "About Me",
+    "SKILLS": "Skillset",
+    "PROJECTS": "Projects",
+    "CONTACT": "Contact me"
+  },
+  
+    "HERO": {
+    "GREETING": "Hello There! I'm",
+    "ROLE": "Frontend Developer",
+    "CTA": "Get in Touch",
+    "SCROLL": "Scroll down. Scroll down. Scroll down. Scroll down."
+  },
+
+"ABOUT": {
+    "TITLE": "About me",
+    "TEXT_1": "What began as a spark of curiosity and a small first project quickly grew into a passion and a clear professional direction. With an inquisitive mindset and a place in a field that never stops evolving, I soon realized that programming wasn't just an interest - it was the path I wanted to pursue.",
+    "TEXT_2": "Let's grow and create something Awesome together!",
+    "CTA": "Let's Talk",
+    "OVERLAY_TITLE": "More about me",
+    "OVERLAY_1": "- Tech enthusiast",
+    "OVERLAY_2": "- Striving to improve",
+    "OVERLAY_3": "- Inspired by problems to solve",
+    "OVERLAY_4": "- Happy to expand my skillset"
+  },
+
+  "SKILLS": {
+    "TITLE": "Core Competencies",
+    "TEXT": "I work across the full front-end stack — Angular and TypeScript for well-structured applications, JavaScript and CSS to bring designs to life, and Material Design for clean, user-friendly interfaces. I've used Supabase for real-time data and authentication, and I always back my work with GitHub. I care about the details that make an experience feel right: responsive layouts, fast load times, and interactions that just work.",
+    "GROWTH_TITLE": "I'm always expanding my Knowledge",
+    "GROWTH_TEXT": "Currently something new sparked my Interest! I've switched to Linux and started learning Python!"
+  },
+
+    "PROJECTS": {
+    "TITLE": "My work",
+    "SUBTITLE": "Explore a selection of my work here - Interact with the projects to see my skills in action.",
+    "PREV": "Previous project",
+    "NEXT": "Next project",
+    "EL_POLLO_LOCO": "A simple Jump-and-Run game based on an object-oriented approach. Help Pepe to defeat his enemies and collect Coins.",
+    "JOIN": "A Task-manager inspired by the Kanban System created as a Group Project."
+  },
+
+    "CONTACT": {
+    "TITLE": "Let's build something Cool together!",
+    "SUBTITLE": "Got a problem to solve?",
+    "TEXT": "I'm a frontend developer focused on building clean, maintainable, and accessible applications. I'm currently looking for a role where solid architecture and long-term code quality matter.",
+    "NAME_LABEL": "What's your name?",
+    "NAME_PLACEHOLDER": "Your Name...",
+    "NAME_ERROR": "Name is incorrect!",
+    "EMAIL_LABEL": "What's your email?",
+    "EMAIL_PLACEHOLDER": "youremail@email.com",
+    "EMAIL_ERROR_REQUIRED": "Email is required!",
+    "EMAIL_ERROR_INVALID": "Please enter a valid email!",
+    "MESSAGE_LABEL": "How can I help you?",
+    "MESSAGE_PLACEHOLDER": "Hello Nils, i'm interested in...",
+    "MESSAGE_ERROR": "Message is required!",
+    "POLICY": "I've read the <a target='_blank' routerLink='/legal-notice'>privacy policy</a> and agree to the processing of my data.",
+    "POLICY_ERROR": "Please accept the privacy policy.",
+    "SEND": "Send!",
+    "SENDING": "Sending...",
+    "SUCCESS": "✓ Message sent! I'll get back to you soon.",
+    "ERROR": "✗ Something went wrong. Please try again or reach out directly.",
+    "FOOTER": "Impressum",
+
+    "POLICY_PRE": "I've read the",
+    "POLICY_LINK": "privacy policy",
+    "POLICY_POST": "and agree to the processing of my data."
+  }
+
+
+}

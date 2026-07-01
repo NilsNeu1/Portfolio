@@ -1,20 +1,17 @@
 <section id="hero" nav="" backgroundType="dark" [attr.darkUi]="false" appObserveSection="hero">
 
     <div class="intro-text">
-
         <div>
-            <p>Hello There! I'm</p>
+            <p>{{ 'HERO.GREETING' | translate }}</p>
             <h1 class="font-eczar">Nils<br>Neumann</h1>
-            <p>Frontend Developer</p>
+            <p>{{ 'HERO.ROLE' | translate }}</p>
 
-            <button (click)="scrollToSection('contact')" >
-                Get in Touch
+            <button (click)="scrollToSection('contact')">
+                {{ 'HERO.CTA' | translate }}
             </button>
-
         </div>
 
         <div class="scroll-button-container">
-
             <nav class="scroll-down-button">
                 <mat-icon svgIcon="flower" class="rotating-icon"></mat-icon>
                 <mat-icon svgIcon="arrow" class="arrow-icon"></mat-icon>
@@ -24,26 +21,17 @@
                     </defs>
                     <text text-anchor="middle">
                         <textPath href="#circlePath" startOffset="50%">
-                            Scroll down. Scroll down. Scroll down. Scroll down.
+                            {{ 'HERO.SCROLL' | translate }}
                         </textPath>
                     </text>
                 </svg>
-
             </nav>
-
         </div>
-
-
-
-
     </div>
-
 
     <div class="hero-display">
         <img class="hero-image" src="../../assets/portraits/Hero.png" alt="">
         <mat-icon svgIcon="flower" class="hero-display-flower"></mat-icon>
-
     </div>
-
 
 </section>

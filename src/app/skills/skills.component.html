@@ -1,33 +1,22 @@
 <section id="skills" class="competencies-container" nav backgroundType="dark" appObserveSection="skills">
 
-    <!-- <div class="competencies-container"></div> -->
-
     <div>
-
         <div class="my-passion">
-            <h1> Core Competencies</h1>
-
-            <div class="passion-text">
-                I work across the full front-end stack — Angular and TypeScript for well-structured applications,
-                JavaScript and CSS to bring designs to life, and Material Design for clean, user-friendly interfaces.
-                I've used Supabase for real-time data and authentication, and I always back my work with GitHub. I care
-                about the details that make an experience feel right: responsive layouts, fast load times, and
-                interactions that just work.
-            </div>
+            <h1>{{ 'SKILLS.TITLE' | translate }}</h1>
+            <div class="passion-text">{{ 'SKILLS.TEXT' | translate }}</div>
         </div>
-
     </div>
 
     <div class="skillset">
         <div class="spinner-container">
-            <mat-icon class="growth-spinner" svgIcon="flower"> </mat-icon>
+            <mat-icon class="growth-spinner" svgIcon="flower"></mat-icon>
             <img class="show-more" (mouseenter)="onHoverStart()" (mouseleave)="onHoverEnd()"
                 src="../../assets/general/Project_emoji/Learning_D.svg" alt="">
         </div>
+
         <div [class.open]="isHovered" class="growth-slide-in">
-            <h2>I'm allways expanding my Knowledge</h2>
-            <span>Currently something new sparked my Interest! I've switched to Linux and started learning
-                Python!</span>
+            <h2>{{ 'SKILLS.GROWTH_TITLE' | translate }}</h2>
+            <span>{{ 'SKILLS.GROWTH_TEXT' | translate }}</span>
             <div class="next-skills-container">
                 <div class="next-skills">
                     <img src="../../assets/Backend_Skills_icons/Linux.svg" alt="">
@@ -43,11 +32,9 @@
         <div class="skill-icon-container">
             <div class="skill-icon" *ngFor="let skill of skills">
                 <img [src]="skill.icon" alt="">
-                <span>{{skill.label}}</span>
+                <span>{{ skill.label }}</span>
             </div>
         </div>
-
-
     </div>
 
 </section>

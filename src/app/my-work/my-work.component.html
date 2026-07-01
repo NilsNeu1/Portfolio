@@ -1,12 +1,11 @@
 <section nav id="projects" backgroundType="bright" appObserveSection="projects">
 
     <div class="project-section-header">
-        <h1>My work</h1>
-        <span>Explore a selection of my work here - Interact with the projects to see my skills in action.</span>
+        <h1>{{ 'PROJECTS.TITLE' | translate }}</h1>
+        <span>{{ 'PROJECTS.SUBTITLE' | translate }}</span>
     </div>
 
     <div class="project-carousel">
-
         <div class="project-snapshots" [style.background-color]="projects[currentIndex].bgColor">
             <mat-icon class="snapshot-spinner" svgIcon="flower"
                 [style.color]="projects[currentIndex].spinnerColor"></mat-icon>
@@ -14,10 +13,8 @@
                 alt="{{projects[currentIndex].name}}">
         </div>
 
-
         <div>
             <div class="project-infobox">
-
                 <div class="project-infobox-titel">
                     <h2>{{projects[currentIndex].name}}</h2>
                     <img src="{{projects[currentIndex].icon}}" alt="">
@@ -30,25 +27,20 @@
                 </div>
 
                 <div class="project-description">
-                    <span>
-                        {{projects[currentIndex].description}}
-                    </span>
+                    <span>{{ projects[currentIndex].descriptionKey | translate }}</span>
                 </div>
 
                 <div class="project-links-container">
                     <a [href]="projects[currentIndex].github" target="_blank" class="project-links">Github</a>
                     <a [href]="projects[currentIndex].redirect" target="_blank" class="project-links">Live Test</a>
                 </div>
-
-
             </div>
 
             <div class="project-select-buttons">
-                <nav (click)="prevProject()">&lt;&lt;&lt;Previous project</nav>
-                <nav (click)="nextProject()">Next project&gt;&gt;&gt;</nav>
+                <nav (click)="prevProject()">&lt;&lt;&lt;{{ 'PROJECTS.PREV' | translate }}</nav>
+                <nav (click)="nextProject()">{{ 'PROJECTS.NEXT' | translate }}&gt;&gt;&gt;</nav>
             </div>
         </div>
-
     </div>
 
 </section>

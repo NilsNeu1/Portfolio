@@ -1,15 +1,13 @@
-<section id="header" 
-  appHeaderObserver 
-  [ngClass]="headerColorClass()"
-  [class.hidden-mobile]="!isHeroActive()">
-  
+<section id="header" appHeaderObserver [ngClass]="headerColorClass()" [class.hidden-mobile]="!isHeroActive()">
+
     <div class="headerLinks" [class.hidden]="!isHeroActive()">
 
 
         <mat-icon (click)="goToLink('https://github.com/NilsNeu1')" class="socialLinks github" svgIcon="github"
             alt="github Profil öffnen"></mat-icon>
         <mat-icon class="socialLinks linkedin" svgIcon="linkedin" alt="linkedin Profil öffnen"></mat-icon>
-        <mat-icon (click)="copyEmailToClipboard()" class="socialLinks mail" svgIcon="mail" alt="Email Formular öffnen"></mat-icon>
+        <mat-icon (click)="copyEmailToClipboard()" class="socialLinks mail" svgIcon="mail"
+            alt="Email Formular öffnen"></mat-icon>
 
     </div>
 
@@ -19,9 +17,9 @@
     </div>
 
     <div class="navigation">
-        <!-- <div (click)="languageSwitch()" class="languageSelect">
+        <div (click)="languageSwitch()" class="languageSelect">
             <span [class.animate]="langAnimate" class="langText">{{ activeLanguage }}</span>
-        </div> -->
+        </div>
 
         <mat-icon (click)="burgerMenuOpen()" class="socialLinks menu" svgIcon="menu"></mat-icon>
 
@@ -35,12 +33,16 @@
 
         </div>
 
-        <div (click)="scrollToSection('hero')" class="burgerLink"><mat-icon svgIcon="flower" class="burgerFlower"></mat-icon>Welcome</div>
-        <div (click)="scrollToSection('about')" class="burgerLink"><mat-icon svgIcon="flower" class="burgerFlower"></mat-icon>About Me</div>
-        <div (click)="scrollToSection('skills')" class="burgerLink"><mat-icon svgIcon="flower" class="burgerFlower"></mat-icon>Skillset</div>
-        <div (click)="scrollToSection('projects')" class="burgerLink"><mat-icon svgIcon="flower" class="burgerFlower"></mat-icon>Projects</div>
-        <!-- <div (click)="scrollToSection('about')" class="burgerLink"><mat-icon svgIcon="flower" class="burgerFlower"></mat-icon>Refences</div> -->
-        <div (click)="scrollToSection('contact')" class="burgerLink"><mat-icon svgIcon="flower" class="burgerFlower"></mat-icon>Contact me</div>
+        <div (click)="scrollToSection('hero')" class="burgerLink"><mat-icon svgIcon="flower"
+                class="burgerFlower"></mat-icon>{{ 'HEADER.WELCOME' | translate }}</div>
+        <div (click)="scrollToSection('about')" class="burgerLink"><mat-icon svgIcon="flower"
+                class="burgerFlower"></mat-icon>{{ 'HEADER.ABOUT' | translate }}</div>
+        <div (click)="scrollToSection('skills')" class="burgerLink"><mat-icon svgIcon="flower"
+                class="burgerFlower"></mat-icon>{{ 'HEADER.SKILLS' | translate }}</div>
+        <div (click)="scrollToSection('projects')" class="burgerLink"><mat-icon svgIcon="flower"
+                class="burgerFlower"></mat-icon>{{ 'HEADER.PROJECTS' | translate }}</div>
+        <div (click)="scrollToSection('contact')" class="burgerLink"><mat-icon svgIcon="flower"
+                class="burgerFlower"></mat-icon>{{ 'HEADER.CONTACT' | translate }}</div>
 
         <div class="mobileLinks" [class.hidden]="!showMobileLinks()">
 
@@ -48,7 +50,9 @@
                 alt="github Profil öffnen"></mat-icon>
             <!-- <mat-icon class="socialLinks linkedin" svgIcon="linkedin" alt="linkedin Profil öffnen"></mat-icon> -->
             <mat-icon class="socialLinks mail" svgIcon="mail" alt="Email Formular öffnen"></mat-icon>
-
+                <div (click)="languageSwitch()" class="languageSelect">
+                    <span [class.animate]="langAnimate" class="langText">{{ activeLanguage }}</span>
+                </div>
         </div>
     </nav>
 

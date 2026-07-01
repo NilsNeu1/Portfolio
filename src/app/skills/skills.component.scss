@@ -137,6 +137,7 @@ section {
     transform: translate(50%, 0);
     padding: 24px;
     opacity: 1;
+    z-index: 10;
     pointer-events: auto;
 
 
@@ -159,6 +160,10 @@ section {
         span {
             font-size: clamp(1rem, calc(0.5rem + 1vw), 1.2rem);
         }
+    }
+
+    @media(max-width: 340px){
+        width: 260px;
     }
 }
 

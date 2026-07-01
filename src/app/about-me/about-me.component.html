@@ -1,43 +1,32 @@
 <section id="about" nav backgroundType="bright" appObserveSection="about">
 
-    <h1 class="header-text" >About me</h1>
+    <h1 class="header-text">{{ 'ABOUT.TITLE' | translate }}</h1>
 
     <div class="section-text">
-
         <div class="information">
-            <p>What began as a spark of curiosity and a small first project quickly grew into a passion and a clear
-                professional direction.
-                With an inquisitive mindset and a place in a field that never stops evolving, I soon realized that
-                programming wasn't just an interest
-                <br>- it was the path I wanted to pursue.
-            </p>
-            <p>Let's grow and create something Awesome together!</p>
+            <p>{{ 'ABOUT.TEXT_1' | translate }}</p>
+            <p>{{ 'ABOUT.TEXT_2' | translate }}</p>
 
             <div class="information-interaction">
-                <button (click)="scrollToSection('contact')" class="get-in-touch-btn">Let's Talk</button>
+                <button (click)="scrollToSection('contact')" class="get-in-touch-btn">
+                    {{ 'ABOUT.CTA' | translate }}
+                </button>
                 <mat-icon (mouseenter)="onHoverStart()" (mouseleave)="onHoverEnd()" class="psst-emoji"
                     svgIcon="psst-emoji-d"></mat-icon>
-
-
             </div>
 
             <div [class.open]="isHovered" class="about-me-overlay">
-                <h2>More about me</h2>
-                <div> - Tech enthusiast</div>
-                <div> - striving to improve</div>
-                <div> - inspired by Problems to solve</div>
-                <div> - happy to expand my skillsset</div>
+                <h2>{{ 'ABOUT.OVERLAY_TITLE' | translate }}</h2>
+                <div>{{ 'ABOUT.OVERLAY_1' | translate }}</div>
+                <div>{{ 'ABOUT.OVERLAY_2' | translate }}</div>
+                <div>{{ 'ABOUT.OVERLAY_3' | translate }}</div>
+                <div>{{ 'ABOUT.OVERLAY_4' | translate }}</div>
             </div>
-
         </div>
-
-
     </div>
 
     <div class="hero-container">
         <img class="hero-image" src="../../assets/portraits/About.jpg" alt="">
     </div>
-
-
 
 </section>

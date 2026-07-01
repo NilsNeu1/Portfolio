@@ -2,105 +2,83 @@
 
     <div class="contact-container">
         <div class="contact-header">
-            <h1>Let's build something Cool together!</h1>
+            <h1>{{ 'CONTACT.TITLE' | translate }}</h1>
         </div>
-
         <div class="contact-text">
-            <h2>Got a problem to solve?</h2>
-            <span>I'm a frontend developer focused on building clean, maintainable, and accessible applications.
-                I'm currently looking for a role where solid architecture and long-term code quality matter.</span>
-            <!-- <span>
-                I'm a frontend developer with a strong focus on building clean, maintainable, and accessible
-                applications - especially with Angular. I'm currently looking for opportunities to contribute as a
-                frontend engineer, ideally within a team that values solid architecture, clarity in code, and long-term
-                maintainability.
-            </span> -->
-            <!-- <span>
-                <br>While my core strength lies in frontend development, I'm actively expanding my backend skills to grow
-                into a more versatile full-stack role over time. If you're looking for someone who brings technical
-                precision, thoughtful problem-solving, and a commitment to high-quality engineering, I'd be excited to
-                connect and explore how I can add value to your projects or team.
-            </span> -->
-
+            <h2>{{ 'CONTACT.SUBTITLE' | translate }}</h2>
+            <span>{{ 'CONTACT.TEXT' | translate }}</span>
         </div>
     </div>
 
     <div class="contact-form-container">
-
         <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
 
             <div class="form-row">
                 <div class="form-block">
-                    <label for="clientName">What's your name?</label>
+                    <label for="clientName">{{ 'CONTACT.NAME_LABEL' | translate }}</label>
                     <input [(ngModel)]="contactData.clientName" name="clientName" id="clientName" type="text"
-                        [placeholder]="clientName.invalid && clientName.touched ? 'Name is incorrect!' : 'Your Name...'"
-                        required #clientName="ngModel" [class.error-input]="clientName.invalid && clientName.touched">
+                        [placeholder]="clientName.invalid && clientName.touched ? ('CONTACT.NAME_ERROR' | translate) : ('CONTACT.NAME_PLACEHOLDER' | translate)"
+                        required #clientName="ngModel"
+                        [class.error-input]="clientName.invalid && clientName.touched">
                 </div>
 
                 <div class="form-block">
-                    <label for="clientEmail">What's your email?</label>
+                    <label for="clientEmail">{{ 'CONTACT.EMAIL_LABEL' | translate }}</label>
                     <input [(ngModel)]="contactData.clientEmail" name="clientEmail" id="clientEmail" type="email"
                         [placeholder]="clientEmail.invalid && clientEmail.touched ? 
-                    (clientEmail.errors?.['required'] ? 'Email is required!' : 'Please enter a valid email!') 
-                    : 'youremail@email.com'" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" required
-                        #clientEmail="ngModel" [class.error-input]="clientEmail.invalid && clientEmail.touched">
+                            (clientEmail.errors?.['required'] ? ('CONTACT.EMAIL_ERROR_REQUIRED' | translate) : ('CONTACT.EMAIL_ERROR_INVALID' | translate))
+                            : ('CONTACT.EMAIL_PLACEHOLDER' | translate)"
+                        pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+                        required #clientEmail="ngModel"
+                        [class.error-input]="clientEmail.invalid && clientEmail.touched">
                 </div>
             </div>
 
             <div class="form-block">
-                <label for="clientMessage">How can I help you?</label>
-                <textarea [(ngModel)]="contactData.clientMessage" name="clientMessage" id="clientMessage" cols="30"
-                    rows="10"
-                    [placeholder]="clientMessage.invalid && clientMessage.touched ? 'Message is required!' : 'Hello Nils, i\'m interested in...'"
+                <label for="clientMessage">{{ 'CONTACT.MESSAGE_LABEL' | translate }}</label>
+                <textarea [(ngModel)]="contactData.clientMessage" name="clientMessage" id="clientMessage"
+                    cols="30" rows="10"
+                    [placeholder]="clientMessage.invalid && clientMessage.touched ? ('CONTACT.MESSAGE_ERROR' | translate) : ('CONTACT.MESSAGE_PLACEHOLDER' | translate)"
                     required #clientMessage="ngModel"
                     [class.error-input]="clientMessage.invalid && clientMessage.touched"></textarea>
             </div>
 
             <div class="policy">
-                <input [(ngModel)]="contactData.agreeToPrivacyPolicy" class="policy-btn" type="checkbox" id="AGB"
-                    name="AGB" required #AGB="ngModel">
+                <input [(ngModel)]="contactData.agreeToPrivacyPolicy" class="policy-btn" type="checkbox"
+                    id="AGB" name="AGB" required #AGB="ngModel">
                 <label class="policy-label" for="AGB">
-                    I've read the <a target="_blank" routerLink="/legal-notice">privacy policy</a> and agree to the
-                    processing of my data.
-                    <span *ngIf="AGB.invalid && AGB.touched" class="error">Please accept the privacy policy.</span>
+                    {{ 'CONTACT.POLICY_PRE' | translate }}
+                    <a target="_blank" routerLink="/legal-notice">{{ 'CONTACT.POLICY_LINK' | translate }}</a>
+                    {{ 'CONTACT.POLICY_POST' | translate }}
+                    <span *ngIf="AGB.invalid && AGB.touched" class="error">
+                        {{ 'CONTACT.POLICY_ERROR' | translate }}
+                    </span>
                 </label>
             </div>
 
             <div class="submit-btn-container">
                 <button class="submit-btn" type="submit" [disabled]="submitStatus === 'loading'">
-                    {{ submitStatus === 'loading' ? 'Sending...' : 'Send!' }}
+                    {{ submitStatus === 'loading' ? ('CONTACT.SENDING' | translate) : ('CONTACT.SEND' | translate) }}
                 </button>
             </div>
 
-
-
         </form>
-
 
         <div class="footer">
             <span>©2026 Nils Neumann</span>
-
             <div class="footer-links">
-                <a href="" routerLink="/legal-notice">Impressum</a>
+                <a href="" routerLink="/legal-notice">{{ 'CONTACT.FOOTER' | translate }}</a>
                 <a href="https://github.com/NilsNeu1" target="_blank">GitHub</a>
             </div>
-
         </div>
-
     </div>
 
-    <div class="form-feedback" [class.feedback-success]="submitStatus === 'success'"
-        [class.feedback-error]="submitStatus === 'error'"
-        *ngIf="submitStatus === 'success' || submitStatus === 'error'">
-
-        <span *ngIf="submitStatus === 'success'">
-            ✓ Message sent! I'll get back to you soon.
-        </span>
-
-        <span *ngIf="submitStatus === 'error'">
-            ✗ Something went wrong. Please try again or reach out directly.
-        </span>
+    <div class="form-feedback"
+         [class.feedback-success]="submitStatus === 'success'"
+         [class.feedback-error]="submitStatus === 'error'"
+         *ngIf="submitStatus === 'success' || submitStatus === 'error'">
+        <span *ngIf="submitStatus === 'success'">{{ 'CONTACT.SUCCESS' | translate }}</span>
+        <span *ngIf="submitStatus === 'error'">{{ 'CONTACT.ERROR' | translate }}</span>
     </div>
-
 
 </section>

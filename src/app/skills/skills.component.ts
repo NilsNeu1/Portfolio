@@ -2,11 +2,12 @@ import { Component, Input } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { NgForOf } from "@angular/common";
 import { ObserveSectionDirective } from '../services/section-observer/section.observer.directive';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-skills',
   standalone: true,
-  imports: [MatIconModule, NgForOf, ObserveSectionDirective],
+  imports: [MatIconModule, NgForOf, ObserveSectionDirective, TranslateModule],
   templateUrl: './skills.component.html',
   styleUrl: './skills.component.scss'
 })
