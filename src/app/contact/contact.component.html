@@ -19,7 +19,7 @@
                     <input [(ngModel)]="contactData.clientName" name="clientName" id="clientName" type="text"
                         [placeholder]="clientName.invalid && clientName.touched ? ('CONTACT.NAME_ERROR' | translate) : ('CONTACT.NAME_PLACEHOLDER' | translate)"
                         required #clientName="ngModel"
-                        [class.error-input]="clientName.invalid && clientName.touched">
+                        [class.error-input]="clientName.invalid && clientName.dirty">
                 </div>
 
                 <div class="form-block">
@@ -30,7 +30,7 @@
                             : ('CONTACT.EMAIL_PLACEHOLDER' | translate)"
                         pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
                         required #clientEmail="ngModel"
-                        [class.error-input]="clientEmail.invalid && clientEmail.touched">
+                        [class.error-input]="clientEmail.invalid && clientEmail.dirty">
                 </div>
             </div>
 

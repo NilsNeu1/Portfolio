@@ -4,11 +4,12 @@ import { NgClass, NgIf } from '@angular/common';
 import { VisibilityService } from '../services/section-observer/section-observer.service';
 import { TranslateModule } from '@ngx-translate/core';
 import { TranslateService } from '@ngx-translate/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [MatIconModule, NgClass, NgIf, TranslateModule],
+  imports: [MatIconModule, NgClass, NgIf, TranslateModule, RouterModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })

@@ -13,7 +13,6 @@ section {
     width: 100%;
     background-color: colors.$primaryDark;
     padding-top: 0;
-    padding-left: 4rem;
     color: colors.$primaryBright;
     display: flex;
     flex-direction: column;
@@ -43,5 +42,28 @@ div{
             color: colors.$accentBright;
             background-color: transparent;
         }
+    }
+}
+
+.legal-footer{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding-bottom: 20px;
+
+    span{
+        color: colors.$primaryBright;
+    }
+ 
+}
+
+.footer-links{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+
+    a{
+        color: colors.$primaryBright;
+        text-decoration: none;
     }
 }
