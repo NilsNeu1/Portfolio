@@ -18,7 +18,7 @@ export class HeaderComponent {
   private translate = inject(TranslateService);
 
   isMenuOpen = false;
-  activeLanguage = 'DE';
+  activeLanguage = 'EN';
   langAnimate = false;
   myEmail = 'nils@example.com';
 

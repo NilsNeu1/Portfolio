@@ -22,7 +22,7 @@ export class AppComponent {
   private translate = inject(TranslateService);
 
   constructor(private iconService: IconService) {
-    this.translate.setDefaultLang('de');
-    this.translate.use('de'); 
+    this.translate.setDefaultLang('en');
+    this.translate.use('en'); 
   }
 }

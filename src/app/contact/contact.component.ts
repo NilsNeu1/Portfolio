@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { ObserveSectionDirective } from '../services/section-observer/section.observer.directive';
-import { FormsModule, NgForm } from '@angular/forms';
+import { FormsModule, NgForm, NgModel } from '@angular/forms';
 import { NgIf } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { RouterLink } from '@angular/router';
@@ -36,8 +36,13 @@ export class ContactComponent {
     },
   };
 
-  isValidName(value: string): boolean {
-    return value.trim().length >= 2;
+  isValidName(control: NgModel): void {
+    const value = control.value || '';
+    if (value.trim().length < 2) {
+      control.control.setErrors({ minlength: true });
+    } else {
+      control.control.setErrors(null);
+    }
   }
 
   isValidMessage(value: string): boolean {
@@ -45,37 +50,37 @@ export class ContactComponent {
   }
 
   alertUserError(ngForm: NgForm) {
-  Object.keys(ngForm.form.controls).forEach(key => {
-    const control = ngForm.form.controls[key];
-    if (control.invalid) {
-      control.reset();
-      control.markAsTouched();
+    Object.keys(ngForm.form.controls).forEach(key => {
+      const control = ngForm.form.controls[key];
+      if (control.invalid) {
+        control.reset();
+        control.markAsTouched();
+      }
+    });
+  }
+
+  onSubmit(ngForm: NgForm) {
+    if (ngForm.form.invalid) {
+      this.alertUserError(ngForm);
+      return;
     }
-  });
-}
 
-onSubmit(ngForm: NgForm) {
-  if (ngForm.form.invalid) {
-    this.alertUserError(ngForm);
-    return;
+    // if (!this.isValidName(this.contactData.clientName)) {
+    //   ngForm.form.controls['clientName'].reset();
+    //   ngForm.form.controls['clientName'].markAsTouched();
+    //   ngForm.form.controls['clientName'].setErrors({ minlength: true });
+    //   return;
+    // }
+
+    if (!this.isValidMessage(this.contactData.clientMessage)) {
+      ngForm.form.controls['clientMessage'].reset();
+      ngForm.form.controls['clientMessage'].markAsTouched();
+      ngForm.form.controls['clientMessage'].setErrors({ whitespace: true });
+      return;
+    }
+
+    this.sendContactForm(ngForm);
   }
-
-  if (!this.isValidName(this.contactData.clientName)) {
-    ngForm.form.controls['clientName'].reset();
-    ngForm.form.controls['clientName'].markAsTouched();
-    ngForm.form.controls['clientName'].setErrors({ minlength: true });
-    return;
-  }
-
-  if (!this.isValidMessage(this.contactData.clientMessage)) {
-    ngForm.form.controls['clientMessage'].reset();
-    ngForm.form.controls['clientMessage'].markAsTouched();
-    ngForm.form.controls['clientMessage'].setErrors({ whitespace: true });
-    return;
-  }
-
-  this.sendContactForm(ngForm);
-}
 
   markAllTouched(ngForm: NgForm) {
     Object.keys(ngForm.form.controls).forEach(key => {
@@ -88,14 +93,14 @@ onSubmit(ngForm: NgForm) {
     this.submitStatus = 'loading';
 
 
-//  if (true) {
-//     setTimeout(() => {
-//       this.submitStatus = 'success';
-//       ngForm.resetForm();
-//       setTimeout(() => this.submitStatus = 'idle', 4000);
-//     }, 1500);
-//     return;
-//   }
+    //  if (true) {
+    //     setTimeout(() => {
+    //       this.submitStatus = 'success';
+    //       ngForm.resetForm();
+    //       setTimeout(() => this.submitStatus = 'idle', 4000);
+    //     }, 1500);
+    //     return;
+    //   }
 
 
 
@@ -104,11 +109,11 @@ onSubmit(ngForm: NgForm) {
         next: () => {
           this.submitStatus = 'success';
           ngForm.resetForm();
-          setTimeout(() => this.submitStatus = 'idle', 4000);
+          setTimeout(() => this.submitStatus = 'idle', 8000);
         },
         error: () => {
           this.submitStatus = 'error';
-          setTimeout(() => this.submitStatus = 'idle', 4000);
+          setTimeout(() => this.submitStatus = 'idle', 8000);
         },
       });
   }

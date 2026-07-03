@@ -5,16 +5,16 @@
 
         <mat-icon (click)="goToLink('https://github.com/NilsNeu1')" class="socialLinks github" svgIcon="github"
             alt="github Profil öffnen"></mat-icon>
-        <mat-icon class="socialLinks linkedin" svgIcon="linkedin" alt="linkedin Profil öffnen"></mat-icon>
+        <!-- <mat-icon class="socialLinks linkedin" svgIcon="linkedin" alt="linkedin Profil öffnen"></mat-icon> -->
         <mat-icon (click)="copyEmailToClipboard()" class="socialLinks mail" svgIcon="mail"
             alt="Email Formular öffnen"></mat-icon>
 
     </div>
 
-<div class="headerDeveloper" routerLink="/" style="cursor: pointer;">
-    <mat-icon svgIcon="dev-logo" class="nameIcon"></mat-icon>
-    <span class="headerName">Neumann</span>
-</div>
+    <div class="headerDeveloper" routerLink="/" style="cursor: pointer;">
+        <mat-icon svgIcon="dev-logo" class="nameIcon"></mat-icon>
+        <span class="headerName">Neumann</span>
+    </div>
 
     <div class="navigation">
         <div (click)="languageSwitch()" class="languageSelect">
@@ -46,13 +46,17 @@
 
         <div class="mobileLinks" [class.hidden]="!showMobileLinks()">
 
-            <mat-icon (click)="goToLink('https://github.com/NilsNeu1')" class="socialLinks github" svgIcon="github"
-                alt="github Profil öffnen"></mat-icon>
-            <!-- <mat-icon class="socialLinks linkedin" svgIcon="linkedin" alt="linkedin Profil öffnen"></mat-icon> -->
-            <mat-icon class="socialLinks mail" svgIcon="mail" alt="Email Formular öffnen"></mat-icon>
-                <div (click)="languageSwitch()" class="languageSelect">
-                    <span [class.animate]="langAnimate" class="langText">{{ activeLanguage }}</span>
-                </div>
+            <div>
+                <mat-icon (click)="goToLink('https://github.com/NilsNeu1')" class="socialLinks github" svgIcon="github"
+                    alt="github Profil öffnen"></mat-icon>
+                <!-- <mat-icon class="socialLinks linkedin" svgIcon="linkedin" alt="linkedin Profil öffnen"></mat-icon> -->
+                <mat-icon class="socialLinks mail" svgIcon="mail" alt="Email Formular öffnen"></mat-icon>
+            </div>
+
+
+            <div (click)="languageSwitch()" class=" mobileLanguageSelect">
+                <span [class.animate]="langAnimate" class="langText">{{ activeLanguage }}</span>
+            </div>
         </div>
     </nav>
 

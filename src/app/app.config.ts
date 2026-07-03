@@ -3,10 +3,8 @@ import { provideRouter } from '@angular/router';
 import { provideClientHydration } from '@angular/platform-browser';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { HttpClientModule, HttpClient, provideHttpClient } from '@angular/common/http';
-
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-
 import { routes } from './app.routes';
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -22,7 +20,7 @@ export const appConfig: ApplicationConfig = {
     importProvidersFrom(
       HttpClientModule,
       TranslateModule.forRoot({
-        defaultLanguage: 'de',
+        defaultLanguage: 'en',
         loader: {
           provide: TranslateLoader,
           useFactory: HttpLoaderFactory,

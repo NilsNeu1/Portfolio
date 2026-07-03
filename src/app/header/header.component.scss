@@ -156,6 +156,28 @@ section.dark-bg .headerName {
        background-color: colors.$accentDark;
     }
 
+    @media (max-width: 768px) {
+    display: none;
+
+}
+
+}
+
+.mobileLanguageSelect{
+    cursor: pointer;
+    font-family: 'Quicksand', sans-serif;
+    width: 26px;
+    height: auto;
+    aspect-ratio: 1/1;
+    border: 1px solid;
+    border-color: colors.$primaryDark;
+    color: colors.$primaryDark;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 12px;
+
 }
 
 // Light background sections (darkUi: false)
@@ -254,6 +276,11 @@ section.dark-bg .languageSelect {
 
 .mobileLinks {
     color: colors.$primaryDark;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: stretch;
+    justify-content: space-between;
 
     mat-icon{
         height: 32px;

@@ -16,7 +16,7 @@
             <div class="form-row">
                 <div class="form-block">
                     <label for="clientName">{{ 'CONTACT.NAME_LABEL' | translate }}</label>
-                    <input [(ngModel)]="contactData.clientName" name="clientName" id="clientName" type="text"
+                    <input [(ngModel)]="contactData.clientName" name="clientName" (ngModelChange)="isValidName(clientName)" id="clientName" type="text"
                         [placeholder]="clientName.invalid && clientName.touched ? ('CONTACT.NAME_ERROR' | translate) : ('CONTACT.NAME_PLACEHOLDER' | translate)"
                         required #clientName="ngModel"
                         [class.error-input]="clientName.invalid && clientName.dirty">
