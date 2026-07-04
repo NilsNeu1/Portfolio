@@ -11,6 +11,8 @@
 section {
     @include wrapper.content-wrapper();
     width: 100%;
+    min-height: 100vh;
+    max-height: fit-content;
     background-color: colors.$primaryDark;
     padding-top: 0;
     color: colors.$primaryBright;
