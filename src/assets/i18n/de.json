@@ -70,7 +70,53 @@
     "POLICY_PRE": "Ich stimme der",
     "POLICY_LINK": "Datenschutzerklärung",
     "POLICY_POST": "zu."
+  },
+
+  
+  "LEGAL": {
+    "title": "Rechtliche Hinweise",
+    "imprint": {
+      "title": "Impressum",
+      "name": "Nils Neumann",
+      "street": "Sonnenweg 16",
+      "city": "49324 Melle-Gerden"
+    },
+    "contact": {
+      "title": "Kontaktinformationen",
+      "email": "E-Mail: Schoenfeld_nils@gmx.de"
+    },
+    "acceptance": {
+      "title": "Annahme der Bedingungen",
+      "body": "Durch den Zugriff auf und die Nutzung von Portfolio (Produkt) erkennen Sie die folgenden Geschäftsbedingungen sowie alle Richtlinien, Leitlinien oder Änderungen, die Ihnen von Zeit zu Zeit vorgelegt werden, an und stimmen diesen zu. Wir, die aufgeführten Studierenden, können die Geschäftsbedingungen von Zeit zu Zeit ohne vorherige Ankündigung aktualisieren oder ändern."
+    },
+    "scope": {
+      "title": "Umfang und Eigentum am Produkt",
+      "body1": "Portfolio wurde im Rahmen eines studentischen Gruppenprojekts im Rahmen eines Webentwicklungs-Bootcamps bei der Developer Akademie GmbH entwickelt. Es dient Bildungszwecken und ist nicht für eine umfangreiche private oder geschäftliche Nutzung vorgesehen. Daher können wir keine durchgehende Verfügbarkeit, Zuverlässigkeit, Genauigkeit oder sonstige Qualitätsaspekte in Bezug auf dieses Produkt garantieren.",
+      "body2": "Das Design von Portfolio liegt im Eigentum der Developer Akademie GmbH. Eine unbefugte Nutzung, Vervielfältigung, Änderung, Verbreitung oder Nachbildung des Designs ist streng untersagt."
+    },
+    "proprietary": {
+      "title": "Eigentumsrechte",
+      "body": "Abgesehen vom Design, das im Eigentum der Developer Akademie GmbH steht, behalten wir, die aufgeführten Studierenden, alle Eigentumsrechte an Portfolio, einschließlich aller damit verbundenen urheberrechtlich geschützten Materialien, Marken und sonstigen Eigentumsinformationen."
+    },
+    "usage": {
+      "title": "Nutzung des Produkts",
+      "body": "Portfolio ist ausschließlich für rechtmäßige Zwecke im Einklang mit allen geltenden Gesetzen und Vorschriften bestimmt. Jegliche Nutzung von Portfolio für illegale Aktivitäten oder um andere Personen zu belästigen, zu schädigen, zu bedrohen oder einzuschüchtern, ist streng untersagt. Sie sind allein verantwortlich für Ihre Interaktionen mit anderen Nutzern von Portfolio."
+    },
+    "disclaimer": {
+      "title": "Gewährleistungsausschluss und Haftungsbeschränkung",
+      "body": "Portfolio wird „wie besehen\" ohne Gewährleistung jeglicher Art bereitgestellt, weder ausdrücklich noch stillschweigend, einschließlich, aber nicht beschränkt auf die stillschweigenden Gewährleistungen der Marktgängigkeit, der Eignung für einen bestimmten Zweck und der Nichtverletzung von Rechten Dritter. In keinem Fall haften wir, die aufgeführten Studierenden, oder die Developer Akademie für direkte, indirekte, beiläufig entstandene, besondere, Folge- oder exemplarische Schäden, einschließlich, aber nicht beschränkt auf Schäden durch entgangenen Gewinn, Goodwill, Nutzung, Daten oder sonstige immaterielle Verluste, selbst wenn wir auf die Möglichkeit solcher Schäden hingewiesen wurden, die aus oder im Zusammenhang mit der Nutzung oder Leistung von Portfolio entstehen."
+    },
+    "indemnity": {
+      "title": "Freistellung",
+      "body": "Sie erklären sich damit einverstanden, uns, die aufgeführten Studierenden, die Developer Akademie sowie unsere verbundenen Unternehmen, Partner, Geschäftsführer, Mitarbeiter und Bevollmächtigten von jeglichen Ansprüchen, Forderungen, Verlusten, Schäden, Kosten oder Haftungen (einschließlich angemessener Anwaltskosten) freizustellen und schadlos zu halten, die sich aus Ihrer Nutzung von Portfolio und/oder Ihrem Verstoß gegen diese rechtlichen Hinweise ergeben.",
+      "contactNote": "Bei Fragen oder Mitteilungen kontaktieren Sie uns bitte unter Schoenfeld_nils@gmx.de.",
+      "date": "Datum: 26. Juli 2025"
+    },
+    "footer": {
+      "copyright": "©2026 Nils Neumann"
+    }
   }
+
 
 
 }
