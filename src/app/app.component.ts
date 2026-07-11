@@ -1,5 +1,5 @@
-import { Component, ElementRef, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, ElementRef, inject, PLATFORM_ID } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Router, RouterOutlet, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
 import { IconService } from './services/icon-service/icon.service';
@@ -20,6 +20,8 @@ import { TranslateService } from '@ngx-translate/core';
 export class AppComponent {
   title = 'Portfolio';
   private translate = inject(TranslateService);
+  private platformId = inject(PLATFORM_ID);
+  private isBrowser = isPlatformBrowser(this.platformId);
 
   constructor(
     private iconService: IconService,
@@ -27,7 +29,13 @@ export class AppComponent {
     private elementRef: ElementRef
   ) {
     this.translate.setDefaultLang('en');
-    this.translate.use('en');
+
+    if (this.isBrowser) {
+      const savedLang = localStorage.getItem('preferredLanguage');
+      this.translate.use(savedLang ?? 'en');
+    } else {
+      this.translate.use('en');
+    }
 
     this.router.events
       .pipe(filter(e => e instanceof NavigationEnd))

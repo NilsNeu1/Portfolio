@@ -18,7 +18,7 @@
 
     <div class="navigation">
         <div (click)="languageSwitch()" class="languageSelect">
-            <span [class.animate]="langAnimate" class="langText">{{ activeLanguage }}</span>
+            <span [class.animate]="langAnimate" class="langText">{{ activeLanguage() }}</span>
         </div>
 
         <mat-icon (click)="burgerMenuOpen()" class="socialLinks menu" svgIcon="menu"></mat-icon>
@@ -55,7 +55,7 @@
 
 
             <div (click)="languageSwitch()" class=" mobileLanguageSelect">
-                <span [class.animate]="langAnimate" class="langText">{{ activeLanguage }}</span>
+                <span [class.animate]="langAnimate" class="langText">{{ activeLanguage() }}</span>
             </div>
         </div>
     </nav>

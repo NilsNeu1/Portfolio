@@ -156,7 +156,7 @@ section.dark-bg .headerName {
        background-color: colors.$accentDark;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: $laptop) {
     display: none;
 
 }

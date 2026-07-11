@@ -19,6 +19,8 @@ export class ContactComponent {
 
   submitStatus: 'idle' | 'loading' | 'success' | 'error' = 'idle';
 
+  private readonly emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.[a-zA-Z]{2,}$/;
+
   contactData = {
     clientName: '',
     clientEmail: '',
@@ -45,6 +47,15 @@ export class ContactComponent {
     }
   }
 
+//  private readonly emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9-]+\.[a-zA-Z]{2,}$/;
+
+isValidEmail(control: NgModel): void {
+  const rawValue: unknown = control.value;
+  const value: string = typeof rawValue === 'string' ? rawValue.trim().toLowerCase() : '';
+
+  control.control.setErrors(this.emailPattern.test(value) ? null : { invalidFormat: true });
+}
+
   isValidMessage(value: string): boolean {
     return value.trim().length > 0;
   }
@@ -65,13 +76,6 @@ export class ContactComponent {
       return;
     }
 
-    // if (!this.isValidName(this.contactData.clientName)) {
-    //   ngForm.form.controls['clientName'].reset();
-    //   ngForm.form.controls['clientName'].markAsTouched();
-    //   ngForm.form.controls['clientName'].setErrors({ minlength: true });
-    //   return;
-    // }
-
     if (!this.isValidMessage(this.contactData.clientMessage)) {
       ngForm.form.controls['clientMessage'].reset();
       ngForm.form.controls['clientMessage'].markAsTouched();
@@ -88,21 +92,8 @@ export class ContactComponent {
     });
   }
 
-
   sendContactForm(ngForm: NgForm) {
     this.submitStatus = 'loading';
-
-
-    //  if (true) {
-    //     setTimeout(() => {
-    //       this.submitStatus = 'success';
-    //       ngForm.resetForm();
-    //       setTimeout(() => this.submitStatus = 'idle', 4000);
-    //     }, 1500);
-    //     return;
-    //   }
-
-
 
     this.http.post(this.post.endPoint, this.post.body(this.contactData), this.post.options)
       .subscribe({

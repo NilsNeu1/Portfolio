@@ -1,9 +1,8 @@
-import { Component, computed, inject, HostListener, signal } from '@angular/core';
+import { Component, computed, inject, HostListener, signal, PLATFORM_ID } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
-import { NgClass, NgIf } from '@angular/common';
+import { NgClass, NgIf, isPlatformBrowser } from '@angular/common';
 import { VisibilityService } from '../services/section-observer/section-observer.service';
-import { TranslateModule } from '@ngx-translate/core';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -16,18 +15,29 @@ import { RouterModule } from '@angular/router';
 export class HeaderComponent {
   private visibilityService = inject(VisibilityService);
   private translate = inject(TranslateService);
+  private platformId = inject(PLATFORM_ID);
+  private isBrowser = isPlatformBrowser(this.platformId);
 
   isMenuOpen = false;
-  activeLanguage = 'EN';
   langAnimate = false;
-  myEmail = 'nils@example.com';
+  myEmail = 'schoenfeld_nils@gmx.de';
 
- isHeroActive = computed(() => this.visibilityService.activeSectionData()?.id === 'hero');
-  isNarrowScreen = signal(window.innerWidth < 1024);
+  activeLanguage = signal(this.translate.currentLang?.toUpperCase() ?? 'EN');
+
+  constructor() {
+    this.translate.onLangChange.subscribe((event) => {
+      this.activeLanguage.set(event.lang.toUpperCase());
+    });
+  }
+
+  isHeroActive = computed(() => this.visibilityService.activeSectionData()?.id === 'hero');
+  isNarrowScreen = signal(this.isBrowser ? window.innerWidth < 1024 : false);
 
   @HostListener('window:resize')
   onResize() {
-    this.isNarrowScreen.set(window.innerWidth < 1024);
+    if (this.isBrowser) {
+      this.isNarrowScreen.set(window.innerWidth < 1024);
+    }
   }
 
   headerColorClass = computed(() =>
@@ -37,6 +47,7 @@ export class HeaderComponent {
   showMobileLinks = computed(() => !this.isHeroActive() || this.isNarrowScreen());
 
   scrollToSection(sectionId: string) {
+    if (!this.isBrowser) return;
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
@@ -45,6 +56,7 @@ export class HeaderComponent {
   }
 
   copyEmailToClipboard() {
+    if (!this.isBrowser) return;
     navigator.clipboard.writeText(this.myEmail).then(() => {
       alert('📋 E-Mail wurde ins Clipboard kopiert!');
     }).catch(err => {
@@ -53,13 +65,18 @@ export class HeaderComponent {
     this.burgerMenuClose();
   }
 
-  goToLink(url: string) { window.open(url, '_blank'); }
+  goToLink(url: string) {
+    if (this.isBrowser) window.open(url, '_blank');
+  }
   burgerMenuOpen() { this.isMenuOpen = true; }
   burgerMenuClose() { this.isMenuOpen = false; }
 
   languageSwitch() {
-    this.activeLanguage = this.activeLanguage === 'DE' ? 'EN' : 'DE';
-    this.translate.use(this.activeLanguage.toLowerCase()); // NGX erwartet lowercase
+    const newLang = this.activeLanguage() === 'DE' ? 'en' : 'de';
+    this.translate.use(newLang);
+    if (this.isBrowser) {
+      localStorage.setItem('preferredLanguage', newLang);
+    }
     this.langAnimate = true;
     setTimeout(() => this.langAnimate = false, 300);
   }
