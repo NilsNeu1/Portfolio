@@ -8,6 +8,7 @@
         <!-- <mat-icon class="socialLinks linkedin" svgIcon="linkedin" alt="linkedin Profil öffnen"></mat-icon> -->
         <mat-icon (click)="copyEmailToClipboard()" class="socialLinks mail" svgIcon="mail"
             alt="Email Formular öffnen"></mat-icon>
+            <span class="mailCopy" [class.visible]="mailCopied()">{{ 'HEADER.COPIEMAIL' | translate }}</span>
 
     </div>
 
@@ -46,11 +47,12 @@
 
         <div class="mobileLinks" [class.hidden]="!showMobileLinks()">
 
-            <div>
+            <div class="mobileSocialLinks" >
                 <mat-icon (click)="goToLink('https://github.com/NilsNeu1')" class="socialLinks github" svgIcon="github"
                     alt="github Profil öffnen"></mat-icon>
                 <!-- <mat-icon class="socialLinks linkedin" svgIcon="linkedin" alt="linkedin Profil öffnen"></mat-icon> -->
-                <mat-icon class="socialLinks mail" svgIcon="mail" alt="Email Formular öffnen"></mat-icon>
+                <mat-icon (click)="copyEmailToClipboard()" class="socialLinks mail" svgIcon="mail" alt="Email Formular öffnen"></mat-icon>
+                <span class="mailCopy" [class.visible]="mailCopied()">{{ 'HEADER.COPIEMAIL' | translate }}</span>
             </div>
 
 

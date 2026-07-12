@@ -17,9 +17,11 @@ export class HeaderComponent {
   private translate = inject(TranslateService);
   private platformId = inject(PLATFORM_ID);
   private isBrowser = isPlatformBrowser(this.platformId);
+  private mailCopyTimeout?: ReturnType<typeof setTimeout>;
 
   isMenuOpen = false;
   langAnimate = false;
+  mailCopied = signal(false);
   myEmail = 'schoenfeld_nils@gmx.de';
 
   activeLanguage = signal(this.translate.currentLang?.toUpperCase() ?? 'EN');
@@ -55,15 +57,23 @@ export class HeaderComponent {
     }
   }
 
-  copyEmailToClipboard() {
-    if (!this.isBrowser) return;
-    navigator.clipboard.writeText(this.myEmail).then(() => {
-      alert('📋 E-Mail wurde ins Clipboard kopiert!');
-    }).catch(err => {
-      console.error('Failed to copy email:', err);
-    });
+ copyEmailToClipboard() {
+  if (!this.isBrowser) return;
+  navigator.clipboard.writeText(this.myEmail).then(() => {
+    this.showMailCopiedHint();
+  }).catch(err => {
+    console.error('Failed to copy email:', err);
+  });
+}
+
+private showMailCopiedHint() {
+  this.mailCopied.set(true);
+  clearTimeout(this.mailCopyTimeout);
+  this.mailCopyTimeout = setTimeout(() => {
+    this.mailCopied.set(false);
     this.burgerMenuClose();
-  }
+  }, 2000);
+}
 
   goToLink(url: string) {
     if (this.isBrowser) window.open(url, '_blank');
@@ -79,5 +89,9 @@ export class HeaderComponent {
     }
     this.langAnimate = true;
     setTimeout(() => this.langAnimate = false, 300);
+  }
+
+    ngOnDestroy() {
+    clearTimeout(this.mailCopyTimeout);
   }
 }

@@ -23,9 +23,9 @@ section {
 }
 
 @media (max-width: 768px) {
-  :host.hidden-mobile {
-    display: none;
-  }
+    :host.hidden-mobile {
+        display: none;
+    }
 }
 
 .socialLinks {
@@ -36,17 +36,32 @@ section {
 
 }
 
-.menu{
+.mailCopy {
+    text-align: center;
+    padding-left: 6px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+    pointer-events: none;
+
+    &.visible {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.menu {
     color: colors.$primaryBright;
 
     &:hover {
-    color: colors.$accentDark;
-}
+        color: colors.$accentDark;
+    }
 }
 
 // Light background sections (darkUi: false)
 section.light-bg .menu {
     color: colors.$primaryBright;
+
     &:hover {
         color: colors.$accentDark;
         transition: color 0.25s ease;
@@ -56,6 +71,7 @@ section.light-bg .menu {
 // Dark background sections (darkUi: true)
 section.dark-bg .menu {
     color: colors.$primaryDark;
+
     &:hover {
         color: colors.$accentBright;
     }
@@ -118,8 +134,10 @@ section.dark-bg .headerName {
     color: colors.$primaryDark;
 }
 
-.headerLinks{
+.headerLinks {
     color: colors.$primaryBright;
+    display: flex;
+    align-items: center;
 
     @media (max-width: 1024px) {
         display: none;
@@ -131,14 +149,14 @@ section.dark-bg .headerName {
     display: none;
 }
 
-.navigation{
+.navigation {
     display: flex;
     align-items: center;
 }
 
 
 
-.languageSelect{
+.languageSelect {
     cursor: pointer;
     font-family: 'Quicksand', sans-serif;
     width: 36px;
@@ -152,18 +170,18 @@ section.dark-bg .headerName {
     align-items: center;
     margin-right: 12px;
 
-    &:hover{
-       background-color: colors.$accentDark;
+    &:hover {
+        background-color: colors.$accentDark;
     }
 
     @media (max-width: $laptop) {
-    display: none;
+        display: none;
+
+    }
 
 }
 
-}
-
-.mobileLanguageSelect{
+.mobileLanguageSelect {
     cursor: pointer;
     font-family: 'Quicksand', sans-serif;
     width: 26px;
@@ -180,10 +198,16 @@ section.dark-bg .headerName {
 
 }
 
+.mobileSocialLinks {
+    display: flex;
+    align-items: center;
+}
+
 // Light background sections (darkUi: false)
 section.light-bg .languageSelect {
     color: colors.$primaryBright;
     border-color: colors.$primaryBright;
+
     &:hover {
         background-color: colors.$accentDark;
         transition: color 0.25s ease;
@@ -194,6 +218,7 @@ section.light-bg .languageSelect {
 section.dark-bg .languageSelect {
     color: colors.$primaryDark;
     border-color: colors.$primaryDark;
+
     &:hover {
         background-color: colors.$accentBright;
         transition: color 0.25s ease;
@@ -215,13 +240,16 @@ section.dark-bg .languageSelect {
     width: 200px;
     height: auto;
     padding: 6px;
-    opacity: 0; 
+    opacity: 0;
     transform: translateX(120%);
-    pointer-events: none; 
+    pointer-events: none;
     transition: transform 0.12s ease-out, opacity 0.12s ease-out;
 }
-.floatingBurgerMenu.open{
-    opacity: 1; transform: translateX(0); pointer-events: auto;
+
+.floatingBurgerMenu.open {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
 }
 
 
@@ -235,10 +263,11 @@ section.dark-bg .languageSelect {
     font-size: 24px;
     padding: 0px 18px 6px;
 
-    img{
-    
-    width: 36px;
-        &:hover{
+    img {
+
+        width: 36px;
+
+        &:hover {
             content: url('./../../assets/Header/Menu/close_hover.svg');
         }
     }
@@ -270,7 +299,7 @@ section.dark-bg .languageSelect {
     &:hover .burgerFlower {
         width: 20px;
         opacity: 1;
-        
+
     }
 }
 
@@ -282,7 +311,7 @@ section.dark-bg .languageSelect {
     width: stretch;
     justify-content: space-between;
 
-    mat-icon{
+    mat-icon {
         height: 32px;
         margin-left: 6px;
     }
@@ -301,6 +330,7 @@ section.dark-bg .languageSelect {
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }

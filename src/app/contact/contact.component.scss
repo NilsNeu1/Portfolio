@@ -18,18 +18,27 @@ section {
     width: 100%;
     background-color: colors.$primaryDark;
     padding-top: 0;
-    // padding-left: 4rem;
     color: colors.$primaryBright;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+
+    @media (max-width: $laptop) {
+        overflow-y: scroll;
+    }
+}
+
+.contact-main {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    position: relative;
+    width: 100%;
 
     @media (max-width: $laptop) {
         flex-direction: column;
         justify-content: space-evenly;
-        overflow-y: scroll;
     }
 }
 
@@ -243,7 +252,8 @@ section {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding-top: 60px;
+    width: 100%;
+    margin-top: 60px;
     font-size: clamp(1rem, 0.5rem + 0.5vw, 16px);
 
     span {
@@ -262,7 +272,7 @@ section {
     }
 
     @media(max-width: $laptop) {
-        padding-top: 20px;
+        margin-top: 20px;
     }
 }
 
