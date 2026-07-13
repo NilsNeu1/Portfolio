@@ -5,11 +5,12 @@ import { NgIf } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { RouterLink } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
+import { MatIcon } from "@angular/material/icon";
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [ObserveSectionDirective, FormsModule, NgIf, RouterLink, TranslateModule],
+  imports: [ObserveSectionDirective, FormsModule, NgIf, RouterLink, TranslateModule, MatIcon],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })
@@ -92,20 +93,35 @@ isValidEmail(control: NgModel): void {
     });
   }
 
-  sendContactForm(ngForm: NgForm) {
-    this.submitStatus = 'loading';
+  // sendContactForm(ngForm: NgForm) {
+  //   this.submitStatus = 'loading';
 
-    this.http.post(this.post.endPoint, this.post.body(this.contactData), this.post.options)
-      .subscribe({
-        next: () => {
-          this.submitStatus = 'success';
-          ngForm.resetForm();
-          setTimeout(() => this.submitStatus = 'idle', 8000);
-        },
-        error: () => {
-          this.submitStatus = 'error';
-          setTimeout(() => this.submitStatus = 'idle', 8000);
-        },
-      });
-  }
+  //   this.http.post(this.post.endPoint, this.post.body(this.contactData), this.post.options)
+  //     .subscribe({
+  //       next: () => {
+  //         this.submitStatus = 'success';
+  //         ngForm.resetForm();
+  //         setTimeout(() => this.submitStatus = 'idle', 8000);
+  //       },
+  //       error: () => {
+  //         this.submitStatus = 'error';
+  //         setTimeout(() => this.submitStatus = 'idle', 8000);
+  //       },
+  //     });
+  // }
+
+
+
+  // 
+
+  sendContactForm(ngForm: NgForm) {
+  this.submitStatus = 'loading';
+
+  // Simulierter Versand, da der Server keine PHP-Dateien ausführen kann.
+  // Echten Versand hier wieder aktivieren, sobald ein funktionsfähiger Endpoint verfügbar ist.
+  setTimeout(() => {
+    this.submitStatus = 'success';
+    ngForm.resetForm();
+    setTimeout(() => this.submitStatus = 'idle', 8000);
+  }, 800);}
 }

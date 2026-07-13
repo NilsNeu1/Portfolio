@@ -10,6 +10,11 @@
                 <h2>{{ 'CONTACT.SUBTITLE' | translate }}</h2>
                 <span>{{ 'CONTACT.TEXT' | translate }}</span>
             </div>
+
+            <div class="flower-container">
+                <mat-icon class="small-flower" svgIcon="flower"></mat-icon>
+                <mat-icon class="big-flower" svgIcon="flower"></mat-icon>
+            </div>
         </div>
 
         <div class="contact-form-container">
@@ -18,10 +23,10 @@
                 <div class="form-row">
                     <div class="form-block">
                         <label for="clientName">{{ 'CONTACT.NAME_LABEL' | translate }}</label>
-                        <input [(ngModel)]="contactData.clientName" name="clientName" (ngModelChange)="isValidName(clientName)" id="clientName" type="text"
+                        <input [(ngModel)]="contactData.clientName" name="clientName"
+                            (ngModelChange)="isValidName(clientName)" id="clientName" type="text"
                             [placeholder]="clientName.invalid && clientName.touched ? ('CONTACT.NAME_ERROR' | translate) : ('CONTACT.NAME_PLACEHOLDER' | translate)"
-                            required #clientName="ngModel"
-                            [class.error-input]="clientName.invalid && clientName.dirty">
+                            required #clientName="ngModel" [class.error-input]="clientName.invalid && clientName.dirty">
                     </div>
 
                     <div class="form-block">
@@ -30,24 +35,23 @@
                             [placeholder]="clientEmail.invalid && clientEmail.touched ? 
                                 (clientEmail.errors?.['required'] ? ('CONTACT.EMAIL_ERROR_REQUIRED' | translate) : ('CONTACT.EMAIL_ERROR_INVALID' | translate))
                                 : ('CONTACT.EMAIL_PLACEHOLDER' | translate)"
-                            pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
-                            required #clientEmail="ngModel"
+                            pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" required #clientEmail="ngModel"
                             [class.error-input]="clientEmail.invalid && clientEmail.dirty">
                     </div>
                 </div>
 
                 <div class="form-block">
                     <label for="clientMessage">{{ 'CONTACT.MESSAGE_LABEL' | translate }}</label>
-                    <textarea [(ngModel)]="contactData.clientMessage" name="clientMessage" id="clientMessage"
-                        cols="30" rows="10"
+                    <textarea [(ngModel)]="contactData.clientMessage" name="clientMessage" id="clientMessage" cols="30"
+                        rows="10"
                         [placeholder]="clientMessage.invalid && clientMessage.touched ? ('CONTACT.MESSAGE_ERROR' | translate) : ('CONTACT.MESSAGE_PLACEHOLDER' | translate)"
                         required #clientMessage="ngModel"
                         [class.error-input]="clientMessage.invalid && clientMessage.touched"></textarea>
                 </div>
 
                 <div class="policy">
-                    <input [(ngModel)]="contactData.agreeToPrivacyPolicy" class="policy-btn" type="checkbox"
-                        id="AGB" name="AGB" required #AGB="ngModel">
+                    <input [(ngModel)]="contactData.agreeToPrivacyPolicy" class="policy-btn" type="checkbox" id="AGB"
+                        name="AGB" required #AGB="ngModel">
                     <label class="policy-label" for="AGB">
                         {{ 'CONTACT.POLICY_PRE' | translate }}
                         <a target="_blank" routerLink="/legal-notice">{{ 'CONTACT.POLICY_LINK' | translate }}</a>
@@ -59,8 +63,10 @@
                 </div>
 
                 <div class="submit-btn-container">
-                    <button class="submit-btn" type="submit" [disabled]="submitStatus === 'loading'">
-                        {{ submitStatus === 'loading' ? ('CONTACT.SENDING' | translate) : ('CONTACT.SEND' | translate) }}
+                    <button class="submit-btn" type="submit"
+                        [disabled]="contactForm.invalid || submitStatus === 'loading'">
+                        {{ submitStatus === 'loading' ? ('CONTACT.SENDING' | translate) : ('CONTACT.SEND' | translate)
+                        }}
                     </button>
                 </div>
 
@@ -77,10 +83,9 @@
         </div>
     </div>
 
-    <div class="form-feedback"
-         [class.feedback-success]="submitStatus === 'success'"
-         [class.feedback-error]="submitStatus === 'error'"
-         *ngIf="submitStatus === 'success' || submitStatus === 'error'">
+    <div class="form-feedback" [class.feedback-success]="submitStatus === 'success'"
+        [class.feedback-error]="submitStatus === 'error'"
+        *ngIf="submitStatus === 'success' || submitStatus === 'error'">
         <span *ngIf="submitStatus === 'success'">{{ 'CONTACT.SUCCESS' | translate }}</span>
         <span *ngIf="submitStatus === 'error'">{{ 'CONTACT.ERROR' | translate }}</span>
     </div>

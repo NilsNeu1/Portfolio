@@ -1,0 +1,72 @@
+@use '../../shared/mixin/colors.scss' as colors;
+@use '../../shared/mixin/content-wrapper.scss' as wrapper;
+
+$laptop: 1024px;
+
+.legal-header {
+    @include wrapper.content-wrapper();
+    padding: 24px 72px 24px 72px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 1000;
+    background-color: transparent;
+}
+
+.headerDeveloper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.nameIcon {
+    height: clamp(24px, calc(14px + 1vw), 30px);
+    padding-right: 6px;
+    color: colors.$accentDark;
+}
+
+.headerName {
+    font-family: 'Quicksand', sans-serif;
+    font-size: clamp(1rem, calc(0.8rem + 1vw), 2rem);
+    font-weight: 600;
+    color: colors.$primaryBright;
+}
+
+.languageSelect {
+    cursor: pointer;
+    font-family: 'Quicksand', sans-serif;
+    width: 36px;
+    height: 36px;
+    border: 1px solid;
+    border-color: colors.$primaryBright;
+    color: colors.$primaryBright;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+        background-color: colors.$accentDark;
+        transition: color 0.25s ease;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.langText.animate {
+    animation: fadeIn 0.12s ease-in;
+}
