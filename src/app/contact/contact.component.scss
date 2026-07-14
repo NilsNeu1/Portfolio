@@ -138,58 +138,58 @@ section {
     }
 
     input,
-textarea {
-    background: transparent;
-    border: 0;
-    border-bottom: 2px solid colors.$accentBright;
-    color: colors.$primaryBright;
-    min-height: 30px;
-    max-height: 400px;
-    field-sizing: content;
-    transition: border-color 0.2s ease;
-    font-family: 'Quicksand', sans-serif;
-    font-size: 1rem;
-    outline: transparent;
-    scrollbar-width: thin;
-    scrollbar-color: colors.$accentDark transparent;
-    resize: none;
-    cursor: pointer;
-
-    &::placeholder {
+    textarea {
+        background: transparent;
+        border: 0;
+        border-bottom: 2px solid colors.$accentBright;
         color: colors.$primaryBright;
-        filter: opacity(0.5);
-    }
+        min-height: 30px;
+        max-height: 400px;
+        field-sizing: content;
+        transition: border-color 0.2s ease;
+        font-family: 'Quicksand', sans-serif;
+        font-size: 1rem;
+        outline: transparent;
+        scrollbar-width: thin;
+        scrollbar-color: colors.$accentDark transparent;
+        resize: none;
+        cursor: pointer;
 
-    &.error-input::placeholder {
-        color: rgb(248, 74, 74);
-        filter: opacity(1);
-    }
+        &::placeholder {
+            color: colors.$primaryBright;
+            filter: opacity(0.5);
+        }
 
-    &.error-input {
-        border-bottom-color: rgb(248, 74, 74);
-    }
+        &.error-input::placeholder {
+            color: rgb(248, 74, 74);
+            filter: opacity(1);
+        }
 
-    &:-webkit-autofill,
-    &:-webkit-autofill:hover,
-    &:-webkit-autofill:focus,
-    &:-webkit-autofill:active {
-        box-shadow: 0 0 0 1000px transparent inset;
-        -webkit-box-shadow: 0 0 0 1000px transparent inset;
-        -webkit-text-fill-color: colors.$primaryBright;
-        caret-color: colors.$primaryBright;
-        transition: background-color 5000s ease-in-out 0s;
-    }
+        &.error-input {
+            border-bottom-color: rgb(248, 74, 74);
+        }
 
-    @media(max-width: $laptop) {
-        font-size: clamp(1rem, 0.5rem + 0.5vw, 1rem);
-        max-width: 80vw;
-        max-height: 46px;
-    }
+        &:-webkit-autofill,
+        &:-webkit-autofill:hover,
+        &:-webkit-autofill:focus,
+        &:-webkit-autofill:active {
+            box-shadow: 0 0 0 1000px transparent inset;
+            -webkit-box-shadow: 0 0 0 1000px transparent inset;
+            -webkit-text-fill-color: colors.$primaryBright;
+            caret-color: colors.$primaryBright;
+            transition: background-color 5000s ease-in-out 0s;
+        }
 
-    @media(max-width: $mobile) {
-        max-height: 46px;
+        @media(max-width: $laptop) {
+            font-size: clamp(1rem, 0.5rem + 0.5vw, 1rem);
+            max-width: 80vw;
+            max-height: 46px;
+        }
+
+        @media(max-width: $mobile) {
+            max-height: 46px;
+        }
     }
-}
 
     &:hover {
         label {
@@ -260,10 +260,13 @@ textarea {
 
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
+    align-items: center;
     width: 100%;
     margin-top: 60px;
     font-size: clamp(1rem, 0.5rem + 0.5vw, 16px);
+    position: absolute;
+    bottom: 5%;
 
     span {
         font-size: clamp(0.8rem, 0.5rem + 0.5vw, 16px);
@@ -281,7 +284,9 @@ textarea {
     }
 
     @media(max-width: $laptop) {
-        margin-top: 20px;
+        bottom: 2%;
+        width: 90vw;
+        justify-content: space-around;
     }
 }
 
@@ -400,7 +405,7 @@ textarea {
 
 
 
-.flower-container{
+.flower-container {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -410,10 +415,10 @@ textarea {
     @media(max-width: $laptop) {
         display: none;
     }
-    
+
 }
 
-.big-flower{
+.big-flower {
     color: colors.$primary;
     width: auto;
     height: 250px;
@@ -424,7 +429,7 @@ textarea {
     animation-direction: reverse;
 }
 
-.small-flower{
+.small-flower {
     color: colors.$accentDark;
     width: auto;
     height: 180px;

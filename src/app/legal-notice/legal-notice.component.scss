@@ -24,7 +24,7 @@ section {
 
 h1{
     color: colors.$accentBright;
-    font-size: 60px;
+    font-size: clamp(20px calc (2rem - 1vw ), 1.5rem);
 }
 
 div{
@@ -35,10 +35,12 @@ div{
 
     h2{
         color: colors.$accentBright;
+        font-size: clamp(1rem, calc(1rem + (100vw - 1920px) * 0.025), 1.2rem);
     }
 
     p{
         color: colors.$primaryBright;
+        font-size: 1rem;
 
         mark{
             color: colors.$accentBright;
