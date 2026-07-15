@@ -20,8 +20,8 @@ export class ContactComponent {
 
   submitStatus: 'idle' | 'loading' | 'success' | 'error' = 'idle';
 
-  // private readonly emailPattern = /^[a-zA-Z0-9]+([._-]?[a-zA-Z0-9]+)*@(gmail|gmx|web|outlook|yahoo|hotmail|protonmail|icloud)\.(com|de|net|org)$/;
-  private readonly emailPattern = /^[a-zA-Z0-9](?:[a-zA-Z0-9._-]*[a-zA-Z0-9])?@(gmail|gmx|web|outlook|yahoo|hotmail|protonmail|icloud)\.(com|de|net|org)$/;
+  private readonly emailPattern = /^[a-zA-Z0-9](?:[a-zA-Z0-9._-]*[a-zA-Z0-9])?@[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?)*\.[a-zA-Z]{2,}$/;
+   // private readonly emailPattern = /^[a-zA-Z0-9](?:[a-zA-Z0-9._-]*[a-zA-Z0-9])?@(gmail|gmx|web|outlook|yahoo|hotmail|protonmail|icloud)\.(com|de|net|org)$/;
 
 
   contactData = {

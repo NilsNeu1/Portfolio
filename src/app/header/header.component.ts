@@ -3,7 +3,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { NgClass, NgIf, isPlatformBrowser } from '@angular/common';
 import { VisibilityService } from '../services/section-observer/section-observer.service';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -16,8 +16,10 @@ export class HeaderComponent {
   private visibilityService = inject(VisibilityService);
   private translate = inject(TranslateService);
   private platformId = inject(PLATFORM_ID);
+  private router = inject(Router);
   private isBrowser = isPlatformBrowser(this.platformId);
   private mailCopyTimeout?: ReturnType<typeof setTimeout>;
+  private scrollAfterNavTimeout?: ReturnType<typeof setTimeout>;
 
   isMenuOpen = false;
   langAnimate = false;
@@ -43,18 +45,34 @@ export class HeaderComponent {
   }
 
   headerColorClass = computed(() =>
-    this.visibilityService.activeSectionData().darkUi ? 'dark-bg' : 'light-bg'
+  this.visibilityService.activeSectionData().darkUi ? 'dark-bg' : 'light-bg'
   );
 
   showMobileLinks = computed(() => !this.isHeroActive() || this.isNarrowScreen());
 
   scrollToSection(sectionId: string) {
     if (!this.isBrowser) return;
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+
+    const isHome = this.router.url === '/' || this.router.url.startsWith('/#');
+
+    if (isHome) {
+      this.scrollToElement(sectionId);
       this.burgerMenuClose();
+      return;
     }
+
+    this.router.navigate(['/']).then(() => {
+      clearTimeout(this.scrollAfterNavTimeout);
+      this.scrollAfterNavTimeout = setTimeout(() => {
+        this.scrollToElement(sectionId);
+      }, 100);
+    });
+    this.burgerMenuClose();
+  }
+
+  private scrollToElement(sectionId: string) {
+    const element = document.getElementById(sectionId);
+    element?.scrollIntoView({ behavior: 'smooth' });
   }
 
  copyEmailToClipboard() {
@@ -93,5 +111,6 @@ private showMailCopiedHint() {
 
     ngOnDestroy() {
     clearTimeout(this.mailCopyTimeout);
+    clearTimeout(this.scrollAfterNavTimeout);
   }
 }

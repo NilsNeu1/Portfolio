@@ -23,7 +23,7 @@ export class VisibilityService {
 
   // Berechnet automatisch die Daten der aktiven Sektion [1, 2]
   readonly activeSectionData = computed(() => 
-    this.sections.find(s => s.id === this._activeId()) || this.sections[0]
+    this.sections.find(s => s.id === this._activeId()) || this.sections[2]
   );
 
   readonly isHeroActive = computed(() => this._activeId() === 'hero');

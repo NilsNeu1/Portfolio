@@ -59,7 +59,7 @@
                 name="AGB" required #AGB="ngModel">
             <label class="policy-label" for="AGB">
                 {{ 'CONTACT.POLICY_PRE' | translate }}
-                <a target="_blank" routerLink="/legal-notice">{{ 'CONTACT.POLICY_LINK' | translate }}</a>
+                <a routerLink="/legal-notice">{{ 'CONTACT.POLICY_LINK' | translate }}</a>
                 {{ 'CONTACT.POLICY_POST' | translate }}
                 <span *ngIf="AGB.invalid && AGB.touched" class="error">
                     {{ 'CONTACT.POLICY_ERROR' | translate }}
@@ -83,7 +83,7 @@
     <div class="footer">
         <span>©2026 Nils Neumann</span>
         <div class="footer-links">
-            <a href="" target="_blank" routerLink="/legal-notice">{{ 'CONTACT.FOOTER' | translate }}</a>
+            <a routerLink="/legal-notice">{{ 'CONTACT.FOOTER' | translate }}</a>
             <a href="https://github.com/NilsNeu1" target="_blank">GitHub</a>
         </div>
     </div>
