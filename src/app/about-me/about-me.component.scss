@@ -16,11 +16,12 @@ section {
     background-color: colors.$primaryBright;
     width: 100%;
     height: 100vh;
+    height: 100dvh;
     padding-top: 0;
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-around;
-    overflow: hidden;
+    // overflow: hidden;
     position: relative;
 
     @media(max-width: $laptop){

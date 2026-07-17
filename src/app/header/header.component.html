@@ -1,4 +1,6 @@
-<section id="header" appHeaderObserver [ngClass]="headerColorClass()" [class.hidden-mobile]="!isHeroActive()">
+<section id="header" appHeaderObserver [ngClass]="headerColorClass()" 
+[class.hidden-mobile]="!isHeroActive() && !isLegalNoticeActive()"
+[class.static-header]="isLegalNoticeActive()">
 
     <div class="headerLinks" [class.hidden]="!isHeroActive()">
 

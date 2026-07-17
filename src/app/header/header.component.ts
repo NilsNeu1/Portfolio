@@ -3,7 +3,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { NgClass, NgIf, isPlatformBrowser } from '@angular/common';
 import { VisibilityService } from '../services/section-observer/section-observer.service';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
-import { Router, RouterModule } from '@angular/router';
+import { NavigationEnd, Router, RouterModule } from '@angular/router';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -27,15 +28,23 @@ export class HeaderComponent {
   myEmail = 'schoenfeld_nils@gmx.de';
 
   activeLanguage = signal(this.translate.currentLang?.toUpperCase() ?? 'EN');
+  currentUrl = signal(this.router.url);
 
   constructor() {
     this.translate.onLangChange.subscribe((event) => {
       this.activeLanguage.set(event.lang.toUpperCase());
     });
+
+    this.router.events
+      .pipe(filter((event): event is NavigationEnd => event instanceof NavigationEnd))
+      .subscribe((event) => {
+        this.currentUrl.set(event.urlAfterRedirects);
+      });
   }
 
   isHeroActive = computed(() => this.visibilityService.activeSectionData()?.id === 'hero');
   isNarrowScreen = signal(this.isBrowser ? window.innerWidth < 1024 : false);
+  isLegalNoticeActive = computed(() => this.currentUrl().includes('legal-notice'));
 
   @HostListener('window:resize')
   onResize() {

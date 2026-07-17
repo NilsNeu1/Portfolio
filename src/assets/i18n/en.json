@@ -49,7 +49,7 @@
     "TEXT": "I'm a frontend developer focused on building clean, maintainable, and accessible applications. I'm currently looking for a role where solid architecture and long-term code quality matter.",
     "NAME_LABEL": "What's your name?",
     "NAME_PLACEHOLDER": "Your Name...",
-    "NAME_ERROR": "Name is incorrect!",
+    "NAME_ERROR": "Name is required!",
     "EMAIL_LABEL": "What's your email?",
     "EMAIL_PLACEHOLDER": "youremail@email.com",
     "EMAIL_ERROR_REQUIRED": "Email is required!",

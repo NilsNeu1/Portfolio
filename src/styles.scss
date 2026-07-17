@@ -6,7 +6,7 @@ $desktop: 1280px;
 body{
     margin: 0;
     width: 100%;
-    overflow-x: hidden;
+    // overflow-x: hidden;
     font-family: 'Quicksand', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
@@ -89,7 +89,7 @@ body{
 
 html, body {
   height: 100%;
-  overflow: hidden; // Kein freies Scrollen mehr auf body-Ebene
+  // overflow: hidden; // Kein freies Scrollen mehr auf body-Ebene
 }
 
 // Scroll-Container

@@ -15,6 +15,7 @@ $desktop: 1280px;
 section {
     @include wrapper.content-wrapper();
     height: 100vh;
+    height: 100dvh;
     width: 100%;
     background-color: colors.$primaryDark;
     padding-top: 0;

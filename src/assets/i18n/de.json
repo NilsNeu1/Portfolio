@@ -52,7 +52,7 @@
     "TEXT": "Ich bin ein Frontend-Entwickler mit Fokus auf saubere, wartbare und zugängliche Anwendungen. Ich suche derzeit eine Stelle, bei der solide Architektur und langfristige Codequalität zählen.",
     "NAME_LABEL": "Wie heißt du?",
     "NAME_PLACEHOLDER": "Dein Name...",
-    "NAME_ERROR": "Name ist falsch!",
+    "NAME_ERROR": "Name ist erforderlich!",
     "EMAIL_LABEL": "Wie lautet deine E-Mail?",
     "EMAIL_PLACEHOLDER": "deinemail@email.com",
     "EMAIL_ERROR_REQUIRED": "E-Mail ist erforderlich!",
