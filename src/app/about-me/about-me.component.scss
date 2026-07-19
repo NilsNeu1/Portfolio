@@ -82,9 +82,16 @@ section {
 
         @media (max-width: $laptop) {
         
-        margin-top: 5%;
         height: clamp(230px, 150px + 30vw, 600px);
-        transform: translate(10%, 50%);
+        transform: translate(-40%, 20%);
+    }
+
+    @media (max-width: $tablet){
+        transform: translate(-20%, 20%);
+    }
+
+        @media (max-width: $mobile){
+        transform: translate(-12%, 20%);
     }
 
         @media(max-width: 380px){
@@ -109,8 +116,6 @@ section {
     background-color: colors.$primaryDark;
     color: colors.$primaryBright;
     border-radius: 6px;
-    // position: relative;
-    // transform: translate(calc(100% - 55vw), 10%);
     position: absolute;
     top: 40%;
     left: 48%;
@@ -120,15 +125,14 @@ section {
     }
     
     @media(max-width: 1920px){
-        height: clamp(200px, 400px - 14vw, 350px);
-
+        // height: clamp(200px, 400px - 14vw, 350px);
+        height: auto;
     }
 
     @media (max-width: $laptop) {
-        aspect-ratio: 3/4;
-        width: auto;
-        height: clamp(200px, 110px + 28vw, 390px);
+        height: auto;
         z-index: 1;
+        left: 38%;
 
         p{
             font-size: clamp(1rem, calc(0.25rem + 1.2vw), 1.5rem);
@@ -139,8 +143,17 @@ section {
     @media(max-width: $tablet){
         padding: 12px;
         width: clamp(100px, 80px + 22vw, 300px);
-        height: 440px;
+        // height: 440px;
+        height: auto;
+        left: 48%;
+        top: 25%;
 
+
+    }
+
+    @media(max-width: $mobile){
+        left: 48%;
+        top: 20%;
     }
 
     @media(max-width: 380px){
@@ -148,7 +161,8 @@ section {
         top: 45%;
         left: 10%;
         width: 280px;
-        height: 320px;
+        // height: 320px;
+        height: auto;
     }
 
     @media(max-width: 340px){
@@ -156,7 +170,8 @@ section {
         top: 49%;
         left: 3%;
         width: 277px;
-        height: 315px;
+        // height: 315px;
+        height: auto;
     }
 
 }
@@ -211,17 +226,20 @@ section {
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-evenly;
-    height: auto;
+    height: 0px;
     width: fit-content;
     aspect-ratio: 3/2;
-    padding: 12px;
+    padding: 0px;
     background-color: colors.$primary;
     border: 1px solid colors.$primaryDark;
     border-radius: 6px;
-    transform: translate(180%, 230%);
+    transform: translate(70%, 90vh);
     opacity: 0;
     transition: transform 0.12s ease-out, opacity 0.12s ease-in-out;
     pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
 
     h2{
         margin-bottom: 6px;
@@ -268,25 +286,27 @@ section {
 }
 
 .about-me-overlay.open{
-    transform: translate(70%, 0%);
+    transform: translate(80%, 110%);
     opacity: 1;
     pointer-events: auto;
+    height: auto;
+    padding: 12px;
 
     @media(max-width: $laptop){
-        transform: translate(-70%, -65%);
+        transform: translate(60%, 105%);
     }
 
         @media(max-width: $tablet){
-        transform: translate(-50%, -75%);
+        transform: translate(-75%, 75%);
         // width: 150px;
     }
 
         @media(max-width: 380px){
-        transform: translate(-10%, -93%);
+        transform: translate(-10%, -10%);
     }
 
        @media(max-width: 340px){
-        transform: translate(5%, -120%);
+        transform: translate(5%, -10%);
     }
 
 }
