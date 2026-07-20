@@ -9,7 +9,8 @@ $desktop: 1280px;
 
 
 :host {
-    display: block;
+    display: flex;
+    align-items: center;
     background-color: colors.$primaryBright;
 }
 

@@ -4,7 +4,8 @@
 :host {
   position: fixed;
   top: 50%;
-  right: calc(max(0px, (100vw - 1580px) / 2) + clamp(16px, 4vw, 80px));
+//   right: calc(max(0px, (100vw - 1580px) / 2) + clamp(16px, 4vw, 80px));
+  right: calc(max(0px, (100vw - 1370px) / 2) + clamp(16px, 4vw, 80px));
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;

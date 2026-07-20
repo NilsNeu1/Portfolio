@@ -10,83 +10,75 @@
                 <h2>{{ 'CONTACT.SUBTITLE' | translate }}</h2>
                 <span>{{ 'CONTACT.TEXT' | translate }}</span>
             </div>
-
-            <div class="flower-container">
-                <mat-icon class="small-flower" svgIcon="flower"></mat-icon>
-                <mat-icon class="big-flower" svgIcon="flower"></mat-icon>
-            </div>
         </div>
 
- <div class="contact-form-container">
-    <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+        <div class="contact-form-container">
+            <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
 
-        <div class="form-row">
-            <div class="form-block">
-                <label for="clientName">{{ 'CONTACT.NAME_LABEL' | translate }}</label>
-                <input [(ngModel)]="contactData.clientName" name="clientName"
-                    (ngModelChange)="isValidName(clientName)" (blur)="isValidName(clientName)" id="clientName" type="text"
-                    [placeholder]="clientName.invalid && clientName.touched ? ('CONTACT.NAME_ERROR' | translate) : ('CONTACT.NAME_PLACEHOLDER' | translate)"
-                    required #clientName="ngModel" [class.error-input]="clientName.invalid && clientName.touched">
-            </div>
+                <div class="form-row">
+                    <div class="form-block">
+                        <label for="clientName">{{ 'CONTACT.NAME_LABEL' | translate }}</label>
+                        <input [(ngModel)]="contactData.clientName" name="clientName"
+                            (ngModelChange)="isValidName(clientName)" (blur)="isValidName(clientName)" id="clientName"
+                            type="text"
+                            [placeholder]="clientName.invalid && clientName.touched ? ('CONTACT.NAME_ERROR' | translate) : ('CONTACT.NAME_PLACEHOLDER' | translate)"
+                            required #clientName="ngModel"
+                            [class.error-input]="clientName.invalid && clientName.touched">
+                    </div>
 
-            <div class="form-block">
-                <label for="clientEmail">{{ 'CONTACT.EMAIL_LABEL' | translate }}</label>
-                <input [(ngModel)]="contactData.clientEmail" name="clientEmail" id="clientEmail" type="email"
-                    required #clientEmail="ngModel" [placeholder]="
+                    <div class="form-block">
+                        <label for="clientEmail">{{ 'CONTACT.EMAIL_LABEL' | translate }}</label>
+                        <input [(ngModel)]="contactData.clientEmail" name="clientEmail" id="clientEmail" type="email"
+                            required #clientEmail="ngModel" [placeholder]="
                     clientEmail.invalid && clientEmail.touched
                     ? (clientEmail.errors?.['required']
                     ? ('CONTACT.EMAIL_ERROR_REQUIRED' | translate)
                      : ('CONTACT.EMAIL_ERROR_INVALID' | translate))
                     : ('CONTACT.EMAIL_PLACEHOLDER' | translate)
                     " [class.error-input]="clientEmail.invalid && clientEmail.touched"
-                    (ngModelChange)="isValidEmail(clientEmail)" (blur)="isValidEmail(clientEmail)">
+                            (ngModelChange)="isValidEmail(clientEmail)" (blur)="isValidEmail(clientEmail)">
 
-            </div>
+                    </div>
+                </div>
+
+                <div class="form-block">
+                    <label for="clientMessage">{{ 'CONTACT.MESSAGE_LABEL' | translate }}</label>
+                    <textarea [(ngModel)]="contactData.clientMessage" name="clientMessage" id="clientMessage" cols="30"
+                        rows="10"
+                        [placeholder]="clientMessage.invalid && clientMessage.touched ? ('CONTACT.MESSAGE_ERROR' | translate) : ('CONTACT.MESSAGE_PLACEHOLDER' | translate)"
+                        required #clientMessage="ngModel" (ngModelChange)="isValidMessage(clientMessage)"
+                        (blur)="isValidMessage(clientMessage)"
+                        [class.error-input]="clientMessage.invalid && clientMessage.touched"></textarea>
+                </div>
+
+                <div class="policy">
+                    <input [(ngModel)]="contactData.agreeToPrivacyPolicy" class="policy-btn" type="checkbox" id="AGB"
+                        name="AGB" required #AGB="ngModel">
+                    <label class="policy-label" for="AGB">
+                        {{ 'CONTACT.POLICY_PRE' | translate }}
+                        <a routerLink="/legal-notice">{{ 'CONTACT.POLICY_LINK' | translate }}</a>
+                        {{ 'CONTACT.POLICY_POST' | translate }}
+                        <span *ngIf="AGB.invalid && AGB.touched" class="error">
+                            {{ 'CONTACT.POLICY_ERROR' | translate }}
+                        </span>
+                    </label>
+                </div>
+
+                <div class="submit-btn-container">
+                    <button class="submit-btn" type="submit"
+                        [disabled]="contactForm.invalid || submitStatus === 'loading'">
+                        {{ submitStatus === 'loading' ? ('CONTACT.SENDING' | translate) : ('CONTACT.SEND' | translate)
+                        }}
+                    </button>
+                </div>
+
+            </form>
         </div>
-
-        <div class="form-block">
-            <label for="clientMessage">{{ 'CONTACT.MESSAGE_LABEL' | translate }}</label>
-            <textarea [(ngModel)]="contactData.clientMessage" name="clientMessage" id="clientMessage" cols="30"
-                rows="10"
-                [placeholder]="clientMessage.invalid && clientMessage.touched ? ('CONTACT.MESSAGE_ERROR' | translate) : ('CONTACT.MESSAGE_PLACEHOLDER' | translate)"
-                required #clientMessage="ngModel" (ngModelChange)="isValidMessage(clientMessage)"
-                (blur)="isValidMessage(clientMessage)"
-                [class.error-input]="clientMessage.invalid && clientMessage.touched"></textarea>
-        </div>
-
-        <div class="policy">
-            <input [(ngModel)]="contactData.agreeToPrivacyPolicy" class="policy-btn" type="checkbox" id="AGB"
-                name="AGB" required #AGB="ngModel">
-            <label class="policy-label" for="AGB">
-                {{ 'CONTACT.POLICY_PRE' | translate }}
-                <a routerLink="/legal-notice">{{ 'CONTACT.POLICY_LINK' | translate }}</a>
-                {{ 'CONTACT.POLICY_POST' | translate }}
-                <span *ngIf="AGB.invalid && AGB.touched" class="error">
-                    {{ 'CONTACT.POLICY_ERROR' | translate }}
-                </span>
-            </label>
-        </div>
-
-        <div class="submit-btn-container">
-            <button class="submit-btn" type="submit"
-                [disabled]="contactForm.invalid || submitStatus === 'loading'">
-                {{ submitStatus === 'loading' ? ('CONTACT.SENDING' | translate) : ('CONTACT.SEND' | translate)
-                }}
-            </button>
-        </div>
-
-    </form>
-</div>
 
     </div>
 
-    <div class="footer">
-        <span>©2026 Nils Neumann</span>
-        <div class="footer-links">
-            <a routerLink="/legal-notice">{{ 'CONTACT.FOOTER' | translate }}</a>
-            <a href="https://github.com/NilsNeu1" target="_blank">GitHub</a>
-        </div>
-    </div>
+    <app-footer></app-footer>
+
 
     <div class="form-feedback" [class.feedback-success]="submitStatus === 'success'"
         [class.feedback-error]="submitStatus === 'error'"

@@ -4,11 +4,12 @@ import { RouterModule } from '@angular/router';
 import { LegalHeaderComponent } from '../legal-header/legal-header.component';
 import { HeaderComponent } from "../header/header.component";
 import { VisibilityService } from './../services/section-observer/section-observer.service';
+import { FooterComponent } from '../footer/footer.component';
 
 @Component({
   selector: 'app-legal-notice',
   standalone: true,
-  imports: [TranslateModule, RouterModule, LegalHeaderComponent, HeaderComponent],
+  imports: [TranslateModule, RouterModule, LegalHeaderComponent, HeaderComponent, FooterComponent],
   templateUrl: './legal-notice.component.html',
   styleUrl: './legal-notice.component.scss'
 })

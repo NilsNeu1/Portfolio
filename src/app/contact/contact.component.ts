@@ -6,11 +6,12 @@ import { HttpClient } from '@angular/common/http';
 import { RouterLink } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { MatIcon } from "@angular/material/icon";
+import { FooterComponent } from "../footer/footer.component";
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [ObserveSectionDirective, FormsModule, NgIf, RouterLink, TranslateModule, MatIcon],
+  imports: [ObserveSectionDirective, FormsModule, NgIf, RouterLink, TranslateModule, MatIcon, FooterComponent],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })

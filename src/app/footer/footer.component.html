@@ -1,0 +1,21 @@
+<section [class.legal-footer]="fixed">
+    <div class="footer">
+
+        <div class="flower-container" [class.force-show]="fixed">
+            <mat-icon class="small-flower" svgIcon="flower"></mat-icon>
+            <mat-icon class="big-flower" svgIcon="flower"></mat-icon>
+        </div>
+
+        <div class="name">
+            <span>©2026 Nils Neumann</span>
+        </div>
+
+        <div class="footer-links">
+            @if (!fixed) {
+                <a routerLink="/legal-notice">{{ 'CONTACT.FOOTER' | translate }}</a>
+            }
+            <a href="https://github.com/NilsNeu1" target="_blank">GitHub</a>
+        </div>
+
+    </div>
+</section>
