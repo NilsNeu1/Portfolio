@@ -99,6 +99,7 @@ app-root {
   overflow-y: auto;
   scroll-snap-type: y mandatory;
   scrollbar-width: none;  
+  // scrollbar-width: auto;
             // Firefox
   &::-webkit-scrollbar {
     display: none; }

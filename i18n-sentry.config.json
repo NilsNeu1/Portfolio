@@ -1,0 +1,13 @@
+{
+  "localeDir": "./src/assets/i18n",
+  "scanDir": "./src/app",
+  "locales": [
+    "de",
+    "en"
+  ],
+  "sourceLocale": "en",
+  "ignoreKeys": [],
+  "ignoreRawText": [],
+  "textAttributes": [],
+  "warnAttributes": []
+}

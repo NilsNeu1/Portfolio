@@ -93,6 +93,13 @@ export class HeaderComponent {
   });
 }
 
+openMailForm(): void {
+  if (!this.isBrowser) return;
+  const subject = encodeURIComponent('Kontaktanfrage über Portfolio');
+  const body = encodeURIComponent('Hallo,\n\n');
+  window.location.href = `mailto:${this.myEmail}?subject=${subject}&body=${body}`;
+}
+
 private showMailCopiedHint() {
   this.mailCopied.set(true);
   clearTimeout(this.mailCopyTimeout);

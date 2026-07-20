@@ -126,6 +126,7 @@ section {
 
     @media (max-width: $laptop) {
         width: auto;
+        max-width: 100vw;
         height: 50vh;
         aspect-ratio: none;
     }

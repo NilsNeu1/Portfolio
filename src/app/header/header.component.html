@@ -8,7 +8,7 @@
         <mat-icon (click)="goToLink('https://github.com/NilsNeu1')" class="socialLinks github" svgIcon="github"
             alt="github Profil öffnen"></mat-icon>
         <!-- <mat-icon class="socialLinks linkedin" svgIcon="linkedin" alt="linkedin Profil öffnen"></mat-icon> -->
-        <mat-icon (click)="copyEmailToClipboard()" class="socialLinks mail" svgIcon="mail"
+        <mat-icon (click)="openMailForm()" class="socialLinks mail" svgIcon="mail"
             alt="Email Formular öffnen"></mat-icon>
         <span class="mailCopy" [class.visible]="mailCopied()">{{ 'HEADER.COPIEMAIL' | translate }}</span>
 
@@ -53,7 +53,7 @@
                 <mat-icon (click)="goToLink('https://github.com/NilsNeu1')" class="socialLinks github" svgIcon="github"
                     alt="github Profil öffnen"></mat-icon>
                 <!-- <mat-icon class="socialLinks linkedin" svgIcon="linkedin" alt="linkedin Profil öffnen"></mat-icon> -->
-                <mat-icon (click)="copyEmailToClipboard()" class="socialLinks mail" svgIcon="mail"
+                <mat-icon (click)="openMailForm()" class="socialLinks mail" svgIcon="mail"
                     alt="Email Formular öffnen"></mat-icon>
                 <span class="mailCopy" [class.visible]="mailCopied()">{{ 'HEADER.COPIEMAIL' | translate }}</span>
             </div>
