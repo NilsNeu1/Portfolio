@@ -74,7 +74,7 @@ section {
     display: flex;
     flex-direction: column-reverse;
     align-items: end;
-    width: min(900px, 50%);
+    width: min(900px, 60%);
     height: auto;
     aspect-ratio: 1/1;
 
@@ -105,7 +105,7 @@ section {
 
         @media (max-width: $laptop) {
         width: 4%;
-
+        transform: scale(9) translate(40%, 75%);
         aspect-ratio: none;
     }
 

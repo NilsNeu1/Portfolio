@@ -173,11 +173,13 @@ section {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 6px;
+    padding-right: 18px;
 
     @media(max-width: $laptop) {
         grid-template-columns: repeat(5, 1fr);
         gap: 2px;
         padding-top: 40px;
+        padding-right: 0px;
     }
 
     @media(max-width: 340px) {

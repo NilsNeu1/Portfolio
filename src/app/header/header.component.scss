@@ -24,6 +24,10 @@ section {
         position: fixed;
         background-color: colors.$primaryDark;
     }
+
+    @media(max-width: $mobile){
+        padding: 12px 20px 6px 20px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -258,6 +262,10 @@ section.dark-bg .languageSelect {
     border: 1px solid black;
     width: 200px;
     padding: 6px;
+
+    @media(max-width: $mobile){
+        transform: translate(46px, -15px);
+    }
 }
 
 
